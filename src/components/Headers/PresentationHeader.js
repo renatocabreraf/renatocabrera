@@ -8,7 +8,7 @@ function PresentationHeader() {
         <img
           src={require("assets/img/banner7.png")}
           alt="Imagen de presentación"
-          className="presentation-image"
+          className="presentation-image fade-in-blur"
         />
       </div>
       
@@ -17,7 +17,7 @@ function PresentationHeader() {
           <Link to="/pdp-10">
             <img src={require("assets/img/banner1.1.1.png")} alt="PDP-10" className="section-image" />
             <div className="section-text" style={{ color: "black" }}>
-              <p>Conoce un poco sobre de mi trabajo, mis planes y sueños, todo acerca de emprender innovando.</p>
+              <p>Mi experiencia trabajando por Guatemala y su desarrollo tecnológico.</p>
             </div>
           </Link>
         </div>
@@ -25,15 +25,15 @@ function PresentationHeader() {
           <Link to="/music">
             <img src={require("assets/img/banner1.2.png")} alt="Billboard Hot 10" className="section-image" />
             <div className="section-text" style={{ color: "black" }}>
-              <p>No todo es trabajo. Mis hobbies me mantienen ocupado, pero además de eso, le dan otro enfoque a mis actividades.</p>
+              <p>Mi blog personal.</p>
             </div>
           </Link>
         </div>
         <div className="section-card">
           <Link to="/news">
             <img src={require("assets/img/banner1.png")} alt="Out of Town News" className="section-image" />
-            <div className="section-text">
-              <p>Soy de la creencia que siempre debemos devolver las bendiciones que hemos recibido, el cambio está en nosotros.</p>
+            <div className="section-text" style={{ color: "black" }}>
+              <p>Trabajo para un mejor mundo.</p>
             </div>
           </Link>
         </div>
@@ -51,12 +51,31 @@ function PresentationHeader() {
           align-items: center;
           overflow: hidden;
         }
+
         .presentation-image {
           width: 100%;
           height: auto;
           max-height: 100vh;
           object-fit: contain;
         }
+
+        .fade-in-blur {
+          opacity: 0;
+          filter: blur(10px);
+          animation: fadeInBlur 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInBlur {
+          0% {
+            opacity: 0;
+            filter: blur(10px);
+          }
+          100% {
+            opacity: 1;
+            filter: blur(0);
+          }
+        }
+
         .sections-container {
           display: flex;
           justify-content: space-around;
@@ -65,6 +84,7 @@ function PresentationHeader() {
           padding: 20px;
           flex-wrap: wrap;
         }
+
         .section-card {
           width: 30%;
           border-radius: 10px;
@@ -74,15 +94,18 @@ function PresentationHeader() {
           box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
           transition: transform 0.3s;
         }
+
         .section-card:hover {
           transform: scale(1.05);
         }
+
         .section-image {
           width: 100%;
           height: auto;
           max-height: 200px;
           object-fit: contain;
         }
+
         .section-text {
           padding: 15px;
           font-size: 14px;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -14,17 +14,34 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter, FaLinkedinIn } from "rea
 
 function ResponsiveNavbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const menuOptions = [
-    { label: "Equipo", path: "/about-us" },
-    { label: "Proyectos", path: "/projects" },
-    { label: "Soluciones", path: "/solutions" }
+    { label: "Experiencia", path: "/about-us" },
+    { label: "Blog", path: "/projects" },
+    { label: "Trabajo Social", path: "/solutions" }
   ];
 
   return (
-    <Navbar color="white" light expand="lg" sticky="top" style={{ boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", padding: "10px 0", position: "relative" }}>
+    <Navbar
+      light
+      expand="lg"
+      className={`fixed-top ${scrolled ? "scrolled-navbar" : ""}`}
+    >
       <Container>
         <NavbarBrand to="/" tag={Link}>
           <img
@@ -34,7 +51,7 @@ function ResponsiveNavbar() {
           />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar className="mobile-menu">
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto d-flex align-items-center" navbar>
             {menuOptions.map((item) => (
               <NavItem key={item.path}>
@@ -64,6 +81,11 @@ function ResponsiveNavbar() {
         </Collapse>
       </Container>
       <style jsx>{`
+        .scrolled-navbar {
+          background-color: white !important;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease-in-out;
+        }
         .navbar-toggler {
           border: none;
           outline: none;
@@ -102,11 +124,11 @@ function ResponsiveNavbar() {
           font-size: 20px;
           transition: color 0.3s ease-in-out;
         }
-        .social-link.linkedin:hover { color: #0077B5; } /* LinkedIn */
-        .social-link.facebook:hover { color: #1877F2; } /* Facebook */
-        .social-link.instagram:hover { color: #E1306C; } /* Instagram */
-        .social-link.tiktok:hover { color: #000000; } /* TikTok */
-        .social-link.twitter:hover { color: #1DA1F2; } /* Twitter */
+        .social-link.linkedin:hover { color: #0077B5; } 
+        .social-link.facebook:hover { color: #1877F2; } 
+        .social-link.instagram:hover { color: #E1306C; } 
+        .social-link.tiktok:hover { color: #000000; } 
+        .social-link.twitter:hover { color: #1DA1F2; } 
       `}</style>
     </Navbar>
   );
