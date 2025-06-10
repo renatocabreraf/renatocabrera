@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 // reactstrap components
 import { Button, Row, Col } from "reactstrap";
@@ -26,7 +27,7 @@ function BlogPostsHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bg44.jpg") + ")"
+            backgroundImage: "url(" + require("assets/img/yo2.png") + ")"
           }}
           ref={pageHeader}
         ></div>
@@ -34,14 +35,18 @@ function BlogPostsHeader() {
           <Row>
             <Col className="ml-auto mr-auto text-center" md="8">
               <h2 className="title">
-                A Place for Entrepreneurs to Share and Discover New Stories
+                Un espacio para conectar, con tecnología, noticias y el mundo.
               </h2>
-              <Button className="btn-round btn-icon mr-1" color="info">
-                <i className="fab fa-twitter"></i>
-              </Button>
-              <Button className="btn-round btn-icon" color="info">
-                <i className="fab fa-instagram"></i>
-              </Button>
+              <a href="https://www.facebook.com/renatocabrera98/" target="_blank" rel="noopener noreferrer">
+                <Button className="btn-round btn-icon" color="info">
+                  <i className="fab fa-facebook"></i>
+                </Button>
+              </a>
+              <a href="https://instagram.com/renatocabreraf" target="_blank" rel="noopener noreferrer">
+                <Button className="btn-round btn-icon" color="info">
+                  <i className="fab fa-instagram"></i>
+                </Button>
+              </a>
             </Col>
           </Row>
         </div>

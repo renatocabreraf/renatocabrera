@@ -1,34 +1,35 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { motion, AnimatePresence } from 'framer-motion';
-import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
+import FixedTransparentNavbar from 'components/Navbars/FixedTransparentNavbar';
 import Footer from 'components/Footers/Footer';
 
 const initialPhotosData = [
   {
+
     id: 1,
-    src: 'https://cdn.kindmindgt.com/assets/img/R.png',
-    modalImg: '/r2.jpg',
-    title: 'Renato Cabrera',
+    src: require("assets/img/km1.png"),
+    modalImg: require("assets/img/km2.png"),
+    title: 'Kind Mind',
     subtitle: 'CEO & Fundador',
     description:
-      'Renato es Project Manager certificado en SCRUM, ITIL 4, Lean Six Sigma, con experiencia en gerencia y dirección de proyectos tecnológicos...',
-    linkedin: 'https://www.linkedin.com/in/renatocabreraf',
+      'Kind Mind es una empresa que nace con la finalidad de hacer fácil lo difícil, llegar a todas las industrias de Guatemala y resolver los problemas nacientes, encontrando soluciones de calidad y cuidar que el cliente entienda la tecnología y la haga su aliada',
+    linkedin: 'https://www.linkedin.com/company/kind-mind-gt/?viewAsMember=true',
   },
   {
     id: 2,
-    src: 'https://cdn.kindmindgt.com/assets/img/mro2.png',
-    modalImg: '/_25A2716.jpg',
-    title: 'María Reneé Ordoñez',
-    subtitle: 'CXO',
+    src: require("assets/img/q1.png"),
+    modalImg: require("assets/img/q2.png"),
+    title: 'Grupo R2C',
+    subtitle: 'Coordinador de Informática y Sistemas',
     description:
-      'Experta en desarrollo de negocios y experiencia de usuario. Parte de múltiples equipos dedicados al desarrollo en Guatemala.',
-    linkedin: 'https://www.linkedin.com/in/al-grano-con-renee-bb7475b3',
+      'Líder de área, encargado de la innovación y transformación tecnológica de la cadena de restaurantes Quedely.',
+    linkedin: 'https://www.linkedin.com/company/quedely/posts/?feedView=all',
   },
   {
     id: 3,
-    src: 'https://cdn.kindmindgt.com/assets/img/j.png',
-    modalImg: '/_25A2606.jpg',
+    src: require("assets/img/c1.png"),
+    modalImg: require("assets/img/c2.png"),
     title: 'José Herrera',
     subtitle: 'CIO & Co-Fundador',
     description:
@@ -37,24 +38,15 @@ const initialPhotosData = [
   },
   {
     id: 4,
-    src: 'https://cdn.kindmindgt.com/assets/img/e.png',
-    modalImg: '/_25A2652.jpg',
+    src: require("assets/img/ga1.png"),
+    modalImg: require("assets/img/ga2.png"),
     title: 'Emmanuel Alvarado',
     subtitle: 'CTO & Co-Fundador',
     description:
       'Senior Developer, experto en servicios en la nube y arquitecturas modernas de software.',
     linkedin: 'https://www.linkedin.com/in/emmanuel-alvarado-jl99/',
   },
-  {
-    id: 5,
-    src: '/chiwi5.png',
-    modalImg: '/chiwi4.png',
-    title: 'Francisco Alonzo',
-    subtitle: 'CDO & Co-Fundador',
-    description:
-      'Analista de datos y BI. Experto en transformar negocios a través de la interpretación estratégica de datos.',
-    linkedin: 'https://www.linkedin.com/in/fjalonzoc/',
-  },
+  
 ];
 
 function AboutUs() {
@@ -117,14 +109,14 @@ function AboutUs() {
 
   return (
     <>
-      <ScrollTransparentNavbar />
+      <FixedTransparentNavbar />
       <div className="wrapper"></div>
       <Container style={{ padding: '30px 0' }}>
         <Row>
           <Col className="text-center">
-            <h2 style={{ fontWeight: 'bold', color: '#333' }}>Nuestro Equipo</h2>
+            <h2 style={{ fontWeight: 'bold', color: '#333' }}>Trabajo y mi escencia</h2>
             <p style={{ fontSize: '20px', color: '#555' }}>
-              Conoce a las mentes detrás de las soluciones.
+              Mi experiencia con la tecnología, buscando el desarrollo de Guatemala.
             </p>
           </Col>
         </Row>

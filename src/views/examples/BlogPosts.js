@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 
 // reactstrap components
 import {
@@ -48,14 +50,14 @@ function BlogPosts() {
                   className="card-fashion card-background"
                   style={{
                     backgroundImage:
-                      "url(" + require("assets/img/project10.jpg") + ")"
+                      "url(" + require("assets/img/libre.jpg") + ")"
                   }}
                 >
                   <CardBody>
                     <CardTitle className="text-left" tag="div">
                       <h2>
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          The world's biggest yacht sets sail. It has lasers.
+                          Las 5 Lecturas que han ayudado a formarme como profesional.
                         </a>
                       </h2>
                     </CardTitle>
@@ -63,21 +65,15 @@ function BlogPosts() {
                       <div className="stats">
                         <span>
                           <i className="now-ui-icons users_circle-08"></i>
-                          Nicholas Deleon
+                        Renato Cabrera
                         </span>
                         <span>
                           <i className="now-ui-icons tech_watch-time"></i>
-                          June 2, 2021
+                          June 9, 2025
                         </span>
                       </div>
                       <div className="stats-link pull-right">
-                        <a
-                          className="footer-link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Yachts
-                        </a>
+                       
                       </div>
                     </CardFooter>
                   </CardBody>
@@ -88,7 +84,7 @@ function BlogPosts() {
                   <CardTitle tag="div">
                     <h4>
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        Why Early Sailors Were Stalled for Millennia in the...
+                        La juventud es la clave del desarrollo de las sociedades.
                       </a>
                     </h4>
                   </CardTitle>
@@ -97,22 +93,14 @@ function BlogPosts() {
                       <div className="stats">
                         <span>
                           <i className="now-ui-icons users_circle-08"></i>
-                          Jon Russell
+                          Renato Caberera
                         </span>
                         <span>
                           <i className="now-ui-icons tech_watch-time"></i>
-                          June 2, 2021
+                          June 9, 2025
                         </span>
                       </div>
-                      <div className="stats-link pull-right">
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Sea
-                        </a>
-                        ‚{" "}
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Magazine
-                        </a>
-                      </div>
+                      
                     </CardFooter>
                   </CardBody>
                 </Card>
@@ -122,7 +110,7 @@ function BlogPosts() {
                   className="card-fashion card-background"
                   style={{
                     backgroundImage:
-                      "url(" + require("assets/img/project11.jpg") + ")"
+                      "url(" + require("assets/img/comunion.jpg") + ")"
                   }}
                 ></Card>
               </Col>
@@ -133,7 +121,7 @@ function BlogPosts() {
                   className="card-fashion card-background"
                   style={{
                     backgroundImage:
-                      "url(" + require("assets/img/project12.jpg") + ")"
+                      "url(" + require("assets/img/apple.jpg") + ")"
                   }}
                 ></Card>
               </Col>
@@ -142,7 +130,7 @@ function BlogPosts() {
                   <CardTitle tag="div">
                     <h4>
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        My Depressing Summers in Belize
+                        La importancia de cuidar la Salud Mental.
                       </a>
                     </h4>
                   </CardTitle>
@@ -151,22 +139,14 @@ function BlogPosts() {
                       <div className="stats">
                         <span>
                           <i className="now-ui-icons users_circle-08"></i>
-                          John Bruno
+                          Renato Cabrera
                         </span>
                         <span>
                           <i className="now-ui-icons tech_watch-time"></i>
-                          June 2, 2021
+                          May 20, 2025
                         </span>
                       </div>
-                      <div className="stats-link pull-right">
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Opinion
-                        </a>
-                        ‚{" "}
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Outdoor
-                        </a>
-                      </div>
+                      
                     </CardFooter>
                   </CardBody>
                 </Card>
@@ -176,14 +156,14 @@ function BlogPosts() {
                   className="card-fashion card-background"
                   style={{
                     backgroundImage:
-                      "url(" + require("assets/img/project13.jpg") + ")"
+                      "url(" + require("assets/img/code.jpg") + ")"
                   }}
                 >
                   <CardBody>
                     <CardTitle className="text-left" tag="div">
                       <h2>
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          China Wants Fish, So Africa Goes Hungry
+                          Si no sabes programar, serás un analfabeta... ¿o no?
                         </a>
                       </h2>
                     </CardTitle>
@@ -191,22 +171,14 @@ function BlogPosts() {
                       <div className="stats">
                         <span>
                           <i className="now-ui-icons users_circle-08"></i>
-                          Joanna Klein
+                          Renato Cabrera
                         </span>
                         <span>
                           <i className="now-ui-icons tech_watch-time"></i>
-                          June 2, 2021
+                          May 2, 2025
                         </span>
                       </div>
-                      <div className="stats-link pull-right">
-                        <a
-                          className="footer-link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          People
-                        </a>
-                      </div>
+                      
                     </CardFooter>
                   </CardBody>
                 </Card>
@@ -218,44 +190,38 @@ function BlogPosts() {
           <Container>
             <div className="section">
               <h3 className="title text-center">
-                You may also be interested in
+                Tal vez te interese conocer
               </h3>
               <br></br>
               <Row>
                 <Col md="4">
                   <Card className="card-plain card-blog">
                     <div className="card-image">
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <a href="http://www.kindmindgt.com" target="_blank" rel="noopener noreferrer">
                         <img
                           alt="..."
                           className="img rounded img-raised"
-                          src={require("assets/img/bg5.jpg")}
+                          src={require("assets/img/IMG_5451.JPG")}
                         ></img>
                       </a>
                     </div>
                     <CardBody>
-                      <h6 className="category text-info">Enterprise</h6>
+                      <h6 className="category text-info">Empresa</h6>
                       <CardTitle tag="h4">
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Autodesk looks to future of 3D printing with Project
-                          Escher
+                        <a href="http://www.kindmindgt.com" target="_blank" rel="noopener noreferrer">
+                          Kind Mind
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        Like so many organizations these days, Autodesk is a
-                        company in transition. It was until recently a
-                        traditional boxed software company selling licenses.{" "}
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Read More
+                        Empresa fundada y dirigida por Renato Cabrera, dedicada al desarrollo de software, 
+                        consultorías y asesorías, además de proyectar un desarrollo tecnológico para Guatemala 
+                        en todas las industrias.{" "}
+                        <a href="http://www.kindmindgt.com" target="_blank" rel="noopener noreferrer">
+                          Conoce Más.
                         </a>
                       </p>
                       <div className="author">
-                        <img
-                          alt="..."
-                          className="avatar img-raised"
-                          src={require("assets/img/olivia.jpg")}
-                        ></img>
-                        <span>Anna Spark</span>
+                        
                       </div>
                     </CardBody>
                   </Card>
@@ -263,221 +229,332 @@ function BlogPosts() {
                 <Col md="4">
                   <Card className="card-plain card-blog">
                     <div className="card-image">
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <a href="http://www.anima.gt" target="_blank" rel="noopener noreferrer">
                         <img
                           alt="..."
                           className="img rounded img-raised"
-                          src={require("assets/img/bg27.jpg")}
+                          src={require("assets/img/anima3.png")}
                         ></img>
                       </a>
                     </div>
                     <CardBody>
-                      <h6 className="category text-success">Startups</h6>
+                      <h6 className="category text-success">Salud Mental</h6>
                       <CardTitle tag="h4">
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Lyft launching cross-platform service this week
+                        <a href="http://www.anima.gt" target="_blank" rel="noopener noreferrer">
+                          Anima
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        Like so many organizations these days, Autodesk is a
-                        company in transition. It was until recently a
-                        traditional boxed software company selling licenses.{" "}
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Read More
+                        Anima es un espacio de psicología dedicado al bienestar emocional y el crecimiento personal. 
+                        Queremos ayudar a las personas a reconectar con ellas mismas y construir una vida con sentido.{" "}
+                        <a href="http://www.anima.gt" target="_blank" rel="noopener noreferrer">
+                          Conoce Más.
                         </a>
                       </p>
-                      <div className="author">
-                        <img
-                          alt="..."
-                          className="avatar img-raised"
-                          src={require("assets/img/michael.jpg")}
-                        ></img>
-                        <span>John Black</span>
-                      </div>
+                      
                     </CardBody>
                   </Card>
                 </Col>
                 <Col md="4">
                   <Card className="card-plain card-blog">
                     <div className="card-image">
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <a href="https://www.nukunem.org/home" target="_blank" rel="noopener noreferrer">
                         <img
                           alt="..."
                           className="img rounded img-raised"
-                          src={require("assets/img/bg21.jpg")}
+                          src={require("assets/img/nukunem4.png")}
                         ></img>
                       </a>
                     </div>
                     <CardBody>
                       <h6 className="category text-danger">
-                        <i className="now-ui-icons media-2_sound-wave"></i>{" "}
-                        Enterprise
+                       {" "}
+                        Fundación
                       </h6>
                       <CardTitle tag="h4">
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          6 insights into the French Fashion landscape
+                        <a href="https://www.nukunem.org/home" target="_blank" rel="noopener noreferrer">
+                          Nukunem
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        Like so many organizations these days, Autodesk is a
-                        company in transition. It was until recently a
-                        traditional boxed software company selling licenses.{" "}
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Read More
+                        Contribuimos a cambiar positivamente la realidad de Guatemala a través de la construcción de un programa comunitario de salud integral. 
+                        Nukunem, en k’aqchikel, significa “programar”.{" "}
+                        <a href="https://www.nukunem.org/home" target="_blank" rel="noopener noreferrer">
+                          Conoce Más
                         </a>
                       </p>
-                      <div className="author">
-                        <img
-                          alt="..."
-                          className="avatar img-raised"
-                          src={require("assets/img/james.jpg")}
-                        ></img>
-                        <span>James Newman</span>
-                      </div>
+                      
                     </CardBody>
                   </Card>
                 </Col>
               </Row>
             </div>
           </Container>
-          <div className="section pt-0 pb-0">
-            <div
-              className="team-3 section-image"
-              data-parallax={true}
-              style={{
-                backgroundImage: "url(" + require("assets/img/bg26.jpg") + ")"
-              }}
-            >
-              <Container>
-                <Row>
-                  <Col className="ml-auto mr-auto text-center" md="8">
-                    <h2 className="title">Our little team.</h2>
-                    <h4 className="description">
-                      This is the paragraph where you can write more details
-                      about your product. Keep you user engaged by providing
-                      meaningful information.
-                    </h4>
-                  </Col>
-                  <Col className="ml-auto mr-auto" lg="7" xl="6">
-                    <Card className="card-profile">
-                      <Row>
-                        <Col md="5">
-                          <div className="card-image">
-                            <a
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <img
-                                alt="..."
-                                className="img"
-                                src={require("assets/img/olivia.jpg")}
-                              ></img>
-                            </a>
-                          </div>
-                        </Col>
-                        <Col md="7">
-                          <CardBody>
-                            <CardTitle tag="h3">Ariana Hazel</CardTitle>
-                            <h6 className="category text-info">
-                              Fashion Designer
-                            </h6>
-                            <p className="card-description">
-                              Happiness resides not in possessions, and not in
-                              gold, happiness dwells in the soul...
-                            </p>
-                          </CardBody>
-                        </Col>
-                      </Row>
-                    </Card>
-                  </Col>
-                  <Col className="ml-auto mr-auto" lg="7" xl="6">
-                    <Card className="card-profile">
-                      <Row>
-                        <Col md="5">
-                          <div className="card-image">
-                            <a
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <img
-                                alt="..."
-                                className="img"
-                                src={require("assets/img/james.jpg")}
-                              ></img>
-                            </a>
-                          </div>
-                        </Col>
-                        <Col md="7">
-                          <CardBody>
-                            <CardTitle tag="h3">Ryan Samuel</CardTitle>
-                            <h6 className="category text-info">
-                              Financial Examiner
-                            </h6>
-                            <p className="card-description">
-                              Today you are you! That is truer than true! There
-                              is no one alive who is you-er than you!..
-                            </p>
-                          </CardBody>
-                        </Col>
-                      </Row>
-                    </Card>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
-          </div>
-          <div className="subscribe-line subscribe-line-white">
-            <Container>
-              <Row>
-                <Col md="6">
-                  <h4 className="title">Get Tips &amp; Tricks every Week!</h4>
-                  <p className="description">
-                    Join our newsletter and get news in your inbox every week!
-                    We hate spam too, so no worries about this.
-                  </p>
-                </Col>
-                <Col md="6">
-                  <Card className="card-plain card-form-horizontal">
-                    <div className="card-content">
-                      <Form action="" method="">
-                        <Row>
-                          <Col sm="8">
-                            <InputGroup
-                              className={emailFocus ? "input-group-focus" : ""}
-                            >
-                              <InputGroupAddon addonType="prepend">
-                                <InputGroupText>
-                                  <i className="now-ui-icons ui-1_email-85"></i>
-                                </InputGroupText>
-                              </InputGroupAddon>
-                              <Input
-                                placeholder="Email Name..."
-                                type="text"
-                                onFocus={() => setEmailFocus(true)}
-                                onBlur={() => setEmailFocus(false)}
-                              ></Input>
-                            </InputGroup>
-                          </Col>
-                          <Col sm="4">
-                            <Button
-                              block
-                              className="btn-round"
-                              color="info"
-                              type="button"
-                            >
-                              Subscribe
-                            </Button>
-                          </Col>
-                        </Row>
-                      </Form>
-                    </div>
-                  </Card>
-                </Col>
-              </Row>
-            </Container>
-          </div>
+          
+         <footer className="site-footer">
+        <div className="footer-links">
+          <Link to="/conoce">Conóceme</Link>
+          <Link to="/blog-posts">Blog</Link>
+          <Link to="/social">Labor Social</Link>
+        
         </div>
-        <FooterBlackSocial />
+        
+        <div className="footer-bottom">
+          <Link to="/privacy">Política de Privacidad</Link>
+          <Link to="/terms">Términos de uso</Link>
+          <Link to="/contacto">Contáctame</Link>
+          <span>© 2025 Renato Cabrera</span>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        .navbar-container {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          background: linear-gradient(to right, #222, #111);
+          padding: 0.5rem 1rem;
+        }
+
+        .navbar {
+          max-width: 1200px;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo {
+          height: 100px;
+          width: 190px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          color: white;
+          display: none;
+        }
+
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-item {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        .nav-item:hover {
+          text-decoration: underline;
+        }
+
+        .search-icon {
+          background: none;
+          border: none;
+          font-size: 1.3rem;
+          color: white;
+        }
+
+        .presentation-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .presentation-inner {
+          position: relative;
+          width: 100%;
+          max-width: 1920px;
+        }
+
+        .presentation-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .presentation-overlay {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          max-width: 400px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 10px;
+        }
+
+        .presentation-box {
+          color: black;
+          text-decoration: none;
+        }
+
+        .presentation-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          color: #444;
+        }
+
+        .presentation-title {
+          font-size: 1.5rem;
+          font-weight: 800;
+          margin: 10px 0;
+        }
+
+        .presentation-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .fade-in-text {
+          opacity: 0;
+          animation: fadeInText 1.2s ease-out forwards;
+          animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInText {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .text-highlight {
+          padding: 60px 20px;
+          text-align: center;
+        }
+
+        .text-highlight p {
+          font-size: 1.6rem;
+          color: #555;
+          max-width: 800px;
+          margin: auto;
+          line-height: 1.6;
+        }
+
+        .inline-photo {
+          height: 40px;
+          width: auto;
+          margin: 0 8px;
+          vertical-align: middle;
+          border-radius: 6px;
+        }
+
+        .featured-section {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+          padding: 60px 20px;
+          max-width: 1200px;
+          margin: auto;
+        }
+
+        .featured-left {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .featured-image-wrapper {
+          position: relative;
+        }
+
+        .featured-image {
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        .featured-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        .featured-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #444;
+        }
+
+        .featured-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin: 10px 0;
+        }
+
+        .featured-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .featured-right {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .mini-featured-image {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 20px;
+        }
+          .site-footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-links,
+.footer-bottom {
+  margin-bottom: 20px;
+}
+
+.footer-links a,
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+  color: #0078d4; /* azul sobrio como en Gates Notes */
+  text-decoration: underline;
+}
+
+.footer-bottom span {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+
+      `
+      }</style>
+        </div>
+
       </div>
     </>
   );

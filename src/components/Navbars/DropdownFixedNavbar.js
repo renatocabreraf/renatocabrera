@@ -188,7 +188,7 @@ function DropdownFixedNavbar() {
                 <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>
                   <DropdownItem tag={Link} to="/about-us">
                     <i className="now-ui-icons business_bulb-63"></i>
-                    Experiencia
+                    Conóceme
                   </DropdownItem>
                   <DropdownItem tag={Link} to="/blog-post">
                     <i className="now-ui-icons text_align-left"></i>
@@ -196,7 +196,7 @@ function DropdownFixedNavbar() {
                   </DropdownItem>
                   <DropdownItem tag={Link} to="/blog-posts">
                     <i className="now-ui-icons design_bullet-list-67"></i>
-                    Trabajo Social
+                    Labor Social
                   </DropdownItem>
                   <DropdownItem tag={Link} to="/contact-us">
                     <i className="now-ui-icons location_pin"></i>

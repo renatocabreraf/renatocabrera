@@ -9,9 +9,9 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { label: "Experiencia", path: "/experiencia" },
-    { label: "Blog", path: "/blogs" },
-    { label: "Trabajo Social", path: "/trabajo-social" }
+    { label: "Conóceme", path: "/about-us" },
+    { label: "Blog", path: "/blog-posts" },
+    { label: "Labor Social", path: "/trabajo-social" }
   ];
 
   return (
@@ -23,7 +23,7 @@ const Navbar = () => {
           </button>
 
           <Link to="/" className="brand">
-            <img src={require("assets/img/rcblanco2.png")} alt="RC Logo" className="logo" />
+            <img src={require("assets/img/rcblanco2.png")} alt="RC Logo" className="logo" width="100%" />
           </Link>
 
           <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
@@ -34,9 +34,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <button className="search-icon">
-            <FaSearch />
-          </button>
+          
         </div>
       </header>
 
@@ -105,10 +103,10 @@ const Navbar = () => {
      
 <footer className="site-footer">
         <div className="footer-links">
-          <Link to="/experiencia">Trabajo</Link>
-          <Link to="/conoceme">Conóceme</Link>
-          <Link to="/blogs">Lecturas</Link>
-          <Link to="/trabajo-social">Héroes</Link>
+          <Link to="/about-us">Conóceme</Link>
+          <Link to="/blog-post">Blog</Link>
+          <Link to="/social">Labor Social</Link>
+    
         </div>
         
         <div className="footer-bottom">
@@ -143,8 +141,8 @@ const Navbar = () => {
         }
 
         .logo {
-          height: 60px;
-          width: 60px;
+          height: 100px;
+          width: 190px;
           object-fit: contain;
           transition: all 0.3s ease;
         }

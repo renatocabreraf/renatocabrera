@@ -10,9 +10,9 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { label: "Experiencia", path: "/experiencia" },
-    { label: "Blogs", path: "/blogs" },
-    { label: "Trabajo Social", path: "/trabajo-social" }
+    { label: "Conóceme", path: "/about-us" },
+    { label: "Blog", path: "/blog-posts" },
+    { label: "Labor Social", path: "/social" }
   ];
 
   return (
