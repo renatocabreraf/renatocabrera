@@ -1,137 +1,143 @@
-import React, { useState, useEffect } from "react";
+// Renato Cabrera Navbar inspirado en Gates Notes
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  Collapse,
-  Nav,
-  NavItem,
-  NavLink,
-  Container
-} from "reactstrap";
-import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaBars, FaTimes, FaSearch, FaFacebookF, FaXTwitter, FaYoutube, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
-function ResponsiveNavbar() {
+
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const menuOptions = [
-    { label: "Experiencia", path: "/about-us" },
-    { label: "Blog", path: "/projects" },
-    { label: "Trabajo Social", path: "/solutions" }
+  const menuItems = [
+    { label: "Experiencia", path: "/experiencia" },
+    { label: "Blogs", path: "/blogs" },
+    { label: "Trabajo Social", path: "/trabajo-social" }
   ];
 
   return (
-    <Navbar
-      light
-      expand="lg"
-      className={`fixed-top ${scrolled ? "scrolled-navbar" : ""}`}
-    >
-      <Container>
-        <NavbarBrand to="/" tag={Link}>
-          <img
-            src={require("assets/img/RCNegro.png")}
-            alt="Logo Principal"
-            style={{ width: "100px", height: "auto", display: "block" }}
-          />
-        </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto d-flex align-items-center" navbar>
-            {menuOptions.map((item) => (
-              <NavItem key={item.path}>
-                <NavLink tag={Link} to={item.path} className="nav-text">
-                  {item.label}
-                </NavLink>
-              </NavItem>
+    <>
+      <header className="navbar-container">
+        <div className="navbar">
+          <button className="menu-toggle" onClick={toggleMenu}>
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+          <Link to="/" className="brand">
+            <img src={require("assets/img/rcblanco2.png")} alt="RC Logo" className="logo" />
+          </Link>
+
+          <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
+            {menuItems.map((item) => (
+              <Link to={item.path} key={item.path} className="nav-item" onClick={() => setIsOpen(false)}>
+                {item.label}
+              </Link>
             ))}
-          </Nav>
-          <div className="social-icons d-flex gap-3">
-            <a href="https://www.linkedin.com/in/renatocabreraf" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
-              <FaLinkedinIn className="social-icon" />
-            </a>
-            <a href="https://www.facebook.com/renatocabrera98" target="_blank" rel="noopener noreferrer" className="social-link facebook">
-              <FaFacebookF className="social-icon" />
-            </a>
-            <a href="https://www.instagram.com/renatocabreraf/" target="_blank" rel="noopener noreferrer" className="social-link instagram">
-              <FaInstagram className="social-icon" />
-            </a>
-            <a href="https://www.tiktok.com/@renatocabreraf" target="_blank" rel="noopener noreferrer" className="social-link tiktok">
-              <FaTiktok className="social-icon" />
-            </a>
-            <a href="https://x.com/renatocabreraf?lang=ar-x-fm" target="_blank" rel="noopener noreferrer" className="social-link twitter">
-              <FaTwitter className="social-icon" />
-            </a>
-          </div>
-        </Collapse>
-      </Container>
+          </nav>
+
+          <button className="search-icon">
+            <FaSearch />
+          </button>
+        </div>
+      </header>
+
       <style jsx>{`
-        .scrolled-navbar {
-          background-color: white !important;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease-in-out;
+        .navbar-container {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          background: linear-gradient(to right, #222, #111);
+          padding: 0.5rem 1rem;
         }
-        .navbar-toggler {
+
+        .navbar {
+          max-width: 1200px;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo {
+          height: 60px;
+          width: 60px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+          background: none;
           border: none;
-          outline: none;
-          font-size: 24px;
-          cursor: pointer;
+          font-size: 1.5rem;
+          color: white;
+          display: none;
         }
-        .navbar-toggler:focus {
-          outline: none;
-          box-shadow: none;
+
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
         }
-        @media (max-width: 992px) {
-          .mobile-menu {
-            background: white;
+
+        .nav-item {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        .nav-item:hover {
+          text-decoration: underline;
+        }
+
+        .search-icon {
+          background: none;
+          border: none;
+          font-size: 1.3rem;
+          color: white;
+        }
+
+        @media (max-width: 768px) {
+          .menu-toggle {
+            display: block;
+          }
+
+          .nav-menu {
             position: absolute;
-            top: 100%;
+            top: 60px;
             left: 0;
             width: 100%;
-            padding: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            background: white;
+            flex-direction: column;
+            align-items: start;
+            padding: 1rem;
+            gap: 1rem;
+            display: none;
           }
-          .nav-text {
-            font-size: 18px;
-            padding: 10px;
-            text-align: left;
-            display: block;
-            color: black;
-          }
-        }
-        .social-icons {
-          display: flex;
-          gap: 15px;
-        }
-        .social-link {
-          color: black;
-          font-size: 20px;
-          transition: color 0.3s ease-in-out;
-        }
-        .social-link.linkedin:hover { color: #0077B5; } 
-        .social-link.facebook:hover { color: #1877F2; } 
-        .social-link.instagram:hover { color: #E1306C; } 
-        .social-link.tiktok:hover { color: #000000; } 
-        .social-link.twitter:hover { color: #1DA1F2; } 
-      `}</style>
-    </Navbar>
-  );
-}
 
-export default ResponsiveNavbar;
+          .nav-menu.open {
+            display: flex;
+          }
+
+          .nav-item {
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+
+          .logo {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      `}</style>
+    </>
+  );
+};
+
+export default Navbar;
