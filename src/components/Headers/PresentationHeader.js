@@ -70,7 +70,7 @@ const Navbar = () => {
       <section className="featured-section">
         <div className="featured-left">
           <div className="featured-image-wrapper">
-            <img src={require("assets/img/conoceme.png")} alt="Destacado" className="featured-image" />
+            <a href="/about-us"><img src={require("assets/img/conoceme.png")} alt="Destacado" className="featured-image" /></a>
             
           </div>
         </div>
