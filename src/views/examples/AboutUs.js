@@ -3,6 +3,9 @@ import { Container, Row, Col } from 'reactstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import FixedTransparentNavbar from 'components/Navbars/FixedTransparentNavbar';
 import Footer from 'components/Footers/Footer';
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+
 
 const initialPhotosData = [
   {
@@ -30,23 +33,23 @@ const initialPhotosData = [
     id: 3,
     src: require("assets/img/c1.png"),
     modalImg: require("assets/img/c2.png"),
-    title: 'José Herrera',
-    subtitle: 'CIO & Co-Fundador',
+    title: 'Conduent',
+    subtitle: 'IT Project Manager',
     description:
-      'Ingeniero en Informática, con experiencia en banca e instrumentos financieros. Experto en Gobernanza y Gestión de Datos.',
-    linkedin: 'https://www.linkedin.com/in/joseherrera7/',
+      'Dirigir el proyecto de Global Roaster para Royal Caribbean y Aetna.',
+    linkedin: 'https://www.linkedin.com/company/conduent/posts/?feedView=all',
   },
   {
     id: 4,
     src: require("assets/img/ga1.png"),
     modalImg: require("assets/img/ga2.png"),
-    title: 'Emmanuel Alvarado',
-    subtitle: 'CTO & Co-Fundador',
+    title: 'Grupo Alta',
+    subtitle: 'IT Manager',
     description:
-      'Senior Developer, experto en servicios en la nube y arquitecturas modernas de software.',
-    linkedin: 'https://www.linkedin.com/in/emmanuel-alvarado-jl99/',
+      'Liderar el departamento de Informática y Sistemas de todo el grupo, incluyendo la innovación y actualización de todas las marcas.',
+    linkedin: 'https://www.linkedin.com/company/grupoaltaguate/posts/?feedView=all',
   },
-  
+
 ];
 
 function AboutUs() {
@@ -114,7 +117,7 @@ function AboutUs() {
       <Container style={{ padding: '30px 0' }}>
         <Row>
           <Col className="text-center">
-            <h2 style={{ fontWeight: 'bold', color: '#333' }}>Trabajo y mi escencia</h2>
+            <h2 style={{ fontWeight: 'bold', color: '#333' }}>Trabajo y escencia</h2>
             <p style={{ fontSize: '20px', color: '#555' }}>
               Mi experiencia con la tecnología, buscando el desarrollo de Guatemala.
             </p>
@@ -274,55 +277,409 @@ function AboutUs() {
         </AnimatePresence>
       </Container>
 
-      {/* Sección de Valores */}
-      <div style={{ backgroundColor: 'white', padding: '60px 20px', position: 'relative' }}>
-        <Container>
-          <Row style={{ marginTop: '50px', borderTop: '1px solid #ccc' }}>
-            {[
-              {
-                letra: 'P',
-                titulo: 'Planteamos',
-                texto:
-                  'Planteamos nuestra opinión, con respeto. Tomamos una posición o defendemos una idea de manera ﬁrme pero respetuosa.',
-              },
-              {
-                letra: 'A',
-                titulo: 'Apoyamos',
-                texto:
-                  'Apoyo mutuo, el equipo se compromete a responsabilizarse por sus acciones, tareas y compromisos.',
-              },
-              {
-                letra: 'T',
-                titulo: 'Toma de decisiones',
-                texto:
-                  'Tomamos decisiones conscientes, actuamos con propósito y basados en la alineación de objetivos del proyecto.',
-              },
-              {
-                letra: 'A',
-                titulo: 'Aprendemos',
-                texto:
-                  'Aprendemos continuamente, buscamos siempre el crecimiento personal y profesional tanto del equipo como de los negocios.',
-              },
-            ].map((valor, index) => (
-              <Col
-                key={index}
-                md="3"
-                style={{ padding: '30px', borderRight: index < 3 ? '1px solid #ccc' : 'none' }}
-              >
-                <h3 style={{ color: '#1c1862', fontWeight: 'bold', textAlign: 'center' }}>
-                  {valor.letra}
-                </h3>
-                <h5 style={{ color: '#1c1862', textAlign: 'center' }}>{valor.titulo}</h5>
-                <p style={{ fontSize: '14px', color: '#555' }}>{valor.texto}</p>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </div>
+      <Container>
+        <div style={{ backgroundColor: '#fff', padding: '60px 30px', fontFamily: 'Helvetica, Arial, sans-serif', color: '#333' }}>
 
-      <Footer />
-    </>
-  );
+          <p style={{ fontSize: '16px', lineHeight: '1.6' }}>
+            Profesional en Ingeniería en Informática y Sistemas con experiencia en gestión de IT, desarrollo de software y transformación digital. Especialista en metodologías ágiles, gestión de proyectos y optimización de procesos tecnológicos. Fundador y CEO de Kind Mind, con un historial de liderazgo en implementación de ERP, consultoría en TI y desarrollo de soluciones empresariales. Certificado en Scrum, ITIL 4 y Lean Six Sigma. Apasionado por la innovación, la seguridad informática y la mejora continua.
+          </p>
+
+          
+
+          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Educación</h3>
+          <p>
+            <strong>Colegio Salesiano Don Bosco</strong><br />
+            Primaria, Secundaria y Diversificado (2006–2016)
+          </p>
+          <p>
+            <strong>Universidad Rafael Landívar</strong><br />
+            Ingeniería en Informática y Sistemas (2017–2022)
+          </p>
+
+          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Certificaciones</h3>
+          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+            <li>Lean Six Sigma Yellow Belt – MF Treinamentos (2025)</li>
+            <li>Apple Certified Developer – Apple (2024)</li>
+            <li>Hillstone Security Master Configuration – FRT (2024)</li>
+            <li>Lean Six Sigma White Belt – MF Treinamentos (2023)</li>
+            <li>Scrum Foundation Professional Certificate – CertiProf (2023)</li>
+            <li>Agile Project Planning – Skillsoft (2022)</li>
+            <li>Project Management (PMBOK 6th Ed.) – Skillsoft (2022)</li>
+            <li>ITIL 4 – LearnQuest (2022)</li>
+            <li>Registered Scrum Team Member – Scrum Inc. (2022)</li>
+            <li>Master JavaScript – Udemy (2022)</li>
+            <li>Master HTML5 Professional – Udemy (2022)</li>
+            <li>ITZ Data Internship: AWS & Oracle DB – Datum (2022)</li>
+            <li>Python Master – University of Michigan (2020)</li>
+            <li>Google Cloud Platform Professional – Google Cloud (2020)</li>
+          </ul>
+
+          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Habilidades Técnicas</h3>
+          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+            <li>Desarrollo Backend y Frontend (JavaScript, TypeScript, Python, Java, C#)</li>
+            <li>Gestión de Bases de Datos (SQL, Oracle, NoSQL)</li>
+            <li>Frameworks y tecnologías (Node.js, Angular, Vue.js, Odoo, SAP B1)</li>
+            <li>Administración de infraestructuras en la nube (AWS, Google Cloud)</li>
+            <li>Ciberseguridad y gestión de riesgos</li>
+          </ul>
+
+          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Habilidades de Gestión</h3>
+          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+            <li>Gestión de Proyectos IT y Transformación Digital</li>
+            <li>Implementación de ERP y soluciones empresariales</li>
+            <li>Liderazgo y toma de decisiones estratégicas</li>
+            <li>Análisis y optimización de procesos de negocio</li>
+          </ul>
+
+          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Otros Datos</h3>
+          <p><strong>Idiomas:</strong> Español (nativo), Inglés (C1)</p>
+          <p><strong>Softwares:</strong> NodeJS, Angular, Vue, Azure DevOps, Jira, Planner, Odoo (experto), SAP B1 (intermedio), Retail One (intermedio)</p>
+
+          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Voluntariado y Asociaciones</h3>
+          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+            <li>Vicepresidente – Asociación de Becados Loyola (2018)</li>
+            <li>Vocal Estudiantil – Agrupación de Alumnos de Ingeniería (2019)</li>
+            <li>Secretario – Asociación de Salesianos Cooperadores, Centro Don Bosco (2022–2024)</li>
+            <li>Coordinador – Asociación de Salesianos Cooperadores, Centro Don Bosco (2025–2027)</li>
+          </ul>
+         </div>
+      </Container>
+      <Container>
+        {/* Sección de Valores */}
+        <div style={{ backgroundColor: 'white', padding: '60px 20px', position: 'relative' }}>
+          <div style={{ backgroundColor: 'transparent', padding: '60px 20px', position: 'relative' }}>
+            <h2 style={{ display: 'flex', alignItems: 'center', fontSize: '2rem', fontWeight: 'bold' }}>
+              <span style={{ marginRight: '10px', color: 'black' }}>💼</span> Experiencia Laboral
+            </h2>
+
+            <div style={{ borderLeft: '3px solid black', marginLeft: '10px', paddingLeft: '20px', marginTop: '40px' }}>
+              <div style={{ marginBottom: '40px', position: 'relative' }}>
+                <div style={{ width: '14px', height: '14px', backgroundColor: '#00cfff', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+                <p style={{ fontSize: '0.9rem', marginBottom: '4px' }}>Enero, 2022 - Actualidad</p>
+                <h3 style={{ color: '#00cfff', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Kind Mind - CEO y Fundador</h3>
+                <p style={{ color: 'black', lineHeight: '1.6' }}>
+                  Kind Mind ha desarrollado soluciones IT personalizadas para más de 10 empresas en Guatemala,
+                  abordando diversas necesidades estratégicas a través de software empresarial, plataformas de ecommerce
+                  y soluciones basadas en la nube. El enfoque especializado ha permitido a estas organizaciones
+                  modernizar sus operaciones y adaptarse a entornos digitales altamente competitivos.
+                  Además, se ha liderado la implementación de auditorías tecnológicas orientadas a identificar
+                  áreas de mejora, optimizar recursos y elevar la eficiencia operativa de forma sostenible.</p>
+              </div>
+
+              <div style={{ marginBottom: '40px', position: 'relative' }}>
+                <div style={{ width: '14px', height: '14px', backgroundColor: '#032346', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+                <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Junio, 2023 - Actualmente </p>
+                <h3 style={{ color: '#032346', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Grupo Alta - IT Manager</h3>
+                <p style={{ color: 'black', lineHeight: '1.6' }}>
+
+                  Como parte de la estrategia de transformación digital del grupo, lidero
+                  la implementación del sistema Odoo ERP en diversas unidades de negocio, incluyendo Gimnasios C3NTRO, Helados Adela (en Guatemala y México),
+                  Villa Bokéh y Casa Palopó. Esta implementación permitió una reducción del 30% en los tiempos operativos gracias
+                  a la optimización de procesos tecnológicos clave. Asimismo, supervisé el desarrollo de soluciones integrales orientadas
+                  a las necesidades específicas de cada empresa, garantizando eficiencia operativa y una mejora continua.
+                  También doy seguimiento a proyectos de infraestructura que fortalecieron significativamente la conectividad
+                  y las telecomunicaciones corporativas.
+                </p>
+
+              </div>
+              <div style={{ marginBottom: '40px', position: 'relative' }}>
+                <div style={{ width: '14px', height: '14px', backgroundColor: 'red', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+                <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Agosto, 2020 - Junio 2023 </p>
+                <h3 style={{ color: 'red', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Grupo R2C - Coordinador de Informática y Sistemas</h3>
+                <p style={{ color: 'black', lineHeight: '1.6' }}>
+
+                  Lideré la implementación del sistema Odoo en 40 puntos de venta a nivel nacional, integrando también
+                  la parte administrativa para lograr una gestión unificada y eficiente. Acompañé de cerca el desarrollo
+                  de mejoras tecnológicas específicas para los restaurantes Quedely, asegurando que cada avance
+                  respondiera a las necesidades operativas del negocio. Asimismo, diseñé y desarrollé herramientas
+                  enfocadas en optimizar los procesos administrativos, lo que permitió mejorar significativamente la
+                  operación interna y la toma de decisiones.
+                </p>
+
+              </div>
+              <div style={{ marginBottom: '40px', position: 'relative' }}>
+                <div style={{ width: '14px', height: '14px', backgroundColor: 'orange', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+                <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Abril, 2022 - Diciembre, 2022 </p>
+                <h3 style={{ color: 'orange', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Conduent - IT Project Manager</h3>
+                <p style={{ color: 'black', lineHeight: '1.6' }}>
+
+                  Dirigí el proyecto de organización y normalización de la base de datos para el sistema Global
+                  Roster de Royal Caribbean y Aetna, asegurando una estructura de datos coherente, limpia y
+                  eficiente. Esta labor fue clave para mejorar la gestión del personal y la planificación operativa,
+                  garantizando la integridad y disponibilidad de la información en tiempo real para ambos
+                  clientes a nivel global.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+</Container>
+
+        <footer className="site-footer">
+          <div className="footer-links">
+            <Link to="/about-us">Conóceme</Link>
+            <Link to="/blog-post">Blog</Link>
+            <Link to="/social">Labor Social</Link>
+
+          </div>
+
+          <div className="footer-bottom">
+            <Link to="/privacy">Política de Privacidad</Link>
+            <Link to="/terms">Términos de uso</Link>
+            <Link to="/contacto">Contáctame</Link>
+            <span>© 2025 Renato Cabrera</span>
+          </div>
+        </footer>
+
+        <style jsx>{`
+        .navbar-container {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          background: linear-gradient(to right, #222, #111);
+          padding: 0.5rem 1rem;
+        }
+
+        .navbar {
+          max-width: 1200px;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo {
+          height: 100px;
+          width: 190px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          color: white;
+          display: none;
+        }
+
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-item {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        .nav-item:hover {
+          text-decoration: underline;
+        }
+
+        .search-icon {
+          background: none;
+          border: none;
+          font-size: 1.3rem;
+          color: white;
+        }
+
+        .presentation-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .presentation-inner {
+          position: relative;
+          width: 100%;
+          max-width: 1920px;
+        }
+
+        .presentation-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .presentation-overlay {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          max-width: 400px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 10px;
+        }
+
+        .presentation-box {
+          color: black;
+          text-decoration: none;
+        }
+
+        .presentation-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          color: #444;
+        }
+
+        .presentation-title {
+          font-size: 1.5rem;
+          font-weight: 800;
+          margin: 10px 0;
+        }
+
+        .presentation-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .fade-in-text {
+          opacity: 0;
+          animation: fadeInText 1.2s ease-out forwards;
+          animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInText {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .text-highlight {
+          padding: 60px 20px;
+          text-align: center;
+        }
+
+        .text-highlight p {
+          font-size: 1.6rem;
+          color: #555;
+          max-width: 800px;
+          margin: auto;
+          line-height: 1.6;
+        }
+
+        .inline-photo {
+          height: 40px;
+          width: auto;
+          margin: 0 8px;
+          vertical-align: middle;
+          border-radius: 6px;
+        }
+
+        .featured-section {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+          padding: 60px 20px;
+          max-width: 1200px;
+          margin: auto;
+        }
+
+        .featured-left {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .featured-image-wrapper {
+          position: relative;
+        }
+
+        .featured-image {
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        .featured-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        .featured-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #444;
+        }
+
+        .featured-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin: 10px 0;
+        }
+
+        .featured-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .featured-right {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .mini-featured-image {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 20px;
+        }
+          .site-footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
 }
 
-export default AboutUs;
+.footer-links,
+.footer-bottom {
+  margin-bottom: 20px;
+}
+
+.footer-links a,
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+  color: #0078d4; /* azul sobrio como en Gates Notes */
+  text-decoration: underline;
+}
+
+.footer-bottom span {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+
+      `
+        }</style>
+      </>
+      );
+}
+
+      export default AboutUs;
