@@ -276,7 +276,19 @@ function AboutUs() {
           )}
         </AnimatePresence>
       </Container>
+      <Container>
+        <div style={{ textAlign: "center" }}>
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold' }}>
+            Tech Stack
+          </h2>
+          <img src={require("assets/img/React.webp")} width={"60px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/python_logo_icon_168886.webp")} width={"50px"} ></img>
+          &nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/java-icon-1511x2048-6ikx8301.png")} width={"40px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/Swift-2-512.webp")} width={"50px"}></img>
+          &nbsp;&nbsp;&nbsp;&nbsp; <img src={require("assets/img/typescript_original_logo_icon_146317.webp")} width={"50px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/Amazon_Web_Services-Logo.wine.png")} width={"80px"}></img>
+          &nbsp;&nbsp;&nbsp;&nbsp; <img src={require("assets/img/odoo-logo-png_seeklogo-320087.png")} width={"80px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/SAP_2011_logo.svg.png")} width={"80px"}></img>
+          &nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/63e0cf28d5cae5023ecd83d3_Opera-Logo 1.png")} width={"100px"}></img>
 
+        </div>
+      </Container>
       <Container>
         <div style={{ backgroundColor: '#fff', padding: '60px 30px', fontFamily: 'Helvetica, Arial, sans-serif', color: '#333' }}>
 
@@ -284,155 +296,296 @@ function AboutUs() {
             Profesional en Ingeniería en Informática y Sistemas con experiencia en gestión de IT, desarrollo de software y transformación digital. Especialista en metodologías ágiles, gestión de proyectos y optimización de procesos tecnológicos. Fundador y CEO de Kind Mind, con un historial de liderazgo en implementación de ERP, consultoría en TI y desarrollo de soluciones empresariales. Certificado en Scrum, ITIL 4 y Lean Six Sigma. Apasionado por la innovación, la seguridad informática y la mejora continua.
           </p>
 
-          
+          <div style={{ justifyContent: "center", display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+            {/* Botón Resume */}
+            <a
+              href="https://drive.google.com/file/d/1oLwF9Map2C2dZ--JLE0Xv8PsHI-ZcOj2/view?usp=share_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: 'none',
+                backgroundColor: '#111',
+                color: '#fff',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                fontSize: '16px',
+                fontWeight: '500',
+                border: '2px solid #111',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={e => {
+                e.target.style.backgroundColor = '#fff';
+                e.target.style.color = '#111';
+              }}
+              onMouseLeave={e => {
+                e.target.style.backgroundColor = '#111';
+                e.target.style.color = '#fff';
+              }}
+            >
+              Resume
+            </a>
 
-          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Educación</h3>
-          <p>
-            <strong>Colegio Salesiano Don Bosco</strong><br />
-            Primaria, Secundaria y Diversificado (2006–2016)
-          </p>
-          <p>
-            <strong>Universidad Rafael Landívar</strong><br />
-            Ingeniería en Informática y Sistemas (2017–2022)
-          </p>
+            {/* Botón LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/renatocabreraf/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: 'black',
+                color: 'white',
+                padding: '12px 20px',
+                borderRadius: '8px',
+                fontSize: '16px',
+                fontWeight: '500',
+                gap: '10px',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={e => {
+                e.target.style.backgroundColor = '#084c75';
+              }}
+              onMouseLeave={e => {
+                e.target.style.backgroundColor = 'black';
+              }}
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                alt="LinkedIn"
+                style={{ width: '20px', height: '20px', borderRadius: '3px' }}
+              />
+              LinkedIn
+            </a>
+          </div>
+          <br /><br /><br />
+          <Container>
+            <Row>
+              <Col>
+                <h3 style={{ fontSize: '1.5rem' }}>Educación</h3>
+              </Col>
+            </Row>
+            <Row style={{ alignItems: 'center', marginTop: '20px' }}>
+              <Col md="6">
+                <p>
+                  <strong>Colegio Salesiano Don Bosco</strong><br />
+                  Primaria, Secundaria y Diversificado (2006–2016)
+                </p>
+                <p>
+                  <strong>Universidad Rafael Landívar</strong><br />
+                  Ingeniería en Informática y Sistemas (2017–2022)
+                </p>
+              </Col>
+              <Col md="6">
+                <img
+                  src={require("assets/img/U.jpg")}
+                  alt="Educación"
+                  style={{ width: '100%', borderRadius: '8px' }}
+                />
+              </Col>
+            </Row>
+          </Container>
 
-          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Certificaciones</h3>
-          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
-            <li>Lean Six Sigma Yellow Belt – MF Treinamentos (2025)</li>
-            <li>Apple Certified Developer – Apple (2024)</li>
-            <li>Hillstone Security Master Configuration – FRT (2024)</li>
-            <li>Lean Six Sigma White Belt – MF Treinamentos (2023)</li>
-            <li>Scrum Foundation Professional Certificate – CertiProf (2023)</li>
-            <li>Agile Project Planning – Skillsoft (2022)</li>
-            <li>Project Management (PMBOK 6th Ed.) – Skillsoft (2022)</li>
-            <li>ITIL 4 – LearnQuest (2022)</li>
-            <li>Registered Scrum Team Member – Scrum Inc. (2022)</li>
-            <li>Master JavaScript – Udemy (2022)</li>
-            <li>Master HTML5 Professional – Udemy (2022)</li>
-            <li>ITZ Data Internship: AWS & Oracle DB – Datum (2022)</li>
-            <li>Python Master – University of Michigan (2020)</li>
-            <li>Google Cloud Platform Professional – Google Cloud (2020)</li>
-          </ul>
+          <Container>
+            <Row>
+              <Col>
+                <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Certificaciones</h3>
+              </Col>
+            </Row>
+            <Row style={{ alignItems: 'center', marginTop: '20px' }}>
+              <Col md="6">
+                <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+                  <li>Lean Six Sigma Yellow Belt – MF Treinamentos (2025)</li>
+                  <li>Apple Certified Developer – Apple (2024)</li>
+                  <li>Hillstone Security Master Configuration – FRT (2024)</li>
+                  <li>Lean Six Sigma White Belt – MF Treinamentos (2023)</li>
+                  <li>Scrum Foundation Professional Certificate – CertiProf (2023)</li>
+                  <li>Agile Project Planning – Skillsoft (2022)</li>
+                  <li>Project Management (PMBOK 6th Ed.) – Skillsoft (2022)</li>
+                  <li>ITIL 4 – LearnQuest (2022)</li>
+                  <li>Registered Scrum Team Member – Scrum Inc. (2022)</li>
+                  <li>Master JavaScript – Udemy (2022)</li>
+                  <li>Master HTML5 Professional – Udemy (2022)</li>
+                  <li>ITZ Data Internship: AWS & Oracle DB – Datum (2022)</li>
+                  <li>Python Master – University of Michigan (2020)</li>
+                  <li>Google Cloud Platform Professional – Google Cloud (2020)</li>
+                </ul>
+              </Col>
+              <Col md="6">
+                <img
+                  src={require("assets/img/comnet.jpg")}
+                  alt="Educación"
+                  style={{ width: '50%', borderRadius: '8px' }}
+                />
+              </Col>
+            </Row>
+          </Container>
 
-          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Habilidades Técnicas</h3>
-          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
-            <li>Desarrollo Backend y Frontend (JavaScript, TypeScript, Python, Java, C#)</li>
-            <li>Gestión de Bases de Datos (SQL, Oracle, NoSQL)</li>
-            <li>Frameworks y tecnologías (Node.js, Angular, Vue.js, Odoo, SAP B1)</li>
-            <li>Administración de infraestructuras en la nube (AWS, Google Cloud)</li>
-            <li>Ciberseguridad y gestión de riesgos</li>
-          </ul>
+          <Container>
+            <Row>
+              <Col>
+                <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Habilidades Técnicas</h3>
+              </Col>
+            </Row>
+            <Row style={{ alignItems: 'center', marginTop: '20px' }}>
+              <Col md="6">
+                <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+                  <li>Desarrollo Backend y Frontend (JavaScript, TypeScript, Python, Java, C#)</li>
+                  <li>Gestión de Bases de Datos (SQL, Oracle, NoSQL)</li>
+                  <li>Frameworks y tecnologías (Node.js, Angular, Vue.js, Odoo, SAP B1)</li>
+                  <li>Administración de infraestructuras en la nube (AWS, Google Cloud)</li>
+                  <li>Ciberseguridad y gestión de riesgos</li>
+                </ul>
+              </Col>
+              <Col md="6">
+                <img
+                  src={require("assets/img/escritorio.JPG")}
+                  alt="Educación"
+                  style={{ width: '50%', borderRadius: '8px' }}
+                />
+              </Col>
+            </Row>
+          </Container>
 
-          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Habilidades de Gestión</h3>
-          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
-            <li>Gestión de Proyectos IT y Transformación Digital</li>
-            <li>Implementación de ERP y soluciones empresariales</li>
-            <li>Liderazgo y toma de decisiones estratégicas</li>
-            <li>Análisis y optimización de procesos de negocio</li>
-          </ul>
+          <Container>
+            <Row>
+              <Col>
+                <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Habilidades de Gestión</h3>
+              </Col>
+            </Row>
+            <Row style={{ alignItems: 'center', marginTop: '20px' }}>
+              <Col md="6">
+                <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+                  <li>Gestión de Proyectos IT y Transformación Digital</li>
+                  <li>Implementación de ERP y soluciones empresariales</li>
+                  <li>Liderazgo y toma de decisiones estratégicas</li>
+                  <li>Análisis y optimización de procesos de negocio</li>
+                </ul>
+              </Col>
+              <Col md="6">
+                <img
+                  src={require("assets/img/sanp.JPG")}
+                  alt="Educación"
+                  style={{ width: '50%', borderRadius: '8px' }}
+                />
+              </Col>
+            </Row>
+          </Container>
 
-          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Otros Datos</h3>
-          <p><strong>Idiomas:</strong> Español (nativo), Inglés (C1)</p>
-          <p><strong>Softwares:</strong> NodeJS, Angular, Vue, Azure DevOps, Jira, Planner, Odoo (experto), SAP B1 (intermedio), Retail One (intermedio)</p>
 
-          <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Voluntariado y Asociaciones</h3>
-          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
-            <li>Vicepresidente – Asociación de Becados Loyola (2018)</li>
-            <li>Vocal Estudiantil – Agrupación de Alumnos de Ingeniería (2019)</li>
-            <li>Secretario – Asociación de Salesianos Cooperadores, Centro Don Bosco (2022–2024)</li>
-            <li>Coordinador – Asociación de Salesianos Cooperadores, Centro Don Bosco (2025–2027)</li>
-          </ul>
-         </div>
+          <Container>
+            <Row>
+              <Col>
+                <h3 style={{ fontSize: '1.5rem', marginTop: '40px' }}>Voluntariado y Asociaciones</h3>
+              </Col>
+            </Row>
+            <Row style={{ alignItems: 'center', marginTop: '20px' }}>
+              <Col md="6">
+                <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+                  <li>Vicepresidente – Asociación de Becados Loyola (2018)</li>
+                  <li>Vocal Estudiantil – Agrupación de Alumnos de Ingeniería (2019)</li>
+                  <li>Secretario – Asociación de Salesianos Cooperadores, Centro Don Bosco (2022–2024)</li>
+                  <li>Coordinador – Asociación de Salesianos Cooperadores, Centro Don Bosco (2025–2027)</li>
+                </ul>
+              </Col>
+              <Col md="6">
+                <img
+                  src={require("assets/img/24m.JPG")}
+                  alt="Educación"
+                  style={{ width: '50%', borderRadius: '8px' }}
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </Container>
       <Container>
-        {/* Sección de Valores */}
-        <div style={{ backgroundColor: 'white', padding: '60px 20px', position: 'relative' }}>
-          <div style={{ backgroundColor: 'transparent', padding: '60px 20px', position: 'relative' }}>
-            <h2 style={{ display: 'flex', alignItems: 'center', fontSize: '2rem', fontWeight: 'bold' }}>
-              <span style={{ marginRight: '10px', color: 'black' }}>💼</span> Experiencia Laboral
-            </h2>
 
-            <div style={{ borderLeft: '3px solid black', marginLeft: '10px', paddingLeft: '20px', marginTop: '40px' }}>
-              <div style={{ marginBottom: '40px', position: 'relative' }}>
-                <div style={{ width: '14px', height: '14px', backgroundColor: '#00cfff', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
-                <p style={{ fontSize: '0.9rem', marginBottom: '4px' }}>Enero, 2022 - Actualidad</p>
-                <h3 style={{ color: '#00cfff', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Kind Mind - CEO y Fundador</h3>
-                <p style={{ color: 'black', lineHeight: '1.6' }}>
-                  Kind Mind ha desarrollado soluciones IT personalizadas para más de 10 empresas en Guatemala,
-                  abordando diversas necesidades estratégicas a través de software empresarial, plataformas de ecommerce
-                  y soluciones basadas en la nube. El enfoque especializado ha permitido a estas organizaciones
-                  modernizar sus operaciones y adaptarse a entornos digitales altamente competitivos.
-                  Además, se ha liderado la implementación de auditorías tecnológicas orientadas a identificar
-                  áreas de mejora, optimizar recursos y elevar la eficiencia operativa de forma sostenible.</p>
-              </div>
 
-              <div style={{ marginBottom: '40px', position: 'relative' }}>
-                <div style={{ width: '14px', height: '14px', backgroundColor: '#032346', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
-                <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Junio, 2023 - Actualmente </p>
-                <h3 style={{ color: '#032346', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Grupo Alta - IT Manager</h3>
-                <p style={{ color: 'black', lineHeight: '1.6' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold' }}>
+          <span style={{ textAlign: "center", color: 'black' }}>💼</span> Experiencia Laboral
+        </h2>
 
-                  Como parte de la estrategia de transformación digital del grupo, lidero
-                  la implementación del sistema Odoo ERP en diversas unidades de negocio, incluyendo Gimnasios C3NTRO, Helados Adela (en Guatemala y México),
-                  Villa Bokéh y Casa Palopó. Esta implementación permitió una reducción del 30% en los tiempos operativos gracias
-                  a la optimización de procesos tecnológicos clave. Asimismo, supervisé el desarrollo de soluciones integrales orientadas
-                  a las necesidades específicas de cada empresa, garantizando eficiencia operativa y una mejora continua.
-                  También doy seguimiento a proyectos de infraestructura que fortalecieron significativamente la conectividad
-                  y las telecomunicaciones corporativas.
-                </p>
+        <div style={{ borderLeft: '3px solid black', marginLeft: '10px', paddingLeft: '20px', marginTop: '40px' }}>
+          <div style={{ marginBottom: '40px', position: 'relative' }}>
+            <div style={{ width: '14px', height: '14px', backgroundColor: '#00cfff', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+            <p style={{ fontSize: '0.9rem', marginBottom: '4px' }}>Enero, 2022 - Actualidad</p>
+            <h3 style={{ color: '#00cfff', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Kind Mind - CEO y Fundador</h3>
+            <p style={{ color: 'black', lineHeight: '1.6' }}>
+              Kind Mind ha desarrollado soluciones IT personalizadas para más de 10 empresas en Guatemala,
+              abordando diversas necesidades estratégicas a través de software empresarial, plataformas de ecommerce
+              y soluciones basadas en la nube. El enfoque especializado ha permitido a estas organizaciones
+              modernizar sus operaciones y adaptarse a entornos digitales altamente competitivos.
+              Además, se ha liderado la implementación de auditorías tecnológicas orientadas a identificar
+              áreas de mejora, optimizar recursos y elevar la eficiencia operativa de forma sostenible.</p>
+          </div>
 
-              </div>
-              <div style={{ marginBottom: '40px', position: 'relative' }}>
-                <div style={{ width: '14px', height: '14px', backgroundColor: 'red', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
-                <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Agosto, 2020 - Junio 2023 </p>
-                <h3 style={{ color: 'red', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Grupo R2C - Coordinador de Informática y Sistemas</h3>
-                <p style={{ color: 'black', lineHeight: '1.6' }}>
+          <div style={{ marginBottom: '40px', position: 'relative' }}>
+            <div style={{ width: '14px', height: '14px', backgroundColor: '#032346', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+            <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Junio, 2023 - Actualmente </p>
+            <h3 style={{ color: '#032346', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Grupo Alta - IT Manager</h3>
+            <p style={{ color: 'black', lineHeight: '1.6' }}>
 
-                  Lideré la implementación del sistema Odoo en 40 puntos de venta a nivel nacional, integrando también
-                  la parte administrativa para lograr una gestión unificada y eficiente. Acompañé de cerca el desarrollo
-                  de mejoras tecnológicas específicas para los restaurantes Quedely, asegurando que cada avance
-                  respondiera a las necesidades operativas del negocio. Asimismo, diseñé y desarrollé herramientas
-                  enfocadas en optimizar los procesos administrativos, lo que permitió mejorar significativamente la
-                  operación interna y la toma de decisiones.
-                </p>
+              Como parte de la estrategia de transformación digital del grupo, lidero
+              la implementación del sistema Odoo ERP en diversas unidades de negocio, incluyendo Gimnasios C3NTRO, Helados Adela (en Guatemala y México),
+              Villa Bokéh y Casa Palopó. Esta implementación permitió una reducción del 30% en los tiempos operativos gracias
+              a la optimización de procesos tecnológicos clave. Asimismo, supervisé el desarrollo de soluciones integrales orientadas
+              a las necesidades específicas de cada empresa, garantizando eficiencia operativa y una mejora continua.
+              También doy seguimiento a proyectos de infraestructura que fortalecieron significativamente la conectividad
+              y las telecomunicaciones corporativas.
+            </p>
 
-              </div>
-              <div style={{ marginBottom: '40px', position: 'relative' }}>
-                <div style={{ width: '14px', height: '14px', backgroundColor: 'orange', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
-                <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Abril, 2022 - Diciembre, 2022 </p>
-                <h3 style={{ color: 'orange', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Conduent - IT Project Manager</h3>
-                <p style={{ color: 'black', lineHeight: '1.6' }}>
+          </div>
+          <div style={{ marginBottom: '40px', position: 'relative' }}>
+            <div style={{ width: '14px', height: '14px', backgroundColor: 'red', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+            <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Agosto, 2020 - Junio 2023 </p>
+            <h3 style={{ color: 'red', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Grupo R2C - Coordinador de Informática y Sistemas</h3>
+            <p style={{ color: 'black', lineHeight: '1.6' }}>
 
-                  Dirigí el proyecto de organización y normalización de la base de datos para el sistema Global
-                  Roster de Royal Caribbean y Aetna, asegurando una estructura de datos coherente, limpia y
-                  eficiente. Esta labor fue clave para mejorar la gestión del personal y la planificación operativa,
-                  garantizando la integridad y disponibilidad de la información en tiempo real para ambos
-                  clientes a nivel global.
-                </p>
+              Lideré la implementación del sistema Odoo en 40 puntos de venta a nivel nacional, integrando también
+              la parte administrativa para lograr una gestión unificada y eficiente. Acompañé de cerca el desarrollo
+              de mejoras tecnológicas específicas para los restaurantes Quedely, asegurando que cada avance
+              respondiera a las necesidades operativas del negocio. Asimismo, diseñé y desarrollé herramientas
+              enfocadas en optimizar los procesos administrativos, lo que permitió mejorar significativamente la
+              operación interna y la toma de decisiones.
+            </p>
 
-              </div>
-            </div>
+          </div>
+          <div style={{ marginBottom: '40px', position: 'relative' }}>
+            <div style={{ width: '14px', height: '14px', backgroundColor: 'orange', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
+            <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Abril, 2022 - Diciembre, 2022 </p>
+            <h3 style={{ color: 'orange', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Conduent - IT Project Manager</h3>
+            <p style={{ color: 'black', lineHeight: '1.6' }}>
+
+              Dirigí el proyecto de organización y normalización de la base de datos para el sistema Global
+              Roster de Royal Caribbean y Aetna, asegurando una estructura de datos coherente, limpia y
+              eficiente. Esta labor fue clave para mejorar la gestión del personal y la planificación operativa,
+              garantizando la integridad y disponibilidad de la información en tiempo real para ambos
+              clientes a nivel global.
+            </p>
+
           </div>
         </div>
-</Container>
 
-        <footer className="site-footer">
-          <div className="footer-links">
-            <Link to="/about-us">Conóceme</Link>
-            <Link to="/blog-post">Blog</Link>
-            <Link to="/social">Labor Social</Link>
+      </Container>
 
-          </div>
+      <footer className="site-footer">
+        <div className="footer-links">
+          <Link to="/about-us">Conóceme</Link>
+          <Link to="/blog-post">Blog</Link>
+          <Link to="/social">Labor Social</Link>
 
-          <div className="footer-bottom">
-            <Link to="/privacy">Política de Privacidad</Link>
-            <Link to="/terms">Términos de uso</Link>
-            <Link to="/contacto">Contáctame</Link>
-            <span>© 2025 Renato Cabrera</span>
-          </div>
-        </footer>
+        </div>
 
-        <style jsx>{`
+        <div className="footer-bottom">
+          <Link to="/privacy">Política de Privacidad</Link>
+          <Link to="/terms">Términos de uso</Link>
+          <Link to="/contacto">Contáctame</Link>
+          <span>© 2025 Renato Cabrera</span>
+        </div>
+      </footer>
+
+      <style jsx>{`
         .navbar-container {
           width: 100%;
           position: fixed;
@@ -677,9 +830,9 @@ function AboutUs() {
 }
 
       `
-        }</style>
-      </>
-      );
+      }</style>
+    </>
+  );
 }
 
-      export default AboutUs;
+export default AboutUs;
