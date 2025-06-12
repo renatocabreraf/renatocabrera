@@ -11,7 +11,7 @@ const Navbar = () => {
   const menuItems = [
     { label: "Conóceme", path: "/about-us" },
     { label: "Blog", path: "/blog-posts" },
-    { label: "Labor Social", path: "/trabajo-social" }
+    { label: "Labor Social", path: "/social" }
   ];
 
   return (
@@ -46,7 +46,7 @@ const Navbar = () => {
             className="presentation-image fade-in-blur"
           />
           <div className="presentation-overlay fade-in-text">
-            <Link to="/destacado" className="presentation-box">
+            <Link to="/5lecturas" className="presentation-box">
               <h6 className="presentation-subtitle">DESTACADO</h6>
               <h2 className="presentation-title">Las 5 Lecturas que han ayudado a formarme como profesional</h2>
               <p className="presentation-description">Una pequeña reflexión y la importancia de leer todos los días.</p>
@@ -76,12 +76,14 @@ const Navbar = () => {
         </div>
         <div className="featured-left">
           <div className="featured-image-wrapper">
+            <Link to="/juventud" className="presentation-box">
             <img src={require("assets/img/oratorio.png")} alt="Destacado" className="featured-image" />
             <div className="featured-overlay">
               <h6 className="featured-subtitle">MI MIRADA HACIA ADELANTE</h6>
               <h2 className="featured-title">La juventud es la clave del desarrollo de las sociedades</h2>
               <p className="featured-description">Acompañame a conocer cómo puedes ayudar a forjar una mejor sociedad, tomando a la niñez como punto de partida.</p>
             </div>
+            </Link>
           </div>
           <br/>
           <h6 className="featured-subtitle">Libros</h6>
@@ -104,7 +106,7 @@ const Navbar = () => {
 <footer className="site-footer">
         <div className="footer-links">
           <Link to="/about-us">Conóceme</Link>
-          <Link to="/blog-post">Blog</Link>
+          <Link to="/blog-posts">Blog</Link>
           <Link to="/social">Labor Social</Link>
     
         </div>

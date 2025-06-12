@@ -26,17 +26,17 @@ function PulseHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/qr-code-and-smartbadge-for-events.png") + ")"
+            backgroundImage: "url(" + require("assets/img/b4.png") + ")"
           }}
           ref={pageHeader}
         ></div>
         <div className="content-center">
           <Row>
             <Col className="ml-auto mr-auto" md="8">
-              <img src="https://cdn.kindmindgt.com/assets/img/pulseweb.png"></img>
-              <h1 className="title">Bienvenido al Futuro</h1>
+            
+              <h1 className="title">Las 5 Lecturas que han ayudado a formarme como profesional</h1>
               <h4>
-                Comparte información rápida, ecológica e innovadora, ¡Únete a Pulse!.
+                Una pequeña reflexión sobre el hábito de leer y su impacto en la vida laboral y personal.
               </h4>
             </Col>
           </Row>

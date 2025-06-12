@@ -26,14 +26,14 @@ function PulseHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(https://cdn.kindmindgt.com/assets/img/coding-1853305.jpg)"
+            backgroundImage: "/assets/img/b4.jpg)"
           }}
           ref={pageHeader}
         ></div>
         <div className="content-center">
           <Row>
             <Col className="ml-auto mr-auto" md="8">
-              <img src="https://cdn.kindmindgt.com/assets/img/CODECRAFTING.png"></img>
+              <img src="/assets/img/b4.png"></img>
               <h1 className="title">Desarrollamos el Éxito</h1>
               <h4>
                 Convertimos tu idea en una realidad, impulsamos el desarrollo de tu negocio.

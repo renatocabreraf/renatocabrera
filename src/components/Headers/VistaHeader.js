@@ -28,7 +28,7 @@ function PulseHeader() {
           style={{
             backgroundImage: "url(" + require("assets/img/work-1699510.jpg") + ")"
           }}
-          ref={pageHeader}
+          ref={pageHeader} 
         ></div>
         <div className="content-center">
           <Row>

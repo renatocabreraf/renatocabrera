@@ -26,7 +26,7 @@ import {
 // core components
 import PulseHeader from "components/Headers/PulseHeader.js";
 import Footer from "components/Footers/Footer.js";
-import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
+import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
 
 function PulseViews() {
   const [specialitySelect, setSpecialitySelect] = React.useState(null);
@@ -45,210 +45,418 @@ function PulseViews() {
   }, []);
   return (
     <>
-      <ScrollTransparentNavbar />
+      <FixedTransparentNavbar />
       <div className="wrapper">
         <PulseHeader />
-        <div className="section">
-          <div className="about-description text-center">
-            <div className="features-3">
+        <div >
+          <div >
+            <div >
               <Container>
                 <Row>
                   <Col className="mr-auto ml-auto" md="8">
-                    <h2 className="title">Innovamos la manera de transmitir información.</h2>
-                    <h4 className="description">
-                      En Kind Mind, estamos comprometidos con el desarrollo humano, empresarial
-                      y tecnológico. Es por eso que hemos creado Pulse, un servicio dedicado a
-                      la transmisión de datos por medio de Códigos QR, facilitando operaciones empresariales
-                      ahorrando costos de impresión y siendo ecológicos con el medio ambiente.
+                    <h2 className="title">Leer también es cool.</h2>
+                    <h4 >
+                      Leer ha sido uno de los hábitos más transformadores que he cultivado. No se trata solamente
+                      de adquirir conocimientos, sino de mirar el mundo desde nuevas perspectivas, cuestionar,
+                      imaginar, construir. La lectura es, en muchos sentidos, una conversación íntima con mentes
+                      brillantes, que nos ayuda a pulir la nuestra.
+                      <br />
+                      Estas cinco obras me han acompañado en diferentes etapas de mi camino y me han moldeado
+                      tanto en lo profesional como en lo humano. Aquí comparto una reseña de cada una y cómo
+                      me han impactado profundamente.
                     </h4>
-                    
+<div style={{ alignItems: 'center', marginBottom: '20px' }}>
+                    <img
+                      src={require("assets/img/rostro.png")} // Usa tu foto aquí
+                      alt="Autor"
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '50%',
+                        marginRight: '10px',
+                      }}
+                    />
+                    <span style={{ fontSize: '14px', color: '#333' }}>
+                      Por <strong>Renato Cabrera</strong> publicado en <time dateTime="2025-06-09">Lunes, Junio 09, 2025</time>
+                    </span>
+
+                  </div>
                   </Col>
                   
                 </Row>
+                
                 <Row>
                   <Col md="4">
                     <div className="info info-hover">
-                      <div className="icon icon-primary icon-circle">
-                        <i className="now-ui-icons business_badge"></i>
+                      <div>
+                        <img src={require("assets/img/sj.webp")} width={"100px"}></img>
                       </div>
-                      <h4 className="info-title">Tarjetas de presentación Virtuales</h4>
-                      <p className="description">
-                        Manejar tarjetas de presentación en papel, es algo elegante, profesional
-                        y llamativo, pues es dar a conocerte en un ámbito profesional, sin embargo,
-                        es sabido por todos que hoy en día mucha de esa información se vuelve irrelevante
-                        si se encuentra en papel, pues se desecha facilmente y la atención se pierde por completo.
-                        Es por ello que Pulse te ofrece el manejo de tus tarjetas de presentación por medio de
-                        Códigos QR, ahorrándote costos de impresión, asegurando que la información
-                        sea recibida y almacenada en el celular y siendo amigables con el medio ambiente
-                        (Proximamente disponible en Apple Wallet). 
+                      <h4 className="info-title">Steve Jobs – Walter Isaacson</h4>
+                      <p >
+                        Esta biografía autorizada de Steve Jobs es mucho más que una historia de éxito; es una exploración cruda, brillante y humana del genio detrás de Apple. Isaacson retrata a Jobs tal como fue: visionario, obsesivo con los detalles, apasionado hasta el extremo y, a la vez, profundamente complejo.
+                        <br />
+                        Por qué me impactó:<br />
+                        Este libro me ayudó a comprender el valor de unir la tecnología con el arte, de crear desde la intuición y también desde la excelencia. En mi trabajo como ingeniero y líder de proyectos, he aprendido que no basta con que algo funcione; debe ser bello, funcional, útil y significativo. La figura de Jobs me enseñó que la pasión es el motor de la innovación y que no hay que tener miedo a romper lo establecido.
                       </p>
                     </div>
-                    <Col md="12">
-              <img style={{
-                display: "flex",
-                position: "relative"
 
-              }}
-              src="https://cdn.kindmindgt.com/assets/img/Renato Cabrera - Presentation Card-2.png"></img>
-            </Col>
                   </Col>
-                 
+
                   <Col md="4">
                     <div className="info info-hover">
-                      <div className="icon icon-info icon-circle">
-                        <i className="now-ui-icons shopping_shop"></i>
+                      <div >
+                        <img src={require("assets/img/md.webp")} width={"103px"}></img>
                       </div>
-                      <h4 className="info-title">Restaurantes</h4>
-                      <p className="description">
-                        Kind Mind tiene al rededor de 5 años de experiencia con trabajo en restaurantes y
-                        es un factor común de todos ellos 2 aspectos: Menús y Wi-Fi.
-                        Pulse adelanta a los restaurantes a la innovación ofreciendo compartir tu Menú por medio
-                        de Códigos QR, los cuales se colocan directamente en tu mesa y tus clientes pueden leerlos
-                        con sus dispositivos móviles, agilizando el proceso de atención y dando una atención diferenciada
-                        sobre los competidores.
-                        También puedes compartir internet por medio de códigos QR, ahorrando tiempo al momento
-                        de dar acceso a tu red de visitantes y promoviendo la facilidad de contacto en tu 
-                        establecimeinto.
+                      <h4 className="info-title">Minimalismo Digital – Cal Newport</h4>
+
+                      <p >
+                        En un mundo saturado por notificaciones y estímulos digitales, este libro fue una guía valiente para reconectar con lo esencial. Newport plantea un enfoque consciente del uso de la tecnología, donde se prioriza lo verdaderamente importante sobre la distracción constante.
+                        <br />
+                        Por qué me impactó:<br />
+                        Aplicar el minimalismo digital ha sido clave para recuperar enfoque, reducir la ansiedad y mejorar mi productividad. Hoy gestiono mejor mi tiempo, elijo con más claridad qué herramientas utilizar y pongo límites saludables al mundo digital. Esto me ha ayudado a ser más presente, tanto en el trabajo como en mi vida personal.
+
                       </p>
                     </div>
-                    <Col md="12">
-              <img style={{
-                display: "flex",
-                position: "relative"
 
-              }}
-              src="https://cdn.kindmindgt.com/assets/img/Carlos & Carlos Antigua Guatemala - English.png"></img>
-            </Col>
                   </Col>
                   <Col md="4">
                     <div className="info info-hover">
-                      <div className="icon icon-success icon-circle">
-                        <i className="now-ui-icons tech_watch-time"></i>
+                      <div >
+                        <img src={require("assets/img/ls.jpg.webp")} width={"98px"}></img>
                       </div>
-                      <h4 className="info-title">Documentos y Enlaces</h4>
-                      <p className="description">
-                        Dentro de nuestro día a día, la demanda de priorizar la organización
-                        y aprovechar el tiempo al máximo es nuestra meta, poder realizar tareas 
-                        en un tiempo rápido, que garantice los mismos resultados es una misión del día a día. 
-                        En Kind Mind, podemos mejorar tus tiempos al convertir links, documentos y archivos multimedia
-                        en Códigos QR, facilitando así la transmisión de datos, postear en cualquier parte
-                        la información y tener un medio virtual por el cual tus colaboradores
-                        puedan intercambiar conjuntos de información. Compartir y generar innovación es
-                        nuestra misión, Kind Mind te lleva al futuro y hace que tu empresa crezca junto a 
-                        tus colaboradores.
-                        
+                      <h4 className="info-title"> El Método Lean Startup – Eric Ries</h4>
+                      <p >
+                        Un clásico del emprendimiento moderno. Ries propone una metodología ágil para lanzar productos y negocios a partir de la validación constante, el aprendizaje iterativo y la adaptación rápida.
+                        <br />
+                        Por qué me impactó:<br />
+                        Este libro me dio estructura para tomar decisiones inteligentes con pocos recursos. Lo aplico en cada proyecto que desarrollo: probar, aprender, corregir. Me enseñó que fallar rápido no es un error, sino una estrategia. Gracias a esta mentalidad, he podido liderar iniciativas tecnológicas con más confianza y flexibilidad, evitando caer en inversiones innecesarias.
                       </p>
                     </div>
-                    <Col md="12">
-                      <img style={{
-                        display: "flex",
-                        position: "relative"
 
-                      }}
-                      src="https://cdn.kindmindgt.com/assets/img/Pulse - Ejemplo de Imagen.png"></img>
-                    </Col>
+
+
+                  </Col>
+                  <Col md="6">
+                    <div className="info info-hover">
+                      <div >
+                        <img src={require("assets/img/hooked.jpg")} width={"100px"}></img>
+                      </div>
+                      <h4 className="info-title"> Enganchado – Nir Eyal</h4>
+                      <p >
+                        Una guía brillante sobre cómo diseñar productos que no solo resuelven necesidades, sino que se integran en la rutina del usuario mediante hábitos.
+                        <br />
+                        Por qué me impactó:<br />
+                        Me abrió los ojos al mundo del diseño conductual y cómo aplicar la psicología al desarrollo tecnológico. Entender el modelo de activación y recompensa me ha servido tanto en el diseño de software como en estrategias de fidelización. Aprendí que detrás de un producto exitoso hay una comprensión profunda del comportamiento humano.                      </p>
+                    </div>
+                  </Col>
+                  <Col md="6">
+                    <div className="info info-hover">
+                      <div >
+                        <img src={require("assets/img/tt.jpg.webp")} width={"95px"}></img>
+                      </div>
+                      <h4 className="info-title"> La Teoría del Todo – Stephen Hawking</h4>
+                      <p >
+                        Una obra que logra hacer accesibles los conceptos más complejos del universo, desde el Big Bang hasta los agujeros negros, con una narrativa sencilla, clara y profundamente inspiradora.                        <br />
+                        Por qué me impactó:<br />
+                        Me recordó que el conocimiento no tiene límites. Que la ciencia también puede ser poesía, y que la humildad ante el misterio del universo nos hace mejores profesionales y personas. Este libro me inspira a nunca dejar de aprender, de explorar, de cuestionar. En cada desafío laboral, intento tener esa mente abierta que Hawking promovía: buscar siempre la próxima frontera.                      </p>
+                    </div>
                   </Col>
                 </Row>
               </Container>
             </div>
           </div>
           <div className="separator-line bg-info"></div>
-         
-        <Container >
-          <Row>
 
-            <Col className="text-center" md="12">
-              <h2 className="title">Clientes Satisfechos</h2>
-            </Col>
-            <Col md="12">
-              <img style={{
-                display: "flex",
-                position: "relative"
+          <Container >
+            <Row>
 
-              }}
-              src="https://cdn.kindmindgt.com/assets/img/MARCAS PULSE V1.png"></img>
-            </Col>
-            
-          </Row>
-        </Container>
-      </div>
-          <div className="separator-line bg-info"></div>
-          <div className="projects-5">
-            <Container>
-              <Row>
-                <Col className="ml-auto mr-auto text-center" md="8">
-                  <h2 className="title">¿Cómo puedes trabajar con Pulse?</h2>
-                  
-                  <div className="section-space"></div>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="ml-auto" md="5">
-                  <Card
-                    className="card-background card-background-product card-raised"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("assets/img/650_1200.jpg") + ")"
-                    }}
-                  >
-                    <CardBody>
-                      <CardTitle tag="h2"></CardTitle>
-                      <p className="card-description">
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                      </p>
-                    </CardBody>
-                  </Card>
-                </Col>
-                <Col className="mr-auto" md="5">
-                  <div className="info info-horizontal">
-                    <div className="icon icon-danger">
-                      <i className="now-ui-icons ui-2_chat-round"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">
-                        Ponte en contacto con nosotros
-                      </h4>
-                      <p className="description">
-                        Comunicate con nosotros, para que nos puedas comentar tu idea y nos indiques si ya tienes el
-                        material listo o deseas que lo construyamos de 0.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-danger">
-                      <i className="now-ui-icons business_bulb-63"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">Analizamos el Diseño Final</h4>
-                      <p className="description">
-                        Con nuestra experiencia podremos indicarte si es un buen material para publicar en tu
-                        QR y procedemos a crear tu código. Tu código puede ser personalizado con colores y fondos
-                        distintos, añadiendo el logo de tu empresa para darle identidad. 
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-danger">
-                      <i className="now-ui-icons ui-1_check"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">¡Hemos terminado!</h4>
-                      <p className="description">
-                        Te mostramos el resultado y te lo compartimos para que puedas iniciar con tu transformación
-                        digital.
-                      </p>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-           
-          
-          
+              <Col className="text-center" md="12">
+                <h2 className="title">¡Bonus! Mi saga favorita de Libros</h2>
+                <img src={require("assets/img/darrenshan.jpg.webp")} width={"750px"}></img>
+              </Col>
+
+              <h4 className="info-title">Cirque du Freak - La Saga de Darren Shan</h4>
+              <p >
+                Cuando tenía entre 13 y 15 años, mi tía me regaló esta saga juvenil, y puedo decir sin exagerar que marcó un antes y un después en mi relación con la lectura. La historia gira en torno a Darren, un chico común que termina convirtiéndose en vampiro tras una serie de decisiones que lo alejan de su vida normal y lo sumergen en un mundo oscuro, mágico y lleno de dilemas morales.
+                <br />Por qué me impactó:<br />
+                Fue la primera vez que me sumergí completamente en una historia. Leí los libros de golpe, y luego los volví a leer más de una vez. Me atrapó su mundo, su ritmo, y sobre todo, los dilemas de crecimiento, lealtad y sacrificio. A esa edad, en plena adolescencia, los conflictos internos de Darren resonaban conmigo. Más allá de los vampiros, la saga hablaba de amistad, responsabilidad, pérdida y transformación.
+
+                El hecho de que me los regalara mi tía le añade un valor emocional. Fue un acto de amor que sembró en mí el gusto por la lectura. Esa conexión entre libros, familia y adolescencia sigue siendo uno de los recuerdos más cálidos de mi vida. Y aunque hoy leo textos más técnicos o filosóficos, jamás olvido que fue la literatura juvenil la que encendió esa chispa.
+              </p>
+            </Row>
+          </Container>
         </div>
-        <Footer />
-      </>
+        <div className="separator-line bg-info"></div>
+        <div className="projects-5">
+
+        </div>
+
+
+
+      </div>
+      <footer className="site-footer">
+        <div className="footer-links">
+          <Link to="/about-us">Conóceme</Link>
+          <Link to="/blog-posts">Blog</Link>
+          <Link to="/social">Labor Social</Link>
+
+        </div>
+
+        <div className="footer-bottom">
+          <Link to="/privacy">Política de Privacidad</Link>
+          <Link to="/terms">Términos de uso</Link>
+          <Link to="/contacto">Contáctame</Link>
+          <span>© 2025 Renato Cabrera</span>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        .navbar-container {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          background: linear-gradient(to right, #222, #111);
+          padding: 0.5rem 1rem;
+        }
+
+        .navbar {
+          max-width: 1200px;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo {
+          height: 100px;
+          width: 190px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          color: white;
+          display: none;
+        }
+
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-item {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        .nav-item:hover {
+          text-decoration: underline;
+        }
+
+        .search-icon {
+          background: none;
+          border: none;
+          font-size: 1.3rem;
+          color: white;
+        }
+
+        .presentation-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .presentation-inner {
+          position: relative;
+          width: 100%;
+          max-width: 1920px;
+        }
+
+        .presentation-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .presentation-overlay {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          max-width: 400px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 10px;
+        }
+
+        .presentation-box {
+          color: black;
+          text-decoration: none;
+        }
+
+        .presentation-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          color: #444;
+        }
+
+        .presentation-title {
+          font-size: 1.5rem;
+          font-weight: 800;
+          margin: 10px 0;
+        }
+
+        .presentation-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .fade-in-text {
+          opacity: 0;
+          animation: fadeInText 1.2s ease-out forwards;
+          animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInText {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .text-highlight {
+          padding: 60px 20px;
+          text-align: center;
+        }
+
+        .text-highlight p {
+          font-size: 1.6rem;
+          color: #555;
+          max-width: 800px;
+          margin: auto;
+          line-height: 1.6;
+        }
+
+        .inline-photo {
+          height: 40px;
+          width: auto;
+          margin: 0 8px;
+          vertical-align: middle;
+          border-radius: 6px;
+        }
+
+        .featured-section {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+          padding: 60px 20px;
+          max-width: 1200px;
+          margin: auto;
+        }
+
+        .featured-left {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .featured-image-wrapper {
+          position: relative;
+        }
+
+        .featured-image {
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        .featured-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        .featured-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #444;
+        }
+
+        .featured-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin: 10px 0;
+        }
+
+        .featured-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .featured-right {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .mini-featured-image {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 20px;
+        }
+          .site-footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-links,
+.footer-bottom {
+  margin-bottom: 20px;
+}
+
+.footer-links a,
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+  color: #0078d4; /* azul sobrio como en Gates Notes */
+  text-decoration: underline;
+}
+
+.footer-bottom span {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+
+      `
+      }</style>
+    </>
   );
 }
 

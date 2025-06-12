@@ -56,7 +56,7 @@ function BlogPosts() {
                   <CardBody>
                     <CardTitle className="text-left" tag="div">
                       <h2>
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <a href="/5lecturas" >
                           Las 5 Lecturas que han ayudado a formarme como profesional.
                         </a>
                       </h2>
@@ -65,7 +65,7 @@ function BlogPosts() {
                       <div className="stats">
                         <span>
                           <i className="now-ui-icons users_circle-08"></i>
-                        Renato Cabrera
+                          Renato Cabrera
                         </span>
                         <span>
                           <i className="now-ui-icons tech_watch-time"></i>
@@ -73,7 +73,7 @@ function BlogPosts() {
                         </span>
                       </div>
                       <div className="stats-link pull-right">
-                       
+
                       </div>
                     </CardFooter>
                   </CardBody>
@@ -83,7 +83,8 @@ function BlogPosts() {
                 <Card className="card-fashion">
                   <CardTitle tag="div">
                     <h4>
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <a href="juventud" 
+                      >
                         La juventud es la clave del desarrollo de las sociedades.
                       </a>
                     </h4>
@@ -100,7 +101,7 @@ function BlogPosts() {
                           June 9, 2025
                         </span>
                       </div>
-                      
+
                     </CardFooter>
                   </CardBody>
                 </Card>
@@ -129,7 +130,7 @@ function BlogPosts() {
                 <Card className="card-fashion arrow-left">
                   <CardTitle tag="div">
                     <h4>
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <a href="/saludmental" >
                         La importancia de cuidar la Salud Mental.
                       </a>
                     </h4>
@@ -146,7 +147,7 @@ function BlogPosts() {
                           May 20, 2025
                         </span>
                       </div>
-                      
+
                     </CardFooter>
                   </CardBody>
                 </Card>
@@ -178,7 +179,7 @@ function BlogPosts() {
                           May 2, 2025
                         </span>
                       </div>
-                      
+
                     </CardFooter>
                   </CardBody>
                 </Card>
@@ -213,15 +214,15 @@ function BlogPosts() {
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        Empresa fundada y dirigida por Renato Cabrera, dedicada al desarrollo de software, 
-                        consultorías y asesorías, además de proyectar un desarrollo tecnológico para Guatemala 
+                        Empresa fundada y dirigida por Renato Cabrera, dedicada al desarrollo de software,
+                        consultorías y asesorías, además de proyectar un desarrollo tecnológico para Guatemala
                         en todas las industrias.{" "}
                         <a href="http://www.kindmindgt.com" target="_blank" rel="noopener noreferrer">
                           Conoce Más.
                         </a>
                       </p>
                       <div className="author">
-                        
+
                       </div>
                     </CardBody>
                   </Card>
@@ -245,13 +246,13 @@ function BlogPosts() {
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        Anima es un espacio de psicología dedicado al bienestar emocional y el crecimiento personal. 
+                        Anima es un espacio de psicología dedicado al bienestar emocional y el crecimiento personal.
                         Queremos ayudar a las personas a reconectar con ellas mismas y construir una vida con sentido.{" "}
                         <a href="http://www.anima.gt" target="_blank" rel="noopener noreferrer">
                           Conoce Más.
                         </a>
                       </p>
-                      
+
                     </CardBody>
                   </Card>
                 </Col>
@@ -268,7 +269,7 @@ function BlogPosts() {
                     </div>
                     <CardBody>
                       <h6 className="category text-danger">
-                       {" "}
+                        {" "}
                         Fundación
                       </h6>
                       <CardTitle tag="h4">
@@ -277,37 +278,37 @@ function BlogPosts() {
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        Contribuimos a cambiar positivamente la realidad de Guatemala a través de la construcción de un programa comunitario de salud integral. 
+                        Contribuimos a cambiar positivamente la realidad de Guatemala a través de la construcción de un programa comunitario de salud integral.
                         Nukunem, en k’aqchikel, significa “programar”.{" "}
                         <a href="https://www.nukunem.org/home" target="_blank" rel="noopener noreferrer">
                           Conoce Más
                         </a>
                       </p>
-                      
+
                     </CardBody>
                   </Card>
                 </Col>
               </Row>
             </div>
           </Container>
-          
-         <footer className="site-footer">
-        <div className="footer-links">
-          <Link to="/conoce">Conóceme</Link>
-          <Link to="/blog-posts">Blog</Link>
-          <Link to="/social">Labor Social</Link>
-        
-        </div>
-        
-        <div className="footer-bottom">
-          <Link to="/privacy">Política de Privacidad</Link>
-          <Link to="/terms">Términos de uso</Link>
-          <Link to="/contacto">Contáctame</Link>
-          <span>© 2025 Renato Cabrera</span>
-        </div>
-      </footer>
 
-      <style jsx>{`
+          <footer className="site-footer">
+            <div className="footer-links">
+              <Link to="/conoce">Conóceme</Link>
+              <Link to="/blog-posts">Blog</Link>
+              <Link to="/social">Labor Social</Link>
+
+            </div>
+
+            <div className="footer-bottom">
+              <Link to="/privacy">Política de Privacidad</Link>
+              <Link to="/terms">Términos de uso</Link>
+              <Link to="/contacto">Contáctame</Link>
+              <span>© 2025 Renato Cabrera</span>
+            </div>
+          </footer>
+
+          <style jsx>{`
         .navbar-container {
           width: 100%;
           position: fixed;
@@ -516,7 +517,8 @@ function BlogPosts() {
           border-radius: 8px;
           margin-top: 20px;
         }
-          .site-footer {
+       
+        .site-footer {
   background-color: #f5f5f5;
   padding: 40px 20px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -552,7 +554,7 @@ function BlogPosts() {
 }
 
       `
-      }</style>
+          }</style>
         </div>
 
       </div>

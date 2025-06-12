@@ -35,9 +35,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <button className="search-icon">
-            <FaSearch />
-          </button>
+          
         </div>
       </header>
 

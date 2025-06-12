@@ -86,19 +86,19 @@ root.render(
           render={(props) => <LoginPage {...props} />}
         />
         <Route 
-          path="/pulse"
+          path="/5lecturas"
           render={(props) => <PulseViews {...props} />} />
            <Route 
-          path="/projects"
+          path="/social"
           render={(props) => <CodeCrafting {...props} />} />    
            <Route 
           path="/counsel"
           render={(props) => <Counsel {...props} />} />
           <Route 
-          path="/genius-cloud"
+          path="/saludmental"
           render={(props) => <GeniusCloud {...props} />} /> 
           <Route 
-          path="/vista"
+          path="/juventud"
           render={(props) => <Vista {...props} />} />                   
         <Route
           path="/nucleo-icons"
