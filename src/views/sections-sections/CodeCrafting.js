@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
+import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
 import { Link } from "react-router-dom";
 
 function PulseViews() {
   return (
     <>
-      <ScrollTransparentNavbar />
+      <FixedTransparentNavbar />
 
-      <section style={{ backgroundColor: "#f8f9fa", padding: "160px 0" }}>
+      <section style={{ backgroundColor: "#f8f9fa"}}>
         <Container>
           <Row>
             <Col className="text-center">
@@ -82,7 +82,7 @@ function PulseViews() {
             </Col>
             <Col md="6" className="text-center">
               <img
-                src={require("assets/img/IMG_5445.JPG")}
+                src={require("assets/img/labsoc.png")}
                 alt="Social"
                 style={{ width: "100%", maxWidth: "500px", borderRadius: "12px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
               />

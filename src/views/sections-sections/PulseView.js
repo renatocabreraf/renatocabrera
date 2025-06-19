@@ -65,26 +65,26 @@ function PulseViews() {
                       tanto en lo profesional como en lo humano. Aquí comparto una reseña de cada una y cómo
                       me han impactado profundamente.
                     </h4>
-<div style={{ alignItems: 'center', marginBottom: '20px' }}>
-                    <img
-                      src={require("assets/img/rostro.png")} // Usa tu foto aquí
-                      alt="Autor"
-                      style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: '50%',
-                        marginRight: '10px',
-                      }}
-                    />
-                    <span style={{ fontSize: '14px', color: '#333' }}>
-                      Por <strong>Renato Cabrera</strong> publicado en <time dateTime="2025-06-09">Lunes, Junio 09, 2025</time>
-                    </span>
+                    <div style={{ alignItems: 'center', marginBottom: '20px' }}>
+                      <img
+                        src={require("assets/img/rostro.png")} // Usa tu foto aquí
+                        alt="Autor"
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '50%',
+                          marginRight: '10px',
+                        }}
+                      />
+                      <span style={{ fontSize: '14px', color: '#333' }}>
+                        Por <strong>Renato Cabrera</strong> publicado en <time dateTime="2025-06-09">Lunes, Junio 09, 2025</time>
+                      </span>
 
-                  </div>
+                    </div>
                   </Col>
-                  
+
                 </Row>
-                
+
                 <Row>
                   <Col md="4">
                     <div className="info info-hover">

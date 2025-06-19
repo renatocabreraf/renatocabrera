@@ -18,7 +18,7 @@ import {
 // core components
 import ContactUsHeader from "components/Headers/ContactUsHeader.js";
 import Footer from "components/Footers/Footer.js";
-import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
+import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
 import FooterBlack from "components/Footers/FooterBlack";
 
 function ContactUs() {
@@ -32,7 +32,7 @@ function ContactUs() {
 
   const alert = useAlert()
   const handleSubmit = (e) => {
-    axios.post('https://a2giloiaf7.execute-api.us-east-1.amazonaws.com/default/SendContactEmail', {senderName: name, senderEmail:email, senderPhone:number , message: message})
+    axios.post('https://mw275xspoi.execute-api.us-east-2.amazonaws.com/default/SendContactEmail', {senderName: name, senderEmail:email, senderPhone:number , message: message})
       .then(response => {
         response.status === 200 ? alert.show("Mensaje enviado correctamente") : alert.show("Ha ocurrido un error al enviar el mensaje");
           return response.data;      
@@ -62,7 +62,7 @@ function ContactUs() {
 
   return (
     <>
-      <ScrollTransparentNavbar />
+      <FixedTransparentNavbar />
       <div className="wrapper">
         <ContactUsHeader />
         <div className="main">
@@ -72,92 +72,36 @@ function ContactUs() {
                 <Col className="ml-auto mr-auto" md="5">
                   <h2 className="title">Envíanos un mensaje</h2>
                   <p className="description">
-                    Puedes contactarnos con cualquier consulta respecto a nuestros servicios.
-                    Nos pondremos en contacto contigo lo más pronto posible. <br></br>
-                    <br></br>
+                    Ponte en contacto con mi equipo, será un placer poder estar en comunicación contigo. <br></br>
+                    
                   </p>
-                  <Form id="contact-form" role="form" onSubmit={e => handleSubmit(e)}>
-                    <label>Tu nombre</label>
-                    <InputGroup
-                      className={nameFocus ? "input-group-focus" : ""}
-                    >
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                          <i className="now-ui-icons users_circle-08"></i>
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input
-                        aria-label="Tu nombre..."
-                        autoComplete="name"
-                        placeholder="Tu nombre..."
-                        type="text"
-                        value={name}
-                        onFocus={() => setNameFocus(true)}
-                        onChange={(e) => setName(e.target.value)}
-                        onBlur={() => setNameFocus(false)}
-                      ></Input>
-                    </InputGroup>
-                    <label>Email</label>
-                    <InputGroup
-                      className={emailFocus ? "input-group-focus" : ""}
-                    >
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                          <i className="now-ui-icons ui-1_email-85"></i>
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input
-                        aria-label="Email..."
-                        autoComplete="email"
-                        placeholder="Email..."
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        onFocus={() => setEmailFocus(true)}
-                        onBlur={() => setEmailFocus(false)}
-                      ></Input>
-                    </InputGroup>
-                    <label>Teléfono</label>
-                    <InputGroup
-                      className={numberFocus ? "input-group-focus" : ""}
-                    >
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                          <i className="now-ui-icons tech_mobile"></i>
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input
-                        autoComplete="number"
-                        placeholder="Teléfono ..."
-                        type="text"
-                        value={number}
-                        onChange={(e) => setNumber(e.target.value)}
-                        onFocus={() => setNumberFocus(true)}
-                        onBlur={() => setNumberFocus(false)}
-                      ></Input>
-                    </InputGroup>
-                    <FormGroup>
-                      <label>Tu mensaje</label>
-                      <Input
-                        id="message"
-                        name="message"
-                        rows="6"
-                        type="textarea"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                      ></Input>
-                    </FormGroup>
-                    <div className="submit text-center">
-                      <Button
-                        className="btn-raised btn-round"
-                        color="info"
-                        defaultValue="Contact Us"
-                        type="submit"
-                      >
-                        Enviar
-                      </Button>
-                    </div>
-                  </Form>
+                  <h3><a href="mailto:rc@renatocabrera.com" style={{ color: "black" }}>
+                  rc@renatocabrera.com
+                </a></h3>
+                <h5>Contacta con  <img
+                  src={require("assets/img/Imagotipo Horizontal_Vivid Blue.png")} // Usa tu foto aquí
+                 
+                  style={{
+                    
+                  
+                    width: '100px',
+                  }}
+                /> si necesitas ayuda tecnológica con tu empresa</h5>
+                <h6><a href="mailto:info@kindmindgt.com" style={{ color: "black" }}>
+                  info@kindmindgt.com
+                </a></h6>
+                <h6><a href="www.kindmindgt.com" style={{ color: "black" }}>
+                  www.kindmindgt.com
+                </a></h6>
+                <img
+                  src={require("assets/img/IMG_5451.JPG")} // Usa tu foto aquí
+                  alt="Autor"
+                  style={{
+                    
+                  
+                    marginRight: '10px',
+                  }}
+                />
                 </Col>
                 <Col className="ml-auto mr-auto" md="5"
               >
@@ -168,13 +112,12 @@ function ContactUs() {
                     <div className="description"
                     >
                       <h4 className="info-title"
-                      >Materializamos tus ideas</h4>
-                      <p
+                      >Agenda una Cita conmigo</h4>
+                      <h5
                       >
-                        Listanos tus requerimientos, <br></br>
-                        envíanos tus ideas, <br></br>
-                        disfruta el resultado.
-                      </p>
+                        Si necesitas alguna Asesoría o Consultoría, puedes contactarme por medio de correo electrónico y agendar una cita conmigo.
+                      </h5>
+                      <h6><a href="https://calendar.app.google/KMwKDykx7d7SRrYq9" style={{ color: "black" }}>Haz clic aquí</a></h6>
                     </div>
                   </div>
                   <div className="info info-horizontal">

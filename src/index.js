@@ -92,7 +92,7 @@ root.render(
           path="/social"
           render={(props) => <CodeCrafting {...props} />} />    
            <Route 
-          path="/counsel"
+          path="/programacion"
           render={(props) => <Counsel {...props} />} />
           <Route 
           path="/saludmental"

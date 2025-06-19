@@ -163,7 +163,7 @@ function BlogPosts() {
                   <CardBody>
                     <CardTitle className="text-left" tag="div">
                       <h2>
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <a href="/programacion" >
                           Si no sabes programar, serás un analfabeta... ¿o no?
                         </a>
                       </h2>

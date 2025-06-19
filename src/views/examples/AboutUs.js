@@ -413,9 +413,9 @@ function AboutUs() {
               </Col>
               <Col md="6">
                 <img
-                  src={require("assets/img/comnet.jpg")}
+                  src={require("assets/img/comnet2.png")}
                   alt="Educación"
-                  style={{ width: '50%', borderRadius: '8px' }}
+                  style={{ width: '100%', borderRadius: '8px' }}
                 />
               </Col>
             </Row>
@@ -439,9 +439,9 @@ function AboutUs() {
               </Col>
               <Col md="6">
                 <img
-                  src={require("assets/img/escritorio.JPG")}
+                  src={require("assets/img/escroi+.png")}
                   alt="Educación"
-                  style={{ width: '50%', borderRadius: '8px' }}
+                  style={{ width: '100%', borderRadius: '8px' }}
                 />
               </Col>
             </Row>
@@ -464,9 +464,9 @@ function AboutUs() {
               </Col>
               <Col md="6">
                 <img
-                  src={require("assets/img/sanp.JPG")}
+                  src={require("assets/img/sanp2.png")}
                   alt="Educación"
-                  style={{ width: '50%', borderRadius: '8px' }}
+                  style={{ width: '100%', borderRadius: '8px' }}
                 />
               </Col>
             </Row>
@@ -490,9 +490,9 @@ function AboutUs() {
               </Col>
               <Col md="6">
                 <img
-                  src={require("assets/img/24m.JPG")}
+                  src={require("assets/img/24m2.png")}
                   alt="Educación"
-                  style={{ width: '50%', borderRadius: '8px' }}
+                  style={{ width: '100%', borderRadius: '8px' }}
                 />
               </Col>
             </Row>

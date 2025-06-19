@@ -26,7 +26,7 @@ import {
 // core components
 import VistaHeader from "components/Headers/VistaHeader";
 import Footer from "components/Footers/Footer.js";
-import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
+import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
 
 function PulseViews() {
   const [specialitySelect, setSpecialitySelect] = React.useState(null);
@@ -46,13 +46,11 @@ function PulseViews() {
   return (
     <>
     
-      <ScrollTransparentNavbar />
+      <FixedTransparentNavbar />
       <div className="wrapper">
 
         <div >
-          <br/>
-          <br/>
-          <br/>
+          
           <div >
             <div className="features-3">
 
