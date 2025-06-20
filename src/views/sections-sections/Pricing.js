@@ -496,7 +496,7 @@ function Pricing() {
                     </NavLink>
                   </NavItem>
                 </Nav>
-                <p className="description">
+               <p>
                   You have Free Unlimited Updates and Premium Support on each
                   package. You also have 20 days to request a refund if you're
                   not happy with your purchase.

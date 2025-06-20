@@ -177,7 +177,7 @@ function ProfilePage() {
                           </div>
                           <div className="description">
                             <h5 className="info-title">Work With Any Team</h5>
-                            <p className="description">
+                           <p>
                               Whether it’s for work or even the next family
                               vacation, Trello helps your team.
                             </p>
@@ -191,7 +191,7 @@ function ProfilePage() {
                             <h5 className="info-title">
                               A Productivity Platform
                             </h5>
-                            <p className="description">
+                           <p>
                               Integrate the apps your team already uses directly
                               into your workflow.
                             </p>
@@ -231,7 +231,7 @@ function ProfilePage() {
                             <h5 className="info-title">
                               Listen to Social Conversations
                             </h5>
-                            <p className="description">
+                           <p>
                               Gain access to the demographics, psychographics,
                               and location of unique people who talk about your
                               brand.
@@ -244,7 +244,7 @@ function ProfilePage() {
                           </div>
                           <div className="description">
                             <h5 className="info-title">Social Conversions</h5>
-                            <p className="description">
+                           <p>
                               Track actions taken on your website that
                               originated from social, and understand the impact
                               on your bottom line.
@@ -283,7 +283,7 @@ function ProfilePage() {
                           </div>
                           <div className="description">
                             <h5 className="info-title">Colors adjustments</h5>
-                            <p className="description">
+                           <p>
                               Gain access to the demographics, psychographics,
                               and location of unique people who talk about your
                               brand.
@@ -296,7 +296,7 @@ function ProfilePage() {
                           </div>
                           <div className="description">
                             <h5 className="info-title">Performance Clothing</h5>
-                            <p className="description">
+                           <p>
                               Unify data from Facebook, Instagram, Twitter,
                               LinkedIn, and Youtube to gain rich insights from
                               easy-to-use reports.

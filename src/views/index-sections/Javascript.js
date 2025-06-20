@@ -160,7 +160,7 @@ function Javascript() {
                     <Row>
                       <Col md="8">
                         <strong>1. Register</strong>
-                        <p className="description">
+                       <p>
                           The first step is to create an account at{" "}
                           <a
                             href="http://www.creative-tim.com/?ref=nuk-pro-react-index"
@@ -187,7 +187,7 @@ function Javascript() {
                     <Row>
                       <Col md="8">
                         <strong>2. Apply</strong>
-                        <p className="description">
+                       <p>
                           The first step is to create an account at{" "}
                           <a
                             href="http://www.creative-tim.com/?ref=nuk-pro-react-index"

@@ -859,7 +859,7 @@ function Ecommerce() {
                 <Col className="ml-auto mr-auto" md="6">
                   <div className="text-center">
                     <h4 className="title">Subscribe to our Newsletter</h4>
-                    <p className="description">
+                   <p>
                       Join our newsletter and get news in your inbox every week!
                       We hate spam too, so no worries about this.
                     </p>

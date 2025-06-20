@@ -25,7 +25,7 @@ function Image() {
                   </div>
                   <div className="description">
                     <h5 className="info-title">Ahorra Tiempo y Dinero</h5>
-                    <p className="description">
+                   <p>
                       Kind Mind se encargará de cumplir tus requerimientos en el menor tiempo posible, con la mejor calidad
                       del mercado y garantizando que tu empresa resalte sobre las demás. Kind Mind ofrece a los ingenieros y
                       diseñadores más preparados para resolver tus necesidades y sobrepasar tus expectativas.
@@ -38,7 +38,7 @@ function Image() {
                   </div>
                   <div className="description">
                     <h5 className="info-title">Métricas e Indicadores</h5>
-                    <p className="description">
+                   <p>
                       Junto a tu solución, ofrecemos el servicio de entregar métricas, indicadores y comparadores de resultados,
                       para que puedas visualizar el avance que tu empresa tendrá gracias a la innovación en tecnología y
                       diseño.
@@ -51,7 +51,7 @@ function Image() {
                   </div>
                   <div className="description">
                     <h5 className="info-title">Documentación</h5>
-                    <p className="description">
+                   <p>
                       Todo trabajo realizado por Kind Mind será documentado, para que tu empresa tenga un archivo histórico
                       del trabajo realizado y puedas auditar de mejor manera los resultados obtenidos.
                     </p>

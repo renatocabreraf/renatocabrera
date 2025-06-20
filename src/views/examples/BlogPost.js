@@ -277,7 +277,7 @@ function BlogPost() {
                       </Col>
                       <Col md="8">
                         <CardTitle tag="h4">Alec Thompson</CardTitle>
-                        <p className="description">
+                       <p>
                           I've been trying to figure out the bed design for the
                           master bedroom at our Hidden Hills compound...I like
                           good music from Youtube.

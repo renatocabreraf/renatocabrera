@@ -58,7 +58,7 @@ function SignupPage() {
                   </div>
                   <div className="description">
                     <h5 className="info-title">Marketing</h5>
-                    <p className="description">
+                   <p>
                       We've created the marketing campaign of the website. It
                       was a very interesting collaboration.
                     </p>
@@ -70,7 +70,7 @@ function SignupPage() {
                   </div>
                   <div className="description">
                     <h5 className="info-title">Fully Coded in React 16</h5>
-                    <p className="description">
+                   <p>
                       We've developed the website with React 16 and CSS3. The
                       client has access to the code using GitHub.
                     </p>
@@ -82,7 +82,7 @@ function SignupPage() {
                   </div>
                   <div className="description">
                     <h5 className="info-title">Built Audience</h5>
-                    <p className="description">
+                   <p>
                       There is also a Fully Customizable CMS Admin Dashboard for
                       this product.
                     </p>

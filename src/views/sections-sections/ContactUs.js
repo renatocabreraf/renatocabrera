@@ -160,7 +160,7 @@ function ContactUs() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Find us at the office</h4>
-                    <p className="description">
+                   <p>
                       Bld Mihail Kogalniceanu, nr. 8, <br></br>
                       7652 Bucharest, <br></br>
                       Romania
@@ -173,7 +173,7 @@ function ContactUs() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Give us a ring</h4>
-                    <p className="description">
+                   <p>
                       Michael Jordan <br></br>
                       +40 762 321 762 <br></br>
                       Mon - Fri, 8:00-22:00

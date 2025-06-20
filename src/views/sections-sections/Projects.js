@@ -573,7 +573,7 @@ function Projects() {
                     <h4 className="info-title">
                       Listen to Social Conversations
                     </h4>
-                    <p className="description">
+                   <p>
                       Gain access to the demographics, psychographics, and
                       location of unique people who talk about your brand.
                     </p>
@@ -585,7 +585,7 @@ function Projects() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Performance Analyze</h4>
-                    <p className="description">
+                   <p>
                       Unify data from Facebook, Instagram, Twitter, LinkedIn,
                       and Youtube to gain rich insights from easy-to-use
                       reports.
@@ -598,7 +598,7 @@ function Projects() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Social Conversions</h4>
-                    <p className="description">
+                   <p>
                       Track actions taken on your website that originated from
                       social, and understand the impact on your bottom line.
                     </p>
@@ -615,7 +615,7 @@ function Projects() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Work With Any Team</h4>
-                    <p className="description">
+                   <p>
                       Whether it’s for work or even the next family vacation,
                       Trello helps your team.
                     </p>
@@ -627,7 +627,7 @@ function Projects() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">A Productivity Platform</h4>
-                    <p className="description">
+                   <p>
                       Integrate the apps your team already uses directly into
                       your workflow.
                     </p>
@@ -639,7 +639,7 @@ function Projects() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Always In Sync</h4>
-                    <p className="description">
+                   <p>
                       No matter where you are, Trello stays in sync across all
                       of your devices.
                     </p>

@@ -69,7 +69,7 @@ function PulseViews() {
           <Row style={{ marginTop: "60px", alignItems: "center" }}>
             <Col md="6">
               <h3 style={{ fontSize: "1.75rem", color: "#333" }}>¿Cómo puedes apoyar?</h3>
-              <p style={{ fontSize: "16px", color: "#555" }}>
+              <p style={{ fontSize: "16px"}}>
                 Si tu deseo es apoyar estos proyectos, por favor, contacta conmigo, y estaré muy feliz de poder indicarte
                 cómo puedes ser parte de este sueño.
                 <br />
@@ -100,7 +100,7 @@ function PulseViews() {
         <div className="footer-bottom">
           <Link to="/privacy">Política de Privacidad</Link>
           <Link to="/terms">Términos de uso</Link>
-          <Link to="/contacto">Contáctame</Link>
+          <Link to="/contact-us">Contáctame</Link>
           <span>© 2025 Renato Cabrera</span>
         </div>
       </footer>

@@ -29,7 +29,7 @@ function Features() {
                     <i className="now-ui-icons ui-2_chat-round"></i>
                   </div>
                   <h4 className="info-title">Social Conversations</h4>
-                  <p className="description">
+                 <p>
                     Gain access to the demographics, psychographics, and
                     location of unique people.
                   </p>
@@ -41,7 +41,7 @@ function Features() {
                     <i className="now-ui-icons business_chart-pie-36"></i>
                   </div>
                   <h4 className="info-title">Analyze Performance</h4>
-                  <p className="description">
+                 <p>
                     Unify data from Facebook, Instagram, Twitter, LinkedIn, and
                     Youtube to gain rich insights.
                   </p>
@@ -53,7 +53,7 @@ function Features() {
                     <i className="now-ui-icons design-2_ruler-pencil"></i>
                   </div>
                   <h4 className="info-title">Measure Conversions</h4>
-                  <p className="description">
+                 <p>
                     Track actions taken on your website, understand the impact
                     on your bottom line.
                   </p>
@@ -85,7 +85,7 @@ function Features() {
                     <i className="now-ui-icons users_single-02"></i>
                   </div>
                   <h4 className="info-title">Work With Any Team</h4>
-                  <p className="description">
+                 <p>
                     Whether it’s for work or even the next family vacation,
                     Trello helps your team.
                   </p>
@@ -97,7 +97,7 @@ function Features() {
                     <i className="now-ui-icons business_chart-bar-32"></i>
                   </div>
                   <h4 className="info-title">A Productivity Platform</h4>
-                  <p className="description">
+                 <p>
                     Integrate the apps your team already uses directly into your
                     workflow.
                   </p>
@@ -109,7 +109,7 @@ function Features() {
                     <i className="now-ui-icons arrows-1_refresh-69"></i>
                   </div>
                   <h4 className="info-title">Always In Sync</h4>
-                  <p className="description">
+                 <p>
                     No matter where you are, Trello stays in sync across all of
                     your devices.
                   </p>
@@ -137,7 +137,7 @@ function Features() {
                     <i className="now-ui-icons objects_globe"></i>
                   </div>
                   <h4 className="info-title">Asset Management</h4>
-                  <p className="description">
+                 <p>
                     Cross-account dashboards provide sophisticated reporting for
                     enterprise.
                   </p>
@@ -149,7 +149,7 @@ function Features() {
                     <i className="now-ui-icons education_atom"></i>
                   </div>
                   <h4 className="info-title">Resource Utilization</h4>
-                  <p className="description">
+                 <p>
                     CloudCheckr provides summary and detailed usage statistics
                     for resources.
                   </p>
@@ -161,7 +161,7 @@ function Features() {
                     <i className="now-ui-icons tech_watch-time"></i>
                   </div>
                   <h4 className="info-title">Self-Healing</h4>
-                  <p className="description">
+                 <p>
                     CloudCheckr enables users to save money, time, and effort.
                   </p>
                 </div>
@@ -428,7 +428,7 @@ function Features() {
                     </div>
                     <div className="description">
                       <h5 className="info-title">For Developers</h5>
-                      <p className="description">
+                     <p>
                         The moment you use Now UI Kit, you know you’ve never
                         felt anything like it. With a single use, this powerfull
                         UI Kit lets you do more than ever before.
@@ -441,7 +441,7 @@ function Features() {
                     </div>
                     <div className="description">
                       <h5 className="info-title">For Designers</h5>
-                      <p className="description">
+                     <p>
                         The moment you use Now UI Kit, you know you’ve never
                         felt anything like it. With a single use, this powerfull
                         UI Kit lets you do more than ever before.
@@ -454,7 +454,7 @@ function Features() {
                     </div>
                     <div className="description">
                       <h5 className="info-title">For Artists</h5>
-                      <p className="description">
+                     <p>
                         The moment you use Now UI Kit, you know you’ve never
                         felt anything like it. With a single use, this powerfull
                         UI Kit lets you do more than ever before.
@@ -502,7 +502,7 @@ function Features() {
                       <i className="now-ui-icons ui-1_email-85"></i>
                     </div>
                     <h4 className="info-title">Reply detection</h4>
-                    <p className="description">
+                   <p>
                       If you get a reply, further follow-ups are automatically
                       stopped.
                     </p>
@@ -523,7 +523,7 @@ function Features() {
                       <i className="now-ui-icons ui-1_calendar-60"></i>
                     </div>
                     <h4 className="info-title">Follow-up</h4>
-                    <p className="description">
+                   <p>
                       Just set a number of days that you want send a follow-up.
                     </p>
                   </div>
@@ -543,7 +543,7 @@ function Features() {
                       <i className="now-ui-icons ui-1_send"></i>
                     </div>
                     <h4 className="info-title">Cold email</h4>
-                    <p className="description">
+                   <p>
                       Unlimited number of prospects daily with personalized
                       emails.
                     </p>
@@ -564,7 +564,7 @@ function Features() {
                       <i className="now-ui-icons ui-2_like"></i>
                     </div>
                     <h4 className="info-title">Teamwork</h4>
-                    <p className="description">
+                   <p>
                       You and your teammates won’t address the same person
                       twice.
                     </p>

@@ -303,7 +303,7 @@ function BlogPosts() {
             <div className="footer-bottom">
               <Link to="/privacy">Política de Privacidad</Link>
               <Link to="/terms">Términos de uso</Link>
-              <Link to="/contacto">Contáctame</Link>
+              <Link to="/contact-us">Contáctame</Link>
               <span>© 2025 Renato Cabrera</span>
             </div>
           </footer>
