@@ -89,7 +89,7 @@ function PulseViews() {
                   <Col md="4">
                     <div className="info info-hover">
                       <div>
-                        <img src={require("assets/img/sj.webp")} width={"100px"}></img>
+                        <img src={require("assets/img/sj.jpg")} width={"100px"}></img>
                       </div>
                       <h4 className="info-title">Steve Jobs – Walter Isaacson</h4>
                       <p >
@@ -105,7 +105,7 @@ function PulseViews() {
                   <Col md="4">
                     <div className="info info-hover">
                       <div >
-                        <img src={require("assets/img/md.webp")} width={"103px"}></img>
+                        <img src={require("assets/img/md.jpg")} width={"103px"}></img>
                       </div>
                       <h4 className="info-title">Minimalismo Digital – Cal Newport</h4>
 
@@ -122,7 +122,7 @@ function PulseViews() {
                   <Col md="4">
                     <div className="info info-hover">
                       <div >
-                        <img src={require("assets/img/ls.jpg.webp")} width={"98px"}></img>
+                        <img src={require("assets/img/ls.jpg.jpg")} width={"98px"}></img>
                       </div>
                       <h4 className="info-title"> El Método Lean Startup – Eric Ries</h4>
                       <p >
@@ -152,7 +152,7 @@ function PulseViews() {
                   <Col md="6">
                     <div className="info info-hover">
                       <div >
-                        <img src={require("assets/img/tt.jpg.webp")} width={"95px"}></img>
+                        <img src={require("assets/img/tt.jpg.jpg")} width={"95px"}></img>
                       </div>
                       <h4 className="info-title"> La Teoría del Todo – Stephen Hawking</h4>
                       <p >
@@ -172,7 +172,7 @@ function PulseViews() {
 
               <Col className="text-center" md="12">
                 <h2 className="title">¡Bonus! Mi saga favorita de Libros</h2>
-                <img src={require("assets/img/darrenshan.jpg.webp")} width={"750px"}></img>
+                <img src={require("assets/img/darrenshan.jpg.jpg")} width={"750px"}></img>
               </Col>
 
               <h4 className="info-title">Cirque du Freak - La Saga de Darren Shan</h4>
