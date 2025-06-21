@@ -26,7 +26,7 @@ import {
 // core components
 import VistaHeader from "components/Headers/VistaHeader";
 import Footer from "components/Footers/Footer.js";
-import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 
 function PulseViews() {
   const [specialitySelect, setSpecialitySelect] = React.useState(null);
@@ -46,7 +46,7 @@ function PulseViews() {
   return (
     <>
     
-      <FixedTransparentNavbar />
+      <ScrollTransparentNavbar />
       <div className="wrapper">
 
         <div >
@@ -150,7 +150,7 @@ La juventud es la clave. La niñez es el comienzo. Y tú, estés donde estés, p
           <Link to="/contact-us">Contáctame</Link>
           <span>© 2025 Renato Cabrera</span>
 
-          
+
         </div>
       </footer>
  <style jsx>{`

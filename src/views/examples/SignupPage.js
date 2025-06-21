@@ -20,7 +20,7 @@ import {
 } from "reactstrap";
 
 // core components
-import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar.js";
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 import Footer from "components/Footers/Footer.js";
 
 function SignupPage() {
@@ -40,7 +40,7 @@ function SignupPage() {
   }, []);
   return (
     <>
-      <FixedTransparentNavbar />
+      <ScrollTransparentNavbar />
       <div className="page-header header-filter" filter-color="black">
         <div
           className="page-header-image"

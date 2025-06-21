@@ -26,7 +26,7 @@ import {
 // core components
 import PulseHeader from "components/Headers/PulseHeader.js";
 import Footer from "components/Footers/Footer.js";
-import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 
 function NucleoIcons() {
   const [specialitySelect, setSpecialitySelect] = React.useState(null);
@@ -45,7 +45,7 @@ function NucleoIcons() {
   }, []);
   return (
     <>
-      <FixedTransparentNavbar />
+      <ScrollTransparentNavbar />
       <div className="wrapper">
 
         <div >

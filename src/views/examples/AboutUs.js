@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { motion, AnimatePresence } from 'framer-motion';
-import FixedTransparentNavbar from 'components/Navbars/FixedTransparentNavbar';
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 import Footer from 'components/Footers/Footer';
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
@@ -112,7 +112,7 @@ function AboutUs() {
 
   return (
     <>
-      <FixedTransparentNavbar />
+      <ScrollTransparentNavbar />
       <div className="wrapper"></div>
       <Container style={{ padding: '30px 0' }}>
         <Row>

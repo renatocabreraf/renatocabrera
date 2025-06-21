@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 
 // core components
-import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar.js";
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 import BlogPostHeader from "components/Headers/BlogPostHeader.js";
 import FooterBlack from "components/Footers/FooterBlack.js";
 
@@ -32,7 +32,7 @@ function BlogPost() {
   });
   return (
     <>
-      <FixedTransparentNavbar />
+      <ScrollTransparentNavbar />
       <div className="wrapper">
         <BlogPostHeader />
         <div className="section">

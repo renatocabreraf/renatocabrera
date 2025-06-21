@@ -1,141 +1,122 @@
-// Renato Cabrera Navbar inspirado en Gates Notes
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaSearch, FaFacebookF, FaXTwitter, FaYoutube, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
+import { FaBars, FaTimes } from "react-icons/fa";
+import rcLogo from "../../assets/img/rcblanco2.png"; // Asegúrate de que esta ruta sea correcta
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   const menuItems = [
     { label: "Conóceme", path: "/about-us" },
     { label: "Blog", path: "/blog-posts" },
-    { label: "Labor Social", path: "/social" }
+    { label: "Labor Social", path: "/social" },
   ];
 
   return (
     <>
-      <header className="navbar-container">
-        <div className="navbar">
-          <button className="menu-toggle" onClick={toggleMenu}>
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
-
-          <Link to="/" className="brand">
-            <img src={require("assets/img/rcblanco2.png")} alt="RC Logo" className="logo" />
+      <header style={styles.header}>
+        <div style={styles.navbar}>
+          <Link to="/" style={styles.brand}>
+            <img src={rcLogo} alt="Logo RC" style={styles.logo} />
           </Link>
 
-          <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
+          <button onClick={() => setIsOpen(!isOpen)} style={styles.menuButton}>
+            {isOpen ? <FaTimes color="white" size={24} /> : <FaBars color="white" size={24} />}
+          </button>
+
+          <nav style={{ ...styles.navMenu, ...(isOpen ? styles.navMenuOpen : {}) }}>
             {menuItems.map((item) => (
-              <Link to={item.path} key={item.path} className="nav-item" onClick={() => setIsOpen(false)}>
+              <Link
+                key={item.path}
+                to={item.path}
+                style={{
+                  ...styles.navItem,
+                  ...(isOpen ? styles.navItemMobile : {}),
+                }}
+                onClick={() => setIsOpen(false)}
+              >
                 {item.label}
               </Link>
             ))}
           </nav>
-
-          
         </div>
       </header>
-
-      <style jsx>{`
-        .navbar-container {
-          width: 100%;
-          position: fixed;
-          top: 0;
-          z-index: 1000;
-          background: linear-gradient(to right, #222, #111);
-          padding: 0.5rem 1rem;
-        }
-
-        .navbar {
-          max-width: 1200px;
-          margin: auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .brand {
-          display: flex;
-          align-items: center;
-        }
-
-        .logo {
-          height: 60px;
-          width: 60px;
-          object-fit: contain;
-          transition: all 0.3s ease;
-        }
-
-        .menu-toggle {
-          background: none;
-          border: none;
-          font-size: 1.5rem;
-          color: white;
-          display: none;
-        }
-
-        .nav-menu {
-          display: flex;
-          gap: 2rem;
-        }
-
-        .nav-item {
-          color: white;
-          text-decoration: none;
-          font-size: 1rem;
-          font-weight: 500;
-        }
-
-        .nav-item:hover {
-          text-decoration: underline;
-        }
-
-        .search-icon {
-          background: none;
-          border: none;
-          font-size: 1.3rem;
-          color: white;
-        }
-
-        @media (max-width: 768px) {
-          .menu-toggle {
-            display: block;
-          }
-
-          .nav-menu {
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            background: white;
-            flex-direction: column;
-            align-items: start;
-            padding: 1rem;
-            gap: 1rem;
-            display: none;
-          }
-
-          .nav-menu.open {
-            display: flex;
-          }
-
-          .nav-item {
-            color: black;
-            font-size: 1.2rem;
-            font-weight: bold;
-          }
-
-          .logo {
-            height: 40px;
-            width: 40px;
-          }
-        }
-      `}</style>
+      <br/><br/><br/><br/>
     </>
   );
+};
+
+const styles = {
+  header: {
+    width: "100%",
+    position: "fixed",
+    top: 0,
+    zIndex: 1000,
+    background: "linear-gradient(to right, #222, #111)",
+    padding: "0.5rem 1rem",
+  },
+  navbar: {
+    maxWidth: "1200px",
+    margin: "auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  brand: {
+    display: "flex",
+    alignItems: "center",
+    textDecoration: "none",
+  },
+  logo: {
+    height: "60px",
+    width: "60px",
+    objectFit: "contain",
+  },
+  menuButton: {
+    background: "none",
+    border: "none",
+    display: "none",
+    cursor: "pointer",
+  },
+  navMenu: {
+    display: "flex",
+    gap: "2rem",
+  },
+  navMenuOpen: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    position: "fixed",
+    top: "70px",
+    left: 0,
+    width: "100%",
+    background: "white",
+    padding: "1.5rem 1rem",
+    boxShadow: "0 8px 16px rgba(0,0,0,0.15)",
+    borderRadius: "0 0 12px 12px",
+    zIndex: 1000,
+  },
+  navItem: {
+    color: "white",
+    textDecoration: "none",
+    fontSize: "1rem",
+    fontWeight: 500,
+  },
+  navItemMobile: {
+    color: "#333",
+    fontSize: "1.2rem",
+    fontWeight: 600,
+    padding: "0.5rem 0",
+  },
+  // Responsive styles (override via media query in CSS if needed)
+  '@media only screen and (max-width: 768px)': {
+    menuButton: {
+      display: "block",
+    },
+    navMenu: {
+      display: "none",
+    },
+  },
 };
 
 export default Navbar;

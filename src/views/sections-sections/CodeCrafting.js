@@ -1,12 +1,13 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 import { Link } from "react-router-dom";
 
 function PulseViews() {
   return (
     <>
-      <FixedTransparentNavbar />
+      <ScrollTransparentNavbar />
+      <br/>      <br/>
 
       <section style={{ backgroundColor: "#f8f9fa"}}>
         <Container>

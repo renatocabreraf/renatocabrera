@@ -19,7 +19,7 @@ import {
 // core components
 import ContactUsHeader from "components/Headers/ContactUsHeader.js";
 import Footer from "components/Footers/Footer.js";
-import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 import FooterBlack from "components/Footers/FooterBlack";
 
 function ContactUs() {
@@ -63,7 +63,7 @@ function ContactUs() {
 
   return (
     <>
-      <FixedTransparentNavbar />
+      <ScrollTransparentNavbar />
       <div className="wrapper">
         <div className="main">
           <div className="contact-content">
