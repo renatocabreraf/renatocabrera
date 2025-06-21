@@ -76,7 +76,6 @@ const Navbar = () => {
                     <img src={require("assets/img/rcnegro.png")} height="100px" width="190px"/>
                   </Link>
                   </Logo>
-
         <Links open={isOpen}>
           <StyledLink to="/about-us">Conóceme</StyledLink>
           <StyledLink to="/blog-posts">Blog</StyledLink>
