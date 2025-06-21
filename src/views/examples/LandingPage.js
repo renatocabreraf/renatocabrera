@@ -66,7 +66,7 @@ function LandingPage() {
                       <div>
                         <img src={require("assets/img/chls.jpg")} width={"100px"}></img>
                       </div>
-                      <h4 className="info-title">Carrera hacia los Sueños: Hot Wheels: Historia, Curiosidades y Coleccionismo</h4>
+                      <h4 className="info-title">Carrera hacia los Sueños</h4>
                       <h5>
                         "Carrera hacia los Sueños" trata de contar, desde la perspectiva de un coleccionista, toda la historia de Hot Wheels, desde el inicio con los esposos Handler en Mattel, hasta los días actuales, detallando sucesos y contando mitos y leyendas de la marca. Es una lectura sencilla que busca reforzar el legado de Hot Wheels y poder contar a nuevos y viejos coleccionistas, como inició la marca y hacia donde va, apoyado de muchos recursos bibliográficos y audiovisuales, "Carrera hacia los Sueños" es el tipo de lectura que puede hacerte enamorar de los Hot Wheels.
                       </h5>
@@ -79,45 +79,54 @@ function LandingPage() {
                         </a>
                       </Col>
                       <Col md="auto" className="mx-2">
-                        <img src={require("assets/img/Downloadable-Pdf-Button-Vector-PNG-Clipart-Background.png")} alt="Versión PDF" style={{ maxWidth: "100px" }} />
+                        <a href="https://app.recurrente.com/s/renato-cabrera-lei80y/carrera-hacia-los-suenos-hot-wheels-historia-curiosidades-y-coleccionismo" target="_blank" rel="noopener noreferrer"><img src={require("assets/img/Downloadable-Pdf-Button-Vector-PNG-Clipart-Background.png")} alt="Versión PDF" style={{ maxWidth: "100px" }} /></a>
                       </Col>
-                      <br/>     <br/>     <br/>
+                      <br />     <br />     <br />
                     </Row>
 
                   </Col>
 
                   <Col md="4">
                     <div className="info info-hover">
-                      <div >
-                        <img src={require("assets/img/md.webp")} width={"103px"}></img>
+                      <div>
+                        <img src={require("assets/img/hs.png")} width={"97px"}></img>
                       </div>
-                      <h4 className="info-title">Minimalismo Digital – Cal Newport</h4>
+                      
+                      <h4 className="info-title">Hasta Siempre</h4>
+                      
+                      <h5>
+                        Arthur y Madison no eran como los demás. Desde su encuentro en la secundaria de Mapplewood, Virginia, sus vidas se entrelazaron en una danza de amor, risas, y desafíos que los llevaría a recorrer un camino lleno de aventuras y adversidades. Su historia comienza con un plan audaz: un viaje épico por Estados Unidos, lleno de promesas, sueños y la fuerza de un amor capaz de desafiar cualquier obstáculo.
 
-                      <p >
-                        En un mundo saturado por notificaciones y estímulos digitales, este libro fue una guía valiente para reconectar con lo esencial. Newport plantea un enfoque consciente del uso de la tecnología, donde se prioriza lo verdaderamente importante sobre la distracción constante.
-                        <br />
-                        Por qué me impactó:<br />
-                        Aplicar el minimalismo digital ha sido clave para recuperar enfoque, reducir la ansiedad y mejorar mi productividad. Hoy gestiono mejor mi tiempo, elijo con más claridad qué herramientas utilizar y pongo límites saludables al mundo digital. Esto me ha ayudado a ser más presente, tanto en el trabajo como en mi vida personal.
+                        Mientras Madison lucha contra una leucemia devastadora, Arthur se convierte en su roca, abandonando todo para darle un último año lleno de vida, sorpresas y amor. 
 
-                      </p>
+                      </h5>
                     </div>
+                    <h3 style={{ textAlign: "center" }}>Adquiérelo aquí</h3>
+                    <Row className="justify-content-center">
+                      <Col md="auto" className="mx-2">
+                        <a href="https://www.amazon.com/-/es/Renato-Cabrera-ebook/dp/B0D7XLHMB5/ref=sr_1_1?__mk_es_US=ÅMÅŽÕÑ&crid=38RJC6C2YHX05&dib=eyJ2IjoiMSJ9.uCkawqlj13_U1Wh4EhPreQ.VP7ft3VIkqW3pJBtj4c-5A1Ja_u5DdOlaYCY-5lkjwA&dib_tag=se&keywords=hasta+siempre+renato+cabrera&qid=1750479538&s=books&sprefix=hasta+siempre+renato+cabrer%2Cstripbooks-intl-ship%2C154&sr=1-1" target="_blank" rel="noopener noreferrer">
+                          <img src={require("assets/img/amazon.svg.png")} alt="Disponible en Amazon" style={{ maxWidth: "100px" }} />
+                        </a>
+                      </Col>
+                      <Col md="auto" className="mx-2">
+                        <a href="https://app.recurrente.com/s/renato-cabrera-lei80y/hasta-siempre" target="_blank" rel="noopener noreferrer"><img src={require("assets/img/Downloadable-Pdf-Button-Vector-PNG-Clipart-Background.png")} alt="Versión PDF" style={{ maxWidth: "100px" }} /></a>
+                      </Col>
+                      <br />     <br />     <br />
+                    </Row>
 
                   </Col>
                   <Col md="4">
                     <div className="info info-hover">
-                      <div >
-                        <img src={require("assets/img/ls.jpg.webp")} width={"98px"}></img>
+                      <div>
+                        <img src={require("assets/img/comings.png")} width={"105px"}></img>
                       </div>
-                      <h4 className="info-title"> El Método Lean Startup – Eric Ries</h4>
-                      <p >
-                        Un clásico del emprendimiento moderno. Ries propone una metodología ágil para lanzar productos y negocios a partir de la validación constante, el aprendizaje iterativo y la adaptación rápida.
-                        <br />
-                        Por qué me impactó:<br />
-                        Este libro me dio estructura para tomar decisiones inteligentes con pocos recursos. Lo aplico en cada proyecto que desarrollo: probar, aprender, corregir. Me enseñó que fallar rápido no es un error, sino una estrategia. Gracias a esta mentalidad, he podido liderar iniciativas tecnológicas con más confianza y flexibilidad, evitando caer en inversiones innecesarias.
-                      </p>
+                      <br/><br/> <br/>
+                      <h4>Próximamente</h4>
+                      <h5> Prepárate para un viaje a través del tiempo, donde los circuitos, las ideas y las revoluciones digitales cobran vida. Muy pronto presentaré un libro que no solo narra la historia de la computación, sino que la analiza, la cuestiona y la conecta con el presente y el futuro.
+                      Desde los pioneros de la informática hasta los titanes tecnológicos del siglo XXI, este libro explorará cómo la humanidad transformó la chispa de una idea en una red que conecta al mundo entero.
+                      Si alguna vez te has preguntado cómo llegamos hasta aquí —o hacia dónde vamos— esta obra es para ti.<br/><br/> <strong>La historia no solo se cuenta. Se programa.</strong> </h5> <br/>
                     </div>
-
-
+                    
 
                   </Col>
 
@@ -142,7 +151,7 @@ function LandingPage() {
 
         <div className="footer-bottom">
           <Link to="/politicas">Política de Privacidad</Link>
-          <Link to="/terms">Términos de uso</Link>
+          <Link to="/presentation"> Home </Link>
           <Link to="/contact-us">Contáctame</Link>
           <span>© 2025 Renato Cabrera</span>
         </div>

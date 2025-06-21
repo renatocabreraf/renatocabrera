@@ -87,11 +87,11 @@ const Navbar = () => {
           </div>
           <br/>
           <h6 className="featured-subtitle">Libros</h6>
-          <h3 className="featured-title">Mi pasión es contar historias</h3>
+          <Link to="/libros" className="presentation-box"><h3 className="featured-title">Mi pasión es contar historias</h3>
           <p className="featured-description">Conoce mis libros, los cuales hablan de mis aficiones, mis fantasías e historias que valen la pena ser contadas. Estaré publicando cada noticia sobre esto por acá.</p>
-          <img src={require("assets/img/burbuja.jpg")} alt="Ilustración" className="mini-featured-image" />
+          <img src={require("assets/img/burbuja.jpg")} alt="Ilustración" className="mini-featured-image" />    </Link>
         </div>
-        
+    
       </section>
 
 <section className="text-highlight">
@@ -113,7 +113,7 @@ const Navbar = () => {
         
         <div className="footer-bottom">
           <Link to="/politicas">Política de Privacidad</Link>
-          <Link to="/terms">Términos de uso</Link>
+          <Link to="/presentation"> Home </Link>
           <Link to="/contact-us">Contáctame</Link>
           <span>© 2025 Renato Cabrera</span>
         </div>
