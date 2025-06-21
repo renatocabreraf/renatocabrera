@@ -74,10 +74,9 @@ const Navbar = () => {
   return (
     <Header>
       <Nav>
-        <Logo to="/">
-          <img src={rcLogo} alt="Logo" height="100px" width="190px" />
-
-        </Logo>
+        <Link to="/" className="brand">
+                    <img src={require("assets/img/rcnegro.png")} alt="RC Logo" className="logo" />
+                  </Link>
         <Links open={isOpen}>
           <StyledLink to="/about-us">Conóceme</StyledLink>
           <StyledLink to="/blog-posts">Blog</StyledLink>
