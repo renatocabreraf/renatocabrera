@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import rcLogo from 'assets/img/rcnegro.png'; // ✅ importa correctamente
+import rcLogo from '../../assets/img/rcnegro.png'; // <- ruta relativa correcta
+
 
 const Header = styled.header`
   background-color: #ffffff;
@@ -75,6 +76,7 @@ const Navbar = () => {
       <Nav>
         <Logo to="/">
           <img src={rcLogo} alt="Logo" height="100px" width="190px" />
+
         </Logo>
         <Links open={isOpen}>
           <StyledLink to="/about-us">Conóceme</StyledLink>
