@@ -149,6 +149,8 @@ La juventud es la clave. La niñez es el comienzo. Y tú, estés donde estés, p
           <Link to="/presentation"> Home </Link>
           <Link to="/contact-us">Contáctame</Link>
           <span>© 2025 Renato Cabrera</span>
+
+          
         </div>
       </footer>
  <style jsx>{`
