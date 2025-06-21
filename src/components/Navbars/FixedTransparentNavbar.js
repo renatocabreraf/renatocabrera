@@ -73,7 +73,7 @@ const Navbar = () => {
     <Header>
       <Nav>
         <Logo to="/"><Link to="/" className="brand">
-                    <img src={require("assets/img/rcnegro.png")} height="100px" width="190px"/>
+                    <img src={require("/assets/img/rcnegro.png")} height="100px" width="190px"/>
                   </Link>
                   </Logo>
         <Links open={isOpen}>
