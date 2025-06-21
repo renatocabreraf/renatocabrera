@@ -40,6 +40,7 @@ function BlogPosts() {
   return (
     <>
       <ScrollTransparentNavbar />
+       <br/> <br/>
       <div className="wrapper">
         <BlogPostsHeader />
         <div className="projects-4">

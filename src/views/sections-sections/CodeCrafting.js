@@ -7,7 +7,7 @@ function PulseViews() {
   return (
     <>
       <ScrollTransparentNavbar />
-      <br/>      <br/>
+      <br/>      <br/><br/>
 
       <section style={{ backgroundColor: "#f8f9fa"}}>
         <Container>

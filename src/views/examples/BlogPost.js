@@ -33,6 +33,7 @@ function BlogPost() {
   return (
     <>
       <ScrollTransparentNavbar />
+       <br/> <br/> <br/>
       <div className="wrapper">
         <BlogPostHeader />
         <div className="section">

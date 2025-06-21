@@ -41,6 +41,7 @@ function SignupPage() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="page-header header-filter" filter-color="black">
         <div
           className="page-header-image"

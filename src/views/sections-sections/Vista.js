@@ -47,6 +47,7 @@ function PulseViews() {
     <>
     
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
 
         <div >

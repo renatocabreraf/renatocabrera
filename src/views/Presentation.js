@@ -78,6 +78,7 @@ function Presentation() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
         <PresentationHeader />
 

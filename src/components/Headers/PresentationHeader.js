@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,28 +17,8 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="navbar-container">
-        <div className="navbar">
-          <button className="menu-toggle" onClick={toggleMenu}>
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
+     <ScrollTransparentNavbar />
 
-          <Link to="/" className="brand">
-            <img src={require("assets/img/rcblanco2.png")} alt="RC Logo" className="logo" width="100%" />
-          </Link>
-
-          <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
-            {menuItems.map((item) => (
-              <Link to={item.path} key={item.path} className="nav-item" onClick={() => setIsOpen(false)}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          
-        </div>
-      </header>
-<br/><br/><br/>
       <div className="presentation-container">
         <div className="presentation-inner">
           <img

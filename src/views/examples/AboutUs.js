@@ -113,6 +113,7 @@ function AboutUs() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper"></div>
       <Container style={{ padding: '30px 0' }}>
         <Row>
@@ -281,9 +282,9 @@ function AboutUs() {
           <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold' }}>
             Tech Stack
           </h2>
-          <img src={require("assets/img/React.webp")} width={"60px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/python_logo_icon_168886.webp")} width={"50px"} ></img>
-          &nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/java-icon-1511x2048-6ikx8301.png")} width={"40px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/Swift-2-512.webp")} width={"50px"}></img>
-          &nbsp;&nbsp;&nbsp;&nbsp; <img src={require("assets/img/typescript_original_logo_icon_146317.webp")} width={"50px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/Amazon_Web_Services-Logo.wine.png")} width={"80px"}></img>
+          <img src={require("assets/img/React.jpg")} width={"60px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/python_logo_icon_168886.jpg")} width={"50px"} ></img>
+          &nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/java-icon-1511x2048-6ikx8301.png")} width={"40px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/Swift-2-512.jpg")} width={"50px"}></img>
+          &nbsp;&nbsp;&nbsp;&nbsp; <img src={require("assets/img/typescript_original_logo_icon_146317.jpg")} width={"50px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/Amazon_Web_Services-Logo.wine.png")} width={"80px"}></img>
           &nbsp;&nbsp;&nbsp;&nbsp; <img src={require("assets/img/odoo-logo-png_seeklogo-320087.png")} width={"80px"}></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/SAP_2011_logo.svg.png")} width={"80px"}></img>
           &nbsp;&nbsp;&nbsp;&nbsp;<img src={require("assets/img/63e0cf28d5cae5023ecd83d3_Opera-Logo 1.png")} width={"100px"}></img>
 

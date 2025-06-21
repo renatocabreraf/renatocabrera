@@ -41,6 +41,7 @@ function Index() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
         <IndexHeader />
         <div className="main">

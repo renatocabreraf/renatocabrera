@@ -64,6 +64,7 @@ function ContactUs() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
         <div className="main">
           <div className="contact-content">

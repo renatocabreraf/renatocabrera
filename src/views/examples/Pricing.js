@@ -42,6 +42,7 @@ function Pricing() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
         <PricingHeader />
         <div className="main">

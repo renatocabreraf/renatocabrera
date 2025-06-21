@@ -46,6 +46,7 @@ function LandingPage() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
 
         <div >

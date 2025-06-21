@@ -72,6 +72,7 @@ function Ecommerce() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
         <EcommerceHeader />
         <div className="main">

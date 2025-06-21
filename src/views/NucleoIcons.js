@@ -46,6 +46,7 @@ function NucleoIcons() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
 
         <div >

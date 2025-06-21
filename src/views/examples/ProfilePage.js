@@ -49,6 +49,7 @@ function ProfilePage() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
         <ProfilePageHeader />
         <div className="section">

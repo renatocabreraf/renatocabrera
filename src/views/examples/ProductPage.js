@@ -99,6 +99,7 @@ function ProductPage() {
   return (
     <>
       <ScrollTransparentNavbar />
+      <br/> <br/>
       <div className="wrapper">
         <ProductPageHeader />
         <div className="section">
