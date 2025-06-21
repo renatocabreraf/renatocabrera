@@ -1,450 +1,399 @@
 import React from "react";
+// react plugin used to create DropdownMenu for selecting items
+import Select from "react-select";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
+  Badge,
   Button,
   Card,
   CardBody,
   CardFooter,
   CardTitle,
+  FormGroup,
+  Form,
   Input,
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  NavItem,
-  NavLink,
-  Nav,
   Container,
+  link,
   Row,
   Col
 } from "reactstrap";
 
 // core components
-import DropdownFixedNavbar from "components/Navbars/DropdownFixedNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import FooterDefault from "components/Footers/FooterDefault.js";
+import PulseHeader from "components/Headers/PulseHeader.js";
+import Footer from "components/Footers/Footer.js";
+import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
 
 function LandingPage() {
-  const [pills, setPills] = React.useState("1");
+  const [specialitySelect, setSpecialitySelect] = React.useState(null);
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [emailFocus, setEmailFocus] = React.useState(false);
   React.useEffect(() => {
-    document.body.classList.add("landing-page");
+    document.body.classList.add("about-us");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("landing-page");
+      document.body.classList.remove("about-us");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
   return (
     <>
-      <DropdownFixedNavbar />
+      <FixedTransparentNavbar />
       <div className="wrapper">
-        <LandingPageHeader />
-        <div className="section section-about-us">
-          <Container>
-            <Row>
-              <Col className="ml-auto mr-auto text-center" md="8">
-                <h2 className="title">Who we are?</h2>
-                <h5 className="description">
-                  According to the National Oceanic and Atmospheric
-                  Administration, Ted, Scambos, NSIDClead scentist, puts the
-                  potentially record low maximum sea ice extent tihs year down
-                  to low ice extent in the Pacific and a late drop in ice extent
-                  in the Barents Sea.
-                </h5>
-              </Col>
-            </Row>
-            <div className="separator separator-info"></div>
-            <div className="section-story-overview">
-              <Row>
-                <Col md="6">
-                  <div
-                    className="image-container image-left"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("assets/img/bg38.jpg") + ")"
-                    }}
-                  >
-                    <p className="blockquote blockquote-info">
-                      "Over the span of the satellite record, Arctic sea ice has
-                      been declining significantly, while sea ice in the
-                      Antarctichas increased very slightly" <br></br>
-                      <br></br>
-                      <small>-NOAA</small>
-                    </p>
-                  </div>
-                  <div
-                    className="image-container image-left-bottom"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("assets/img/bg24.jpg") + ")"
-                    }}
-                  ></div>
-                </Col>
-                <Col md="5">
-                  <div
-                    className="image-container image-right"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("assets/img/bg39.jpg") + ")"
-                    }}
-                  ></div>
-                  <h3>
-                    So what does the new record for the lowest level of winter
-                    ice actually mean
-                  </h3>
-                  <p>
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens with climate change. Even if the
-                    Arctic continues to be one of the fastest-warming regions of
-                    the world, it will always be plunged into bitterly cold
-                    polar dark every winter. And year-by-year, for all kinds of
-                    natural reasons, there’s huge variety of the state of the
-                    ice.
-                  </p>
-                  <p>
-                    For a start, it does not automatically follow that a record
-                    amount of ice will melt this summer. More important for
-                    determining the size of the annual thaw is the state of the
-                    weather as the midnight sun approaches and temperatures
-                    rise. But over the more than 30 years of satellite records,
-                    scientists have observed a clear pattern of decline,
-                    decade-by-decade.
-                  </p>
-                  <p>
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens with climate change. Even if the
-                    Arctic continues to be one of the fastest-warming regions of
-                    the world, it will always be plunged into bitterly cold
-                    polar dark every winter. And year-by-year, for all kinds of
-                    natural reasons, there’s huge variety of the state of the
-                    ice.
-                  </p>
-                </Col>
-              </Row>
+
+        <div >
+          <div >
+            <div >
+              <Container>
+                <Row>
+                  <Col className="mr-auto ml-auto" md="8">
+                    <h2 className="title">Mi pasión es contar historias.</h2>
+                    <h4> Cada página que escribo es una ventana a mi forma de entender el mundo, la tecnología, el pensamiento crítico y la vida misma.<br /><br /> En esta sección encontrarás las obras que he publicado —proyectos nacidos de la experiencia, la pasión y la necesidad de compartir ideas que merecen ser contadas. Ya sea que exploren el impacto de la innovación tecnológica, la historia detrás de grandes mentes, o reflexiones sobre la condición humana, cada libro es una invitación a pensar, cuestionar y crecer.<br /><br /> Te invito a descubrirlos, hojear sus ideas, y, si resuenan contigo, hacerlos parte de tu propia historia. </h4> <br />
+                  </Col>
+
+                </Row>
+
+                <Row>
+                  <Col md="4">
+                    <div className="info info-hover">
+                      <div>
+                        <img src={require("assets/img/chls.jpg")} width={"100px"}></img>
+                      </div>
+                      <h4 className="info-title">Carrera hacia los Sueños: Hot Wheels: Historia, Curiosidades y Coleccionismo</h4>
+                      <h5>
+                        "Carrera hacia los Sueños" trata de contar, desde la perspectiva de un coleccionista, toda la historia de Hot Wheels, desde el inicio con los esposos Handler en Mattel, hasta los días actuales, detallando sucesos y contando mitos y leyendas de la marca. Es una lectura sencilla que busca reforzar el legado de Hot Wheels y poder contar a nuevos y viejos coleccionistas, como inició la marca y hacia donde va, apoyado de muchos recursos bibliográficos y audiovisuales, "Carrera hacia los Sueños" es el tipo de lectura que puede hacerte enamorar de los Hot Wheels.
+                      </h5>
+                    </div>
+                    <h3 style={{ textAlign: "center" }}>Adquiérelo aquí</h3>
+                    <Row className="justify-content-center">
+                      <Col md="auto" className="mx-2">
+                        <a href="https://www.amazon.com/Carrera-hacia-Sueños-Coleccionismo-Coleccionista/dp/B09TN1N5RR" target="_blank" rel="noopener noreferrer">
+                          <img src={require("assets/img/amazon.svg.png")} alt="Disponible en Amazon" style={{ maxWidth: "100px" }} />
+                        </a>
+                      </Col>
+                      <Col md="auto" className="mx-2">
+                        <img src={require("assets/img/Downloadable-Pdf-Button-Vector-PNG-Clipart-Background.png")} alt="Versión PDF" style={{ maxWidth: "100px" }} />
+                      </Col>
+                      <br/>     <br/>     <br/>
+                    </Row>
+
+                  </Col>
+
+                  <Col md="4">
+                    <div className="info info-hover">
+                      <div >
+                        <img src={require("assets/img/md.webp")} width={"103px"}></img>
+                      </div>
+                      <h4 className="info-title">Minimalismo Digital – Cal Newport</h4>
+
+                      <p >
+                        En un mundo saturado por notificaciones y estímulos digitales, este libro fue una guía valiente para reconectar con lo esencial. Newport plantea un enfoque consciente del uso de la tecnología, donde se prioriza lo verdaderamente importante sobre la distracción constante.
+                        <br />
+                        Por qué me impactó:<br />
+                        Aplicar el minimalismo digital ha sido clave para recuperar enfoque, reducir la ansiedad y mejorar mi productividad. Hoy gestiono mejor mi tiempo, elijo con más claridad qué herramientas utilizar y pongo límites saludables al mundo digital. Esto me ha ayudado a ser más presente, tanto en el trabajo como en mi vida personal.
+
+                      </p>
+                    </div>
+
+                  </Col>
+                  <Col md="4">
+                    <div className="info info-hover">
+                      <div >
+                        <img src={require("assets/img/ls.jpg.webp")} width={"98px"}></img>
+                      </div>
+                      <h4 className="info-title"> El Método Lean Startup – Eric Ries</h4>
+                      <p >
+                        Un clásico del emprendimiento moderno. Ries propone una metodología ágil para lanzar productos y negocios a partir de la validación constante, el aprendizaje iterativo y la adaptación rápida.
+                        <br />
+                        Por qué me impactó:<br />
+                        Este libro me dio estructura para tomar decisiones inteligentes con pocos recursos. Lo aplico en cada proyecto que desarrollo: probar, aprender, corregir. Me enseñó que fallar rápido no es un error, sino una estrategia. Gracias a esta mentalidad, he podido liderar iniciativas tecnológicas con más confianza y flexibilidad, evitando caer en inversiones innecesarias.
+                      </p>
+                    </div>
+
+
+
+                  </Col>
+
+                </Row>
+              </Container>
             </div>
-          </Container>
+          </div>
+
         </div>
-        <div
-          className="testimonials-1 section-image"
-          style={{
-            backgroundImage: "url(" + require("assets/img/bg19.jpg") + ")"
-          }}
-        >
-          <Container>
-            <Row>
-              <Col className="ml-auto mr-auto text-center" md="6">
-                <h2 className="title">What is ALPHA?</h2>
-                <h4 className="description text-white">
-                  If you’re selected for ALPHA you’ll also get 3 tickets,
-                  opportunity to access Investor Office Hours and Mentor Hours
-                  and much more all for €850.
-                </h4>
-              </Col>
-            </Row>
-            <Row>
-              <Col md="4">
-                <Card className="card-testimonial">
-                  <div className="card-avatar">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={require("assets/img/michael.jpg")}
-                      ></img>
-                    </a>
-                  </div>
-                  <CardBody>
-                    <p className="card-description">
-                      The networking at Web Summit is like no other European
-                      tech conference.
-                    </p>
-                  </CardBody>
-                  <div className="icon icon-info">
-                    <i className="fa fa-quote-right"></i>
-                  </div>
-                  <CardFooter>
-                    <CardTitle tag="h4">Michael Elijah</CardTitle>
-                    <p className="category">@michaelelijah</p>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-testimonial">
-                  <div className="card-avatar">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={require("assets/img/olivia.jpg")}
-                      ></img>
-                    </a>
-                  </div>
-                  <CardBody>
-                    <p className="card-description">
-                      The connections you make at Web Summit are unparalleled,
-                      we met users all over the world.
-                    </p>
-                  </CardBody>
-                  <div className="icon icon-info">
-                    <i className="fa fa-quote-right"></i>
-                  </div>
-                  <CardFooter>
-                    <CardTitle tag="h4">Olivia Harper</CardTitle>
-                    <p className="category">@oliviaharper</p>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-testimonial">
-                  <div className="card-avatar">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={require("assets/img/james.jpg")}
-                      ></img>
-                    </a>
-                  </div>
-                  <CardBody>
-                    <p className="card-description">
-                      Web Summit will increase your appetite, your inspiration,
-                      and your network.
-                    </p>
-                  </CardBody>
-                  <div className="icon icon-info">
-                    <i className="fa fa-quote-right"></i>
-                  </div>
-                  <CardFooter>
-                    <CardTitle tag="h4">James Logan</CardTitle>
-                    <p className="category">@jameslogan</p>
-                  </CardFooter>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <div className="pricing-2">
-          <Container>
-            <Row>
-              <Col className="ml-auto mr-auto text-center" md="6">
-                <h2 className="title">Pick the best plan for you</h2>
-                <Nav
-                  className="nav-pills-info justify-content-center"
-                  pills
-                  role="tablist"
-                >
-                  <NavItem>
-                    <NavLink
-                      className={pills === "1" ? "active" : ""}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setPills("1");
-                      }}
-                      role="tablist"
-                      href="#pablo"
-                    >
-                      Legal Entity
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className={pills === "2" ? "active" : ""}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setPills("2");
-                      }}
-                      role="tablist"
-                      href="#pablo"
-                    >
-                      Individual
-                    </NavLink>
-                  </NavItem>
-                </Nav>
-              </Col>
-            </Row>
-            <Row>
-              <Col md="4">
-                <Card className="card-pricing card-plain">
-                  <CardBody>
-                    <h6 className="category">Enterprise</h6>
-                    <CardTitle tag="h1">
-                      <small>$</small>
-                      59
-                    </CardTitle>
-                    <ul>
-                      <li>
-                        <b>10GB</b> Disk Space
-                      </li>
-                      <li>
-                        <b>100GB</b> Monthly Bandwidth
-                      </li>
-                      <li>
-                        <b>20</b> Email Accounts
-                      </li>
-                      <li>
-                        <b>Unlimited</b> subdomains
-                      </li>
-                    </ul>
-                    <Button
-                      className="btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Sign Up
-                    </Button>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card
-                  className="card-pricing card-background card-raised"
-                  style={{
-                    backgroundImage:
-                      "url(" + require("assets/img/pricing2.jpg") + ")"
-                  }}
-                >
-                  <CardBody>
-                    <h6 className="category text-info">Professional</h6>
-                    <CardTitle tag="h1">
-                      <small>$</small>
-                      29
-                    </CardTitle>
-                    <ul>
-                      <li>
-                        <b>5GB</b> Disk Space
-                      </li>
-                      <li>
-                        <b>50GB</b> Monthly Bandwidth
-                      </li>
-                      <li>
-                        <b>10</b> Email Accounts
-                      </li>
-                      <li>
-                        <b>Unlimited</b> subdomains
-                      </li>
-                    </ul>
-                    <Button
-                      className="btn-neutral btn-round"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Sign Up
-                    </Button>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-pricing card-plain">
-                  <CardBody>
-                    <h6 className="category">Standard</h6>
-                    <CardTitle tag="h1">
-                      <small>$</small>
-                      17
-                    </CardTitle>
-                    <ul>
-                      <li>
-                        <b>2GB</b> Disk Space
-                      </li>
-                      <li>
-                        <b>25GB</b> Monthly Bandwidth
-                      </li>
-                      <li>
-                        <b>5</b> Email Accounts
-                      </li>
-                      <li>
-                        <b>Unlimited</b> subdomains
-                      </li>
-                    </ul>
-                    <Button
-                      className="btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Get Started
-                    </Button>
-                  </CardBody>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <div className="section section-contact-us text-center">
-          <Container>
-            <h2 className="title">Want to work with us?</h2>
-           <p>Your project is very important to us.</p>
-            <Row>
-              <Col className="text-center ml-auto mr-auto" lg="6" md="8">
-                <InputGroup
-                  className={
-                    firstFocus ? "input-lg input-group-focus" : "input-lg"
-                  }
-                >
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="now-ui-icons users_circle-08"></i>
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Input
-                    placeholder="First Name..."
-                    type="text"
-                    onFocus={() => setFirstFocus(true)}
-                    onBlur={() => setFirstFocus(false)}
-                  ></Input>
-                </InputGroup>
-                <InputGroup
-                  className={
-                    emailFocus ? "input-lg input-group-focus" : "input-lg"
-                  }
-                >
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="now-ui-icons ui-1_email-85"></i>
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Input
-                    placeholder="Email Here..."
-                    type="text"
-                    onFocus={() => setEmailFocus(true)}
-                    onBlur={() => setEmailFocus(false)}
-                  ></Input>
-                </InputGroup>
-                <div className="textarea-container">
-                  <Input
-                    cols="80"
-                    name="name"
-                    placeholder="Type a message..."
-                    rows="4"
-                    type="textarea"
-                  ></Input>
-                </div>
-                <div className="send-button">
-                  <Button
-                    block
-                    className="btn-round"
-                    color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="lg"
-                  >
-                    Send Message
-                  </Button>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <FooterDefault />
+
+
+
+
       </div>
+      <footer className="site-footer">
+        <div className="footer-links">
+          <Link to="/about-us">Conóceme</Link>
+          <Link to="/blog-posts">Blog</Link>
+          <Link to="/social">Labor Social</Link>
+
+        </div>
+
+        <div className="footer-bottom">
+          <Link to="/politicas">Política de Privacidad</Link>
+          <Link to="/terms">Términos de uso</Link>
+          <Link to="/contact-us">Contáctame</Link>
+          <span>© 2025 Renato Cabrera</span>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        .navbar-container {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          background: linear-gradient(to right, #222, #111);
+          padding: 0.5rem 1rem;
+        }
+
+        .navbar {
+          max-width: 1200px;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo {
+          height: 100px;
+          width: 190px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          color: white;
+          display: none;
+        }
+
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-item {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        .nav-item:hover {
+          text-decoration: underline;
+        }
+
+        .search-icon {
+          background: none;
+          border: none;
+          font-size: 1.3rem;
+          color: white;
+        }
+
+        .presentation-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .presentation-inner {
+          position: relative;
+          width: 100%;
+          max-width: 1920px;
+        }
+
+        .presentation-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .presentation-overlay {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          max-width: 400px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 10px;
+        }
+
+        .presentation-box {
+          color: black;
+          text-decoration: none;
+        }
+
+        .presentation-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          color: #444;
+        }
+
+        .presentation-title {
+          font-size: 1.5rem;
+          font-weight: 800;
+          margin: 10px 0;
+        }
+
+        .presentation-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .fade-in-text {
+          opacity: 0;
+          animation: fadeInText 1.2s ease-out forwards;
+          animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInText {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .text-highlight {
+          padding: 60px 20px;
+          text-align: center;
+        }
+
+        .text-highlight p {
+          font-size: 1.6rem;
+          color: #555;
+          max-width: 800px;
+          margin: auto;
+          line-height: 1.6;
+        }
+
+        .inline-photo {
+          height: 40px;
+          width: auto;
+          margin: 0 8px;
+          vertical-align: middle;
+          border-radius: 6px;
+        }
+
+        .featured-section {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+          padding: 60px 20px;
+          max-width: 1200px;
+          margin: auto;
+        }
+
+        .featured-left {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .featured-image-wrapper {
+          position: relative;
+        }
+
+        .featured-image {
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        .featured-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        .featured-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #444;
+        }
+
+        .featured-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin: 10px 0;
+        }
+
+        .featured-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .featured-right {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .mini-featured-image {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 20px;
+        }
+          .site-footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-links,
+.footer-bottom {
+  margin-bottom: 20px;
+}
+
+.footer-links a,
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+  color: #0078d4; /* azul sobrio como en Gates Notes */
+  text-decoration: underline;
+}
+
+.footer-bottom span {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+
+      `
+      }</style>
     </>
   );
 }

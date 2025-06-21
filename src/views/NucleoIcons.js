@@ -1,800 +1,409 @@
-/*eslint-disable*/
 import React from "react";
+// react plugin used to create DropdownMenu for selecting items
+import Select from "react-select";
+import { Link } from "react-router-dom";
+
+// reactstrap components
+import {
+  Badge,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardTitle,
+  FormGroup,
+  Form,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Container,
+  link,
+  Row,
+  Col
+} from "reactstrap";
+
+// core components
+import PulseHeader from "components/Headers/PulseHeader.js";
+import Footer from "components/Footers/Footer.js";
+import FixedTransparentNavbar from "components/Navbars/FixedTransparentNavbar";
 
 function NucleoIcons() {
-  const [open, setOpen] = React.useState(false);
+  const [specialitySelect, setSpecialitySelect] = React.useState(null);
+  const [firstFocus, setFirstFocus] = React.useState(false);
+  const [emailFocus, setEmailFocus] = React.useState(false);
   React.useEffect(() => {
-    document.documentElement.classList.add("nucleo-icons-page-styles");
+    document.body.classList.add("about-us");
+    document.body.classList.add("sidebar-collapse");
+    document.documentElement.classList.remove("nav-open");
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
     return function cleanup() {
-      document.documentElement.classList.remove("nucleo-icons-page-styles");
+      document.body.classList.remove("about-us");
+      document.body.classList.remove("sidebar-collapse");
     };
-  });
+  }, []);
   return (
     <>
-      <header>
-        <h1>Nucleo Outline Web Font v2.9</h1>
-        <p>
-          <a href="https://nucleoapp.com/?ref=1712" target="_blank">
-            nucleoapp.com
-          </a>
-        </p>
-      </header>
-      <div id="cd-nav">
-        <a
-          className={"cd-nav-trigger" + (open ? " menu-is-open" : "")}
-          href="#pablo"
-          id="cd-nav-trigger"
-          onClick={(e) => {
-            e.preventDefault();
-            setOpen(!open);
-          }}
-        >
-          Menu <span></span>
-        </a>
-        <nav>
-          <ul id="cd-main-nav" className={open ? "is-visible" : ""}>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("arrows").scrollIntoView();
-                }}
-              >
-                Arrows
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("business").scrollIntoView();
-                }}
-              >
-                Business &amp; Finance
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("clothes").scrollIntoView();
-                }}
-              >
-                Clothes &amp; Accessories
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("design").scrollIntoView();
-                }}
-              >
-                Design &amp; Development
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("emoticons").scrollIntoView();
-                }}
-              >
-                Emoticons
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("files").scrollIntoView();
-                }}
-              >
-                Files &amp; Folders
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("medical").scrollIntoView();
-                }}
-              >
-                Healthcare &amp; Medical
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("loaders").scrollIntoView();
-                }}
-              >
-                Loaders
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("maps").scrollIntoView();
-                }}
-              >
-                Maps &amp; Location
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("media").scrollIntoView();
-                }}
-              >
-                Media
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("objects").scrollIntoView();
-                }}
-              >
-                Objects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("school").scrollIntoView();
-                }}
-              >
-                School &amp; Education
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("shopping").scrollIntoView();
-                }}
-              >
-                Shopping
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("sport").scrollIntoView();
-                }}
-              >
-                Sport
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("technology").scrollIntoView();
-                }}
-              >
-                Technology
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("text").scrollIntoView();
-                }}
-              >
-                Text Editing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("gestures").scrollIntoView();
-                }}
-              >
-                Touch Gestures
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("transportation").scrollIntoView();
-                }}
-              >
-                Transportation
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("travel").scrollIntoView();
-                }}
-              >
-                Travel
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("interface").scrollIntoView();
-                }}
-              >
-                User Interface
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpen(!open);
-                  document.getElementById("users").scrollIntoView();
-                }}
-              >
-                Users
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <FixedTransparentNavbar />
+      <div className="wrapper">
+
+        <div >
+          <div >
+            <div >
+              <Container>
+                <Row>
+                  <Col className="mr-auto ml-auto" md="12">
+                    <h2 className="title">Políticas de Privacidad</h2>
+                    <h4 >
+                      Última actualización: [20 de junio de 2025]
+                      <br />
+                      En renatocabrera.com, nos comprometemos a proteger y respetar tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos la información personal que puedes proporcionarnos a través del sitio web.
+                    </h4>
+    <br />
+                    <h3>
+                      Información que Recopilamos
+                    </h3>
+                    <h4>
+                      Podemos recopilar y procesar la siguiente información:<br />
+
+                      Datos de contacto: nombre, correo electrónico, número de teléfono (cuando llenas formularios de contacto o suscripción).<br />
+                      Datos de navegación: dirección IP, tipo de navegador, ubicación geográfica, tiempo de visita y páginas vistas, a través de herramientas como Google Analytics o cookies.<br />
+                      Otros datos que decidas compartir al comunicarte con nosotros por correo o por el formulario del sitio.<br />
+                    </h4>
+                        <br />
+                    <h3>Finalidad del Tratamiento</h3>
+                    <h4>
+                      La información recopilada puede ser utilizada para:<br /><br />
+                      - Responder consultas o solicitudes realizadas a través del sitio.<br />
+                      - Enviar actualizaciones, noticias o contenido profesional (solo si das tu consentimiento).<br />
+                      - Mejorar la experiencia del usuario y el rendimiento del sitio web.<br />
+                      - Cumplir con obligaciones legales.
+                    </h4>
+                    <br />
+
+                    <h3>Conservación de los Datos</h3>
+                    <h4>
+                      Tus datos personales serán conservados únicamente durante el tiempo necesario para cumplir con los fines para los que fueron recopilados, salvo obligación legal que indique lo contrario.
+                    </h4>
+                    <br />
+
+                    <h3>Compartición de Información</h3>
+                    <h4>
+                      No compartimos, vendemos ni alquilamos tus datos personales a terceros.<br />
+                      Podemos usar servicios externos (como Google o proveedores de email marketing), los cuales pueden tener acceso limitado a tus datos únicamente para cumplir funciones específicas y bajo acuerdos de confidencialidad.
+                    </h4>
+                    <br />
+
+                    <h3>Cookies y Tecnologías Similares</h3>
+                    <h4>
+                      Este sitio puede utilizar cookies para analizar el tráfico, personalizar contenido y mejorar tu experiencia de navegación.<br />
+                      Puedes aceptar o rechazar las cookies desde la configuración de tu navegador.
+                    </h4>
+                    <br />
+
+                    <h3>Tus Derechos</h3>
+                    <h4>
+                      Tienes derecho a:<br /><br />
+                      - Acceder a tus datos personales.<br />
+                      - Rectificar información incorrecta o desactualizada.<br />
+                      - Solicitar la eliminación de tus datos.<br />
+                      - Retirar tu consentimiento en cualquier momento.<br /><br />
+                      Para ejercer cualquiera de estos derechos, puedes escribir a: contacto@renatocabrera.com
+                    </h4>
+                    <br />
+
+                    <h3>Seguridad</h3>
+                    <h4>
+                      Adoptamos medidas razonables para proteger tu información personal contra pérdida, uso indebido, acceso no autorizado o divulgación.
+                    </h4>
+                    <br />
+
+                    <h3>Cambios a esta Política</h3>
+                    <h4>
+                      Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento.<br />
+                      Los cambios serán publicados en esta página con la fecha de actualización correspondiente.
+                    </h4>
+                    <br />
+                  </Col>
+
+                </Row>
+
+
+              </Container>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+
       </div>
-      <div id="icons-wrapper">
-        <section id="arrows">
-          <h2>Arrows</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons arrows-1_cloud-download-93"></i>
-              <p>arrows-1_cloud-download-93</p>
-            </li>
-            <li>
-              <i className="now-ui-icons arrows-1_cloud-upload-94"></i>
-              <p>arrows-1_cloud-upload-94</p>
-            </li>
-            <li>
-              <i className="now-ui-icons arrows-1_minimal-down"></i>
-              <p>arrows-1_minimal-down</p>
-            </li>
-            <li>
-              <i className="now-ui-icons arrows-1_minimal-left"></i>
-              <p>arrows-1_minimal-left</p>
-            </li>
-            <li>
-              <i className="now-ui-icons arrows-1_minimal-right"></i>
-              <p>arrows-1_minimal-right</p>
-            </li>
-            <li>
-              <i className="now-ui-icons arrows-1_minimal-up"></i>
-              <p>arrows-1_minimal-up</p>
-            </li>
-            <li>
-              <i className="now-ui-icons arrows-1_refresh-69"></i>
-              <p>arrows-1_refresh-69</p>
-            </li>
-            <li>
-              <i className="now-ui-icons arrows-1_share-66"></i>
-              <p>arrows-1_share-66</p>
-            </li>
-          </ul>
-        </section>
-        <section id="business">
-          <h2>Business &amp; Finance</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons business_badge"></i>
-              <p>business_badge</p>
-            </li>
-            <li>
-              <i className="now-ui-icons business_bank"></i>
-              <p>business_bank</p>
-            </li>
-            <li>
-              <i className="now-ui-icons business_briefcase-24"></i>
-              <p>business_briefcase-24</p>
-            </li>
-            <li>
-              <i className="now-ui-icons business_bulb-63"></i>
-              <p>business_bulb-63</p>
-            </li>
-            <li>
-              <i className="now-ui-icons business_chart-bar-32"></i>
-              <p>business_chart-bar-32</p>
-            </li>
-            <li>
-              <i className="now-ui-icons business_chart-pie-36"></i>
-              <p>business_chart-pie-36</p>
-            </li>
-            <li>
-              <i className="now-ui-icons business_globe"></i>
-              <p>business_globe</p>
-            </li>
-            <li>
-              <i className="now-ui-icons business_money-coins"></i>
-              <p>business_money-coins</p>
-            </li>
-          </ul>
-        </section>
-        <section id="clothes">
-          <h2>Clothes &amp; Accessories</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons clothes_tie-bow"></i>
-              <p>clothes_tie-bow</p>
-            </li>
-          </ul>
-        </section>
-        <section id="design">
-          <h2>Design &amp; Development</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons design_app"></i>
-              <p>design_app</p>
-            </li>
-            <li>
-              <i className="now-ui-icons design_bullet-list-67"></i>
-              <p>design_bullet-list-67</p>
-            </li>
-            <li>
-              <i className="now-ui-icons design_image"></i>
-              <p>design_image</p>
-            </li>
-            <li>
-              <i className="now-ui-icons design_palette"></i>
-              <p>design_palette</p>
-            </li>
-            <li>
-              <i className="now-ui-icons design_scissors"></i>
-              <p>design_scissors</p>
-            </li>
-            <li>
-              <i className="now-ui-icons design_vector"></i>
-              <p>design_vector</p>
-            </li>
-            <li>
-              <i className="now-ui-icons design-2_html5"></i>
-              <p>design-2_html5</p>
-            </li>
-            <li>
-              <i className="now-ui-icons design-2_ruler-pencil"></i>
-              <p>design-2_ruler-pencil</p>
-            </li>
-          </ul>
-        </section>
-        <section id="emoticons">
-          <h2>Emoticons</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons emoticons_satisfied"></i>
-              <p>emoticons_satisfied</p>
-            </li>
-          </ul>
-        </section>
-        <section id="files">
-          <h2>Files &amp; Folders</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons files_box"></i>
-              <p>files_box</p>
-            </li>
-            <li>
-              <i className="now-ui-icons files_paper"></i>
-              <p>files_paper</p>
-            </li>
-            <li>
-              <i className="now-ui-icons files_single-copy-04"></i>
-              <p>files_single-copy-04</p>
-            </li>
-          </ul>
-        </section>
-        <section id="medical">
-          <h2>Healthcare &amp; Medical</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons health_ambulance"></i>
-              <p>health_ambulance</p>
-            </li>
-          </ul>
-        </section>
-        <section id="loaders">
-          <h2>Loaders</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons loader_gear spin"></i>
-              <p>loader_gear</p>
-            </li>
-            <li>
-              <i className="now-ui-icons loader_refresh spin"></i>
-              <p>loader_refresh</p>
-            </li>
-          </ul>
-        </section>
-        <section id="maps">
-          <h2>Maps &amp; Location</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons location_bookmark"></i>
-              <p>location_bookmark</p>
-            </li>
-            <li>
-              <i className="now-ui-icons location_compass-05"></i>
-              <p>location_compass-05</p>
-            </li>
-            <li>
-              <i className="now-ui-icons location_map-big"></i>
-              <p>location_map-big</p>
-            </li>
-            <li>
-              <i className="now-ui-icons location_pin"></i>
-              <p>location_pin</p>
-            </li>
-            <li>
-              <i className="now-ui-icons location_world"></i>
-              <p>location_world</p>
-            </li>
-          </ul>
-        </section>
-        <section id="media">
-          <h2>Media</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons media-1_album"></i>
-              <p>media-1_album</p>
-            </li>
-            <li>
-              <i className="now-ui-icons media-1_button-pause"></i>
-              <p>media-1_button-pause</p>
-            </li>
-            <li>
-              <i className="now-ui-icons media-1_button-play"></i>
-              <p>media-1_button-play</p>
-            </li>
-            <li>
-              <i className="now-ui-icons media-1_button-power"></i>
-              <p>media-1_button-power</p>
-            </li>
-            <li>
-              <i className="now-ui-icons media-1_camera-compact"></i>
-              <p>media-1_camera-compact</p>
-            </li>
-            <li>
-              <i className="now-ui-icons media-2_note-03"></i>
-              <p>media-2_note-03</p>
-            </li>
-            <li>
-              <i className="now-ui-icons media-2_sound-wave"></i>
-              <p>media-2_sound-wave</p>
-            </li>
-          </ul>
-        </section>
-        <section id="objects">
-          <h2>Objects</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons objects_diamond"></i>
-              <p>objects_diamond</p>
-            </li>
-            <li>
-              <i className="now-ui-icons objects_globe"></i>
-              <p>objects_globe</p>
-            </li>
-            <li>
-              <i className="now-ui-icons objects_key-25"></i>
-              <p>objects_key-25</p>
-            </li>
-            <li>
-              <i className="now-ui-icons objects_planet"></i>
-              <p>objects_planet</p>
-            </li>
-            <li>
-              <i className="now-ui-icons objects_spaceship"></i>
-              <p>objects_spaceship</p>
-            </li>
-            <li>
-              <i className="now-ui-icons objects_support-17"></i>
-              <p>objects_support-17</p>
-            </li>
-            <li>
-              <i className="now-ui-icons objects_umbrella-13"></i>
-              <p>objects_umbrella-13</p>
-            </li>
-          </ul>
-        </section>
-        <section id="school">
-          <h2>School &amp; Education</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons education_agenda-bookmark"></i>
-              <p>education_agenda-bookmark</p>
-            </li>
-            <li>
-              <i className="now-ui-icons education_atom"></i>
-              <p>education_atom</p>
-            </li>
-            <li>
-              <i className="now-ui-icons education_glasses"></i>
-              <p>education_glasses</p>
-            </li>
-            <li>
-              <i className="now-ui-icons education_hat"></i>
-              <p>education_hat</p>
-            </li>
-            <li>
-              <i className="now-ui-icons education_paper"></i>
-              <p>education_paper</p>
-            </li>
-          </ul>
-        </section>
-        <section id="shopping">
-          <h2>Shopping</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons shopping_bag-16"></i>
-              <p>shopping_bag-16</p>
-            </li>
-            <li>
-              <i className="now-ui-icons shopping_basket"></i>
-              <p>shopping_basket</p>
-            </li>
-            <li>
-              <i className="now-ui-icons shopping_box"></i>
-              <p>shopping_box</p>
-            </li>
-            <li>
-              <i className="now-ui-icons shopping_cart-simple"></i>
-              <p>shopping_cart-simple</p>
-            </li>
-            <li>
-              <i className="now-ui-icons shopping_credit-card"></i>
-              <p>shopping_credit-card</p>
-            </li>
-            <li>
-              <i className="now-ui-icons shopping_delivery-fast"></i>
-              <p>shopping_delivery-fast</p>
-            </li>
-            <li>
-              <i className="now-ui-icons shopping_shop"></i>
-              <p>shopping_shop</p>
-            </li>
-            <li>
-              <i className="now-ui-icons shopping_tag-content"></i>
-              <p>shopping_tag-content</p>
-            </li>
-          </ul>
-        </section>
-        <section id="sport">
-          <h2>Sport</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons sport_trophy"></i>
-              <p>sport_trophy</p>
-            </li>
-            <li>
-              <i className="now-ui-icons sport_user-run"></i>
-              <p>sport_user-run</p>
-            </li>
-          </ul>
-        </section>
-        <section id="technology">
-          <h2>Technology</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons tech_controller-modern"></i>
-              <p>tech_controller-modern</p>
-            </li>
-            <li>
-              <i className="now-ui-icons tech_headphones"></i>
-              <p>tech_headphones</p>
-            </li>
-            <li>
-              <i className="now-ui-icons tech_laptop"></i>
-              <p>tech_laptop</p>
-            </li>
-            <li>
-              <i className="now-ui-icons tech_mobile"></i>
-              <p>tech_mobile</p>
-            </li>
-            <li>
-              <i className="now-ui-icons tech_tablet"></i>
-              <p>tech_tablet</p>
-            </li>
-            <li>
-              <i className="now-ui-icons tech_tv"></i>
-              <p>tech_tv</p>
-            </li>
-            <li>
-              <i className="now-ui-icons tech_watch-time"></i>
-              <p>tech_watch-time</p>
-            </li>
-          </ul>
-        </section>
-        <section id="text">
-          <h2>Text Editing</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons text_align-center"></i>
-              <p>text_align-center</p>
-            </li>
-            <li>
-              <i className="now-ui-icons text_align-left"></i>
-              <p>text_align-left</p>
-            </li>
-            <li>
-              <i className="now-ui-icons text_bold"></i>
-              <p>text_bold</p>
-            </li>
-            <li>
-              <i className="now-ui-icons text_caps-small"></i>
-              <p>text_caps-small</p>
-            </li>
-          </ul>
-        </section>
-        <section id="gestures">
-          <h2>Touch Gestures</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons gestures_tap-01"></i>
-              <p>gestures_tap-01</p>
-            </li>
-          </ul>
-        </section>
-        <section id="transportation">
-          <h2>Transportation</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons transportation_air-baloon"></i>
-              <p>transportation_air-baloon</p>
-            </li>
-            <li>
-              <i className="now-ui-icons transportation_bus-front-12"></i>
-              <p>transportation_bus-front-12</p>
-            </li>
-          </ul>
-        </section>
-        <section id="travel">
-          <h2>Travel</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons travel_info"></i>
-              <p>travel_info</p>
-            </li>
-            <li>
-              <i className="now-ui-icons travel_istanbul"></i>
-              <p>travel_istanbul</p>
-            </li>
-          </ul>
-        </section>
-        <section id="interface">
-          <h2>User Interface</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons ui-1_bell-53"></i>
-              <p>ui-1_bell-53</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_calendar-60"></i>
-              <p>ui-1_calendar-60</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_check"></i>
-              <p>ui-1_check</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_lock-circle-open"></i>
-              <p>ui-1_lock-circle-open</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_send"></i>
-              <p>ui-1_send</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_settings-gear-63"></i>
-              <p>ui-1_settings-gear-63</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_simple-add"></i>
-              <p>ui-1_simple-add</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_simple-delete"></i>
-              <p>ui-1_simple-delete</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_simple-remove"></i>
-              <p>ui-1_simple-remove</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_zoom-bold"></i>
-              <p>ui-1_zoom-bold</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-2_chat-round"></i>
-              <p>ui-2_chat-round</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-2_favourite-28"></i>
-              <p>ui-2_favourite-28</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-2_like"></i>
-              <p>ui-2_like</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-2_settings-90"></i>
-              <p>ui-2_settings-90</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-2_time-alarm"></i>
-              <p>ui-2_time-alarm</p>
-            </li>
-            <li>
-              <i className="now-ui-icons ui-1_email-85"></i>
-              <p>ui-1_email-85</p>
-            </li>
-          </ul>
-        </section>
-        <section id="users">
-          <h2>Users</h2>
-          <ul>
-            <li>
-              <i className="now-ui-icons users_circle-08"></i>
-              <p>users_circle-08</p>
-            </li>
-            <li>
-              <i className="now-ui-icons users_single-02"></i>
-              <p>users_single-02</p>
-            </li>
-          </ul>
-        </section>
-      </div>
+      <footer className="site-footer">
+        <div className="footer-links">
+          <Link to="/about-us">Conóceme</Link>
+          <Link to="/blog-posts">Blog</Link>
+          <Link to="/social">Labor Social</Link>
+
+        </div>
+
+        <div className="footer-bottom">
+          <Link to="/politicas">Política de Privacidad</Link>
+          <Link to="/terms">Términos de uso</Link>
+          <Link to="/contact-us">Contáctame</Link>
+          <span>© 2025 Renato Cabrera</span>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        .navbar-container {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          background: linear-gradient(to right, #222, #111);
+          padding: 0.5rem 1rem;
+        }
+
+        .navbar {
+          max-width: 1200px;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo {
+          height: 100px;
+          width: 190px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          color: white;
+          display: none;
+        }
+
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-item {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        .nav-item:hover {
+          text-decoration: underline;
+        }
+
+        .search-icon {
+          background: none;
+          border: none;
+          font-size: 1.3rem;
+          color: white;
+        }
+
+        .presentation-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .presentation-inner {
+          position: relative;
+          width: 100%;
+          max-width: 1920px;
+        }
+
+        .presentation-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .presentation-overlay {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          max-width: 400px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 10px;
+        }
+
+        .presentation-box {
+          color: black;
+          text-decoration: none;
+        }
+
+        .presentation-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          color: #444;
+        }
+
+        .presentation-title {
+          font-size: 1.5rem;
+          font-weight: 800;
+          margin: 10px 0;
+        }
+
+        .presentation-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .fade-in-text {
+          opacity: 0;
+          animation: fadeInText 1.2s ease-out forwards;
+          animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInText {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .text-highlight {
+          padding: 60px 20px;
+          text-align: center;
+        }
+
+        .text-highlight p {
+          font-size: 1.6rem;
+          color: #555;
+          max-width: 800px;
+          margin: auto;
+          line-height: 1.6;
+        }
+
+        .inline-photo {
+          height: 40px;
+          width: auto;
+          margin: 0 8px;
+          vertical-align: middle;
+          border-radius: 6px;
+        }
+
+        .featured-section {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+          padding: 60px 20px;
+          max-width: 1200px;
+          margin: auto;
+        }
+
+        .featured-left {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .featured-image-wrapper {
+          position: relative;
+        }
+
+        .featured-image {
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        .featured-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        .featured-subtitle {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #444;
+        }
+
+        .featured-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin: 10px 0;
+        }
+
+        .featured-description {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .featured-right {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .mini-featured-image {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 20px;
+        }
+          .site-footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-links,
+.footer-bottom {
+  margin-bottom: 20px;
+}
+
+.footer-links a,
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+  color: #0078d4; /* azul sobrio como en Gates Notes */
+  text-decoration: underline;
+}
+
+.footer-bottom span {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+
+      `
+      }</style>
     </>
   );
 }

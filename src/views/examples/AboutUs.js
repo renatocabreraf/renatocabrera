@@ -578,7 +578,7 @@ function AboutUs() {
         </div>
 
         <div className="footer-bottom">
-          <Link to="/privacy">Política de Privacidad</Link>
+          <Link to="/politicas">Política de Privacidad</Link>
           <Link to="/terms">Términos de uso</Link>
           <Link to="/contact-us">Contáctame</Link>
           <span>© 2025 Renato Cabrera</span>

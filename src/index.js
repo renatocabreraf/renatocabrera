@@ -78,7 +78,7 @@ root.render(
         />
         <Route path="/index" render={(props) => <Index {...props} />} />
         <Route
-          path="/landing-page"
+          path="/libros"
           render={(props) => <LandingPage {...props} />}
         />
         <Route
@@ -101,7 +101,7 @@ root.render(
           path="/juventud"
           render={(props) => <Vista {...props} />} />                   
         <Route
-          path="/nucleo-icons"
+          path="/politicas"
           render={(props) => <NucleoIcons {...props} />}
         />
         <Route
