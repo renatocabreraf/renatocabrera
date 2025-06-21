@@ -75,7 +75,7 @@ const Navbar = () => {
     <Header>
       <Nav>
         <Link to="/" className="brand">
-                    <img src={require("assets/img/rcnegro.png")} alt="RC Logo" className="logo" />
+                   
                   </Link>
         <Links open={isOpen}>
           <StyledLink to="/about-us">Conóceme</StyledLink>
