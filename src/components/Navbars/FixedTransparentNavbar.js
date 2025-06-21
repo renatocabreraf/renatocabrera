@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import rcLogo from '../../assets/img/rcnegro.png'; // <- ruta relativa correcta
+
 
 
 const Header = styled.header`
