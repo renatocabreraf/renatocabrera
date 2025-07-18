@@ -154,7 +154,7 @@ function PulseViews() {
               
             </Col>
             <Col md="6">
-              <h3>Como individuos:</h3>
+              <h3>Como comunidad:</h3>
               <p>Invertir en salud emocional desde la infancia. Incluir programas de educación emocional en las escuelas.</p>
               <p>Capacitar a maestros, líderes comunitarios y padres de familia en temas de prevención y acompañamiento emocional.</p>
               <p>Garantizar el acceso a servicios de salud mental públicos y privados.</p>
