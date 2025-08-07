@@ -41,7 +41,7 @@ const initialPhotosData = [
   },
   {
     id: 4,
-    src: require("assets/img/ga1.png"),
+    src: require("assets/img/ga2.png"),
     modalImg: require("assets/img/ga2.png"),
     title: 'Grupo Alta',
     subtitle: 'IT Manager',
@@ -523,16 +523,16 @@ function AboutUs() {
 
           <div style={{ marginBottom: '40px', position: 'relative' }}>
             <div style={{ width: '14px', height: '14px', backgroundColor: '#032346', borderRadius: '50%', position: 'absolute', left: '-31px', top: '5px' }}></div>
-            <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Junio, 2023 - Actualmente </p>
+            <p style={{ color: '#032346', fontSize: '0.9rem', marginBottom: '4px' }}>Junio, 2023 - Agosto 2025 </p>
             <h3 style={{ color: '#032346', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '10px' }}>Grupo Alta - IT Manager</h3>
             <p style={{ color: 'black', lineHeight: '1.6' }}>
 
-              Como parte de la estrategia de transformación digital del grupo, lidero
+              Como parte de la estrategia de transformación digital del grupo, lideré
               la implementación del sistema Odoo ERP en diversas unidades de negocio, incluyendo Gimnasios C3NTRO, Helados Adela (en Guatemala y México),
               Villa Bokéh y Casa Palopó. Esta implementación permitió una reducción del 30% en los tiempos operativos gracias
               a la optimización de procesos tecnológicos clave. Asimismo, supervisé el desarrollo de soluciones integrales orientadas
               a las necesidades específicas de cada empresa, garantizando eficiencia operativa y una mejora continua.
-              También doy seguimiento a proyectos de infraestructura que fortalecieron significativamente la conectividad
+              También dí seguimiento a proyectos de infraestructura que fortalecieron significativamente la conectividad
               y las telecomunicaciones corporativas.
             </p>
 
