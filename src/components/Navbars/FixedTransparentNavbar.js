@@ -78,7 +78,7 @@ const Navbar = () => {
                    
                   </Link>
         <Links open={isOpen}>
-          <StyledLink to="/about-us">Conóceme</StyledLink>
+          
           <StyledLink to="/blog-posts">Blog</StyledLink>
           <StyledLink to="/social">Labor Social</StyledLink>
         </Links>

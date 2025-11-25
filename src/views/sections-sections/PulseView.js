@@ -197,7 +197,7 @@ function PulseViews() {
       </div>
       <footer className="site-footer">
         <div className="footer-links">
-          <Link to="/about-us">Conóceme</Link>
+
           <Link to="/blog-posts">Blog</Link>
           <Link to="/social">Labor Social</Link>
 

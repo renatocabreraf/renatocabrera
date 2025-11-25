@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "Conóceme", path: "/about-us" },
+
     { label: "Blog", path: "/blog-posts" },
     { label: "Labor Social", path: "/social" },
   ];

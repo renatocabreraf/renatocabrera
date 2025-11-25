@@ -10,7 +10,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { label: "Conóceme", path: "/about-us" },
+
     { label: "Blog", path: "/blog-posts" },
     { label: "Labor Social", path: "/social" }
   ];
@@ -51,7 +51,7 @@ const Navbar = () => {
       <section className="featured-section">
         <div className="featured-left">
           <div className="featured-image-wrapper">
-            <a href="/about-us"><img src={require("assets/img/conoceme.png")} alt="Destacado" className="featured-image" /></a>
+            <a href="https://www.linkedin.com/in/renatocabreraf/"><img src={require("assets/img/conoceme.png")} alt="Destacado" className="featured-image" /></a>
             
           </div>
         </div>
@@ -86,7 +86,7 @@ const Navbar = () => {
      
 <footer className="site-footer">
         <div className="footer-links">
-          <Link to="/about-us">Conóceme</Link>
+
           <Link to="/blog-posts">Blog</Link>
           <Link to="/social">Labor Social</Link>
     

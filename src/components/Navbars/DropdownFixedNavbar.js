@@ -186,10 +186,7 @@ function DropdownFixedNavbar() {
                   <p>Conócenos</p>
                 </DropdownToggle>
                 <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>
-                  <DropdownItem tag={Link} to="/about-us">
-                    <i className="now-ui-icons business_bulb-63"></i>
-                    Conóceme
-                  </DropdownItem>
+                  
                   <DropdownItem tag={Link} to="/blog-post">
                     <i className="now-ui-icons text_align-left"></i>
                     Blog
