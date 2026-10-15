@@ -1,353 +1,904 @@
-// Renato Cabrera Navbar inspirado en Gates Notes
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
-import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
+import { motion } from "framer-motion";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  const menuItems = [
-
-    { label: "Blog", path: "/blog-posts" },
-    { label: "Labor Social", path: "/social" }
-  ];
-
+function PresentationHeader() {
   return (
     <>
-     <ScrollTransparentNavbar />
+      <main className="rc-home">
 
-      <div className="presentation-container">
-        <div className="presentation-inner">
-          <img
-            src={require("assets/img/b4.png")}
-            alt="Imagen de presentación"
-            className="presentation-image fade-in-blur"
-          />
-          <div className="presentation-overlay fade-in-text">
-            <Link to="/5lecturas" className="presentation-box">
-              <h6 className="presentation-subtitle">DESTACADO</h6>
-              <h2 className="presentation-title">Las 5 Lecturas que han ayudado a formarme como profesional</h2>
-              <p className="presentation-description">Una pequeña reflexión y la importancia de leer todos los días.</p>
+        {/* HERO */}
+        <section className="home-hero">
+          <div className="home-shell">
+
+            <motion.div
+              className="home-hero-copy"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <p className="home-eyebrow">
+                RENATO CABRERA
+              </p>
+
+              <h1>
+                Tecnología para
+                <br />
+                <span>construir futuro.</span>
+              </h1>
+
+              <p className="home-lead">
+                Ingeniería, liderazgo, emprendimiento y propósito.
+                Construyo tecnología pensando primero en las personas.
+              </p>
+
+              <div className="home-actions">
+                <Link to="/about-us" className="home-primary">
+                  Conóceme <span>→</span>
+                </Link>
+
+                <Link to="/blog-posts" className="home-secondary">
+                  Explorar el blog <span>↗</span>
+                </Link>
+              </div>
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* FEATURED PHOTO */}
+        <section className="home-feature">
+          <div className="home-wide">
+
+            <Link to="/5lecturas" className="home-feature-link">
+
+              <motion.div
+                className="home-feature-image-wrap"
+                initial={{ opacity: 0, scale: 0.985 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7 }}
+              >
+                <img
+                  src={require("assets/img/b4.png")}
+                  alt="Las cinco lecturas que han influido en mi formación"
+                  className="home-feature-image"
+                />
+
+                <div className="home-feature-gradient"></div>
+
+                <div className="home-feature-copy">
+                  <p className="home-kicker">
+                    DESTACADO
+                  </p>
+
+                  <h2>
+                    Cinco lecturas que
+                    <br />
+                    han marcado mi camino.
+                  </h2>
+
+                  <p>
+                    Ideas, historias y reflexiones que han influido
+                    en mi manera de pensar y crecer profesionalmente.
+                  </p>
+
+                  <span className="home-text-link">
+                    Leer más →
+                  </span>
+                </div>
+
+              </motion.div>
+
             </Link>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <section className="text-highlight">
-        <p>
-          <strong>Mi trabajo</strong>
-          <img
-            src={require("assets/img/cross-2536818_1280.jpg")}
-            alt="Foto mini"
-            className="inline-photo"
-          />
-          nace del firme ideal de que cada persona debe tener acceso a una vida plena y con propósito, independientemente del lugar en el que haya nacido.
-        </p>
-      </section>
+        {/* MANIFESTO */}
+        <section className="home-manifesto">
+          <div className="home-shell home-narrow">
 
-      <section className="featured-section">
-        <div className="featured-left">
-          <div className="featured-image-wrapper">
-            <a href="https://www.linkedin.com/in/renatocabreraf/"><img src={require("assets/img/conoceme.png")} alt="Destacado" className="featured-image" /></a>
-            
+            <p className="home-section-label">
+              Una idea sencilla
+            </p>
+
+            <h2>
+              La tecnología no debería
+              <br />
+              sentirse complicada.
+            </h2>
+
+            <p className="home-large-copy">
+              Mi trabajo nace de una convicción:
+              las mejores soluciones no son las que parecen más sofisticadas,
+              sino las que resuelven problemas reales de manera simple.
+            </p>
+
           </div>
-        </div>
-        <div className="featured-left">
-          <div className="featured-image-wrapper">
-            <Link to="/juventud" className="presentation-box">
-            <img src={require("assets/img/oratorio.png")} alt="Destacado" className="featured-image" />
-            <div className="featured-overlay">
-              <h6 className="featured-subtitle">MI MIRADA HACIA ADELANTE</h6>
-              <h2 className="featured-title">La juventud es la clave del desarrollo de las sociedades</h2>
-              <p className="featured-description">Acompañame a conocer cómo puedes ayudar a forjar una mejor sociedad, tomando a la niñez como punto de partida.</p>
+        </section>
+
+        {/* ABOUT IMAGE */}
+        <section className="home-story">
+          <div className="home-shell">
+
+            <div className="home-story-grid">
+
+              <motion.div
+                className="home-story-photo"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.6 }}
+              >
+                <Link to="/about-us">
+                  <img
+                    src={require("assets/img/conoceme.png")}
+                    alt="Conoce más sobre Renato Cabrera"
+                  />
+                </Link>
+              </motion.div>
+
+              <motion.div
+                className="home-story-content"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <p className="home-section-label">
+                  Mi historia
+                </p>
+
+                <h2>
+                  Ingeniería,
+                  <br />
+                  liderazgo
+                  <br />
+                  y propósito.
+                </h2>
+
+                <p>
+                  Mi carrera ha evolucionado desde el desarrollo y
+                  administración de sistemas hasta la dirección de
+                  tecnología, transformación digital y construcción
+                  de productos.
+                </p>
+
+                <Link to="/about-us" className="home-inline-link">
+                  Conoce mi trayectoria →
+                </Link>
+              </motion.div>
+
             </div>
-            </Link>
+
           </div>
-          <br/>
-          <h6 className="featured-subtitle">Libros</h6>
-          <Link to="/libros" className="presentation-box"><h3 className="featured-title">Mi pasión es contar historias</h3>
-          <p className="featured-description">Conoce mis libros, los cuales hablan de mis aficiones, mis fantasías e historias que valen la pena ser contadas. Estaré publicando cada noticia sobre esto por acá.</p>
-          <img src={require("assets/img/burbuja.jpg")} alt="Ilustración" className="mini-featured-image" />    </Link>
-        </div>
-    
-      </section>
+        </section>
 
-<section className="text-highlight">
-        <p>
-          <strong>El futuro </strong>
-          
-           depende enteramente del desarrollo correcto de la sociedad, no podemos ignorar los sueños de los jóvenes,
-          las oportunidades de empleo emergentes y la educación de la humanidad.
-        </p>
-      </section>
-     
-<footer className="site-footer">
-        <div className="footer-links">
+        {/* SOCIAL / YOUTH */}
+        <section className="home-youth">
+          <div className="home-wide">
 
-          <Link to="/blog-posts">Blog</Link>
-          <Link to="/social">Labor Social</Link>
-    
-        </div>
-        
-        <div className="footer-bottom">
-          <Link to="/politicas">Política de Privacidad</Link>
-          <Link to="/presentation"> Home </Link>
-          <Link to="/contact-us">Contáctame</Link>
-          <span>© 2025 Renato Cabrera</span>
-        </div>
-      </footer>
+            <Link to="/juventud" className="home-youth-link">
+              <div className="home-youth-image-wrap">
 
-      <style jsx>{`
-        .navbar-container {
-          width: 100%;
-          position: fixed;
-          top: 0;
-          z-index: 1000;
-          background: linear-gradient(to right, #222, #111);
-          padding: 0.5rem 1rem;
+                <img
+                  src={require("assets/img/oratorio.png")}
+                  alt="Juventud y desarrollo social"
+                  className="home-youth-image"
+                />
+
+                <div className="home-youth-overlay"></div>
+
+                <div className="home-youth-copy">
+                  <p className="home-kicker light">
+                    MI MIRADA HACIA ADELANTE
+                  </p>
+
+                  <h2>
+                    El futuro también
+                    <br />
+                    se construye acompañando.
+                  </h2>
+
+                  <p>
+                    Creo profundamente en la educación,
+                    la juventud y las oportunidades como motores
+                    del desarrollo de nuestras sociedades.
+                  </p>
+
+                  <span>
+                    Conocer más →
+                  </span>
+                </div>
+
+              </div>
+            </Link>
+
+          </div>
+        </section>
+
+        {/* BOOKS */}
+        <section className="home-books">
+          <div className="home-shell">
+
+            <div className="home-books-grid">
+
+              <div className="home-books-content">
+
+                <p className="home-section-label">
+                  Historias
+                </p>
+
+                <h2>
+                  También escribo.
+                </h2>
+
+                <p className="home-large-copy small">
+                  Escribir es otra forma de construir:
+                  ordenar ideas, imaginar posibilidades y
+                  preservar historias que merecen ser contadas.
+                </p>
+
+                <Link to="/libros" className="home-inline-link">
+                  Descubre mis libros →
+                </Link>
+
+              </div>
+
+              <motion.div
+                className="home-books-photo"
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7 }}
+              >
+                <Link to="/libros">
+                  <img
+                    src={require("assets/img/burbuja.jpg")}
+                    alt="Libros e historias de Renato Cabrera"
+                  />
+                </Link>
+              </motion.div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* PHILOSOPHY */}
+        <section className="home-philosophy">
+          <div className="home-shell home-narrow">
+
+            <p className="home-section-label light">
+              El futuro
+            </p>
+
+            <h2>
+              No se espera.
+              <br />
+              <span>Se diseña.</span>
+            </h2>
+
+            <p>
+              Las oportunidades de empleo, la educación,
+              la innovación y los sueños de los jóvenes
+              forman parte de una misma conversación:
+              qué sociedad queremos construir.
+            </p>
+
+          </div>
+        </section>
+
+        {/* CLOSING */}
+        <section className="home-closing">
+          <div className="home-shell home-narrow">
+
+            <h2>
+              Hay mucho por
+              <br />
+              <span>construir todavía.</span>
+            </h2>
+
+            <div className="home-closing-actions">
+
+              <Link to="/about-us">
+                Sobre mí →
+              </Link>
+
+              <Link to="/contact-us">
+                Hablemos →
+              </Link>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="home-footer">
+
+          <div className="home-shell home-footer-inner">
+
+            <span>
+              © 2026 Renato Cabrera
+            </span>
+
+            <div>
+              <Link to="/about-us">
+                Conóceme
+              </Link>
+
+              <Link to="/blog-posts">
+                Blog
+              </Link>
+
+              <Link to="/social">
+                Labor Social
+              </Link>
+
+              <Link to="/politicas">
+                Privacidad
+              </Link>
+
+              <a
+                href="https://www.linkedin.com/in/renatocabreraf/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+
+          </div>
+
+        </footer>
+
+      </main>
+
+      <style>{`
+
+        .rc-home {
+          background: #fff;
+          color: #1d1d1f;
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "SF Pro Display",
+            "SF Pro Text",
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
+          -webkit-font-smoothing: antialiased;
+          overflow: hidden;
         }
 
-        .navbar {
-          max-width: 1200px;
-          margin: auto;
+        .home-shell {
+          width: calc(100% - 80px);
+          max-width: 1180px;
+          margin: 0 auto;
+        }
+
+        .home-wide {
+          width: calc(100% - 48px);
+          max-width: 1480px;
+          margin: 0 auto;
+        }
+
+        .home-narrow {
+          max-width: 930px;
+        }
+
+        /* HERO */
+
+        .home-hero {
+          min-height: 90vh;
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          padding: 170px 0 110px;
+          background:
+            radial-gradient(
+              circle at 72% 18%,
+              rgba(0, 113, 227, 0.09),
+              transparent 30%
+            ),
+            #fff;
         }
 
-        .brand {
+        .home-eyebrow,
+        .home-section-label {
+          margin: 0 0 28px;
+          color: #6e6e73;
+          font-size: 13px;
+          line-height: 1;
+          font-weight: 650;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .home-hero h1 {
+          max-width: 1050px;
+          margin: 0;
+          color: #1d1d1f;
+          font-size: clamp(68px, 9.2vw, 132px);
+          line-height: 0.92;
+          letter-spacing: -0.07em;
+          font-weight: 650;
+        }
+
+        .home-hero h1 span {
+          color: #86868b;
+        }
+
+        .home-lead {
+          max-width: 690px;
+          margin: 50px 0 0;
+          color: #6e6e73;
+          font-size: clamp(22px, 2.2vw, 30px);
+          line-height: 1.35;
+          letter-spacing: -0.03em;
+        }
+
+        .home-actions {
           display: flex;
           align-items: center;
+          gap: 30px;
+          margin-top: 42px;
         }
 
-        .logo {
-          height: 100px;
-          width: 190px;
-          object-fit: contain;
-          transition: all 0.3s ease;
-        }
-
-        .menu-toggle {
-          background: none;
-          border: none;
-          font-size: 1.5rem;
-          color: white;
-          display: none;
-        }
-
-        .nav-menu {
-          display: flex;
-          gap: 2rem;
-        }
-
-        .nav-item {
-          color: white;
-          text-decoration: none;
-          font-size: 1rem;
+        .home-primary {
+          display: inline-flex;
+          gap: 9px;
+          padding: 13px 24px;
+          background: #0071e3;
+          border-radius: 999px;
+          color: white !important;
+          font-size: 17px;
           font-weight: 500;
+          text-decoration: none !important;
+          transition: 0.25s ease;
         }
 
-        .nav-item:hover {
-          text-decoration: underline;
+        .home-primary:hover {
+          background: #0077ed;
+          transform: translateY(-1px);
         }
 
-        .search-icon {
-          background: none;
-          border: none;
-          font-size: 1.3rem;
-          color: white;
+        .home-secondary,
+        .home-inline-link {
+          color: #0066cc !important;
+          font-size: 17px;
+          font-weight: 500;
+          text-decoration: none !important;
         }
 
-        .presentation-container {
-          width: 100%;
-          display: flex;
-          justify-content: center;
+        .home-secondary:hover,
+        .home-inline-link:hover {
+          opacity: 0.7;
         }
 
-        .presentation-inner {
+        /* FEATURE */
+
+        .home-feature {
+          padding: 0 0 150px;
+          background: #fff;
+        }
+
+        .home-feature-link {
+          color: inherit;
+          text-decoration: none !important;
+        }
+
+        .home-feature-image-wrap {
           position: relative;
-          width: 100%;
-          max-width: 1920px;
+          min-height: 720px;
+          overflow: hidden;
+          border-radius: 28px;
+          background: #000;
         }
 
-        .presentation-image {
+        .home-feature-image {
           width: 100%;
-          height: auto;
+          height: 720px;
+          object-fit: cover;
           display: block;
         }
 
-        .presentation-overlay {
+        .home-feature-gradient {
           position: absolute;
-          bottom: 40px;
-          left: 40px;
-          max-width: 400px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 10px;
+          inset: 0;
+          background:
+            linear-gradient(
+              90deg,
+              rgba(0,0,0,0.68) 0%,
+              rgba(0,0,0,0.28) 42%,
+              rgba(0,0,0,0.02) 72%
+            );
         }
 
-        .presentation-box {
-          color: black;
+        .home-feature-copy {
+          position: absolute;
+          left: 70px;
+          bottom: 70px;
+          max-width: 560px;
+          color: white;
+        }
+
+        .home-kicker {
+          margin: 0 0 20px;
+          font-size: 13px;
+          letter-spacing: 0.12em;
+          font-weight: 700;
+          color: rgba(255,255,255,0.72);
+        }
+
+        .home-feature-copy h2 {
+          margin: 0;
+          font-size: clamp(42px, 5vw, 70px);
+          line-height: 1;
+          letter-spacing: -0.055em;
+          font-weight: 650;
+        }
+
+        .home-feature-copy p {
+          margin: 25px 0;
+          max-width: 500px;
+          color: rgba(255,255,255,0.82);
+          font-size: 18px;
+          line-height: 1.5;
+        }
+
+        .home-text-link {
+          color: white;
+          font-size: 17px;
+          font-weight: 500;
+        }
+
+        /* MANIFESTO */
+
+        .home-manifesto {
+          padding: 170px 0;
+          background: #f5f5f7;
+        }
+
+        .home-manifesto h2,
+        .home-story-content h2,
+        .home-books-content h2,
+        .home-philosophy h2,
+        .home-closing h2 {
+          margin: 0;
+          font-size: clamp(46px, 6vw, 78px);
+          line-height: 1.02;
+          letter-spacing: -0.055em;
+          font-weight: 650;
+        }
+
+        .home-large-copy {
+          margin: 55px 0 0;
+          color: #6e6e73;
+          font-size: clamp(24px, 3vw, 34px);
+          line-height: 1.28;
+          letter-spacing: -0.035em;
+          font-weight: 500;
+        }
+
+        .home-large-copy.small {
+          max-width: 570px;
+          font-size: 27px;
+        }
+
+        /* STORY */
+
+        .home-story {
+          padding: 170px 0;
+          background: #fff;
+        }
+
+        .home-story-grid {
+          display: grid;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 100px;
+          align-items: center;
+        }
+
+        .home-story-photo img {
+          width: 100%;
+          display: block;
+          border-radius: 28px;
+        }
+
+        .home-story-content p:not(.home-section-label) {
+          max-width: 500px;
+          margin: 36px 0 28px;
+          color: #6e6e73;
+          font-size: 19px;
+          line-height: 1.55;
+        }
+
+        /* YOUTH */
+
+        .home-youth {
+          padding: 0 0 160px;
+          background: #fff;
+        }
+
+        .home-youth-link {
+          text-decoration: none !important;
+        }
+
+        .home-youth-image-wrap {
+          position: relative;
+          min-height: 750px;
+          overflow: hidden;
+          border-radius: 28px;
+          background: black;
+        }
+
+        .home-youth-image {
+          width: 100%;
+          height: 750px;
+          display: block;
+          object-fit: cover;
+        }
+
+        .home-youth-overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(
+              0deg,
+              rgba(0,0,0,0.72) 0%,
+              rgba(0,0,0,0.14) 70%
+            );
+        }
+
+        .home-youth-copy {
+          position: absolute;
+          left: 70px;
+          bottom: 70px;
+          max-width: 670px;
+          color: white;
+        }
+
+        .home-kicker.light {
+          color: rgba(255,255,255,0.65);
+        }
+
+        .home-youth-copy h2 {
+          margin: 0;
+          color: white;
+          font-size: clamp(42px, 5.5vw, 74px);
+          line-height: 1;
+          letter-spacing: -0.055em;
+          font-weight: 650;
+        }
+
+        .home-youth-copy p {
+          max-width: 560px;
+          margin: 25px 0;
+          color: rgba(255,255,255,0.8);
+          font-size: 18px;
+          line-height: 1.5;
+        }
+
+        .home-youth-copy span {
+          color: white;
+          font-size: 17px;
+          font-weight: 500;
+        }
+
+        /* BOOKS */
+
+        .home-books {
+          padding: 170px 0;
+          background: #f5f5f7;
+        }
+
+        .home-books-grid {
+          display: grid;
+          grid-template-columns: 0.9fr 1.1fr;
+          gap: 100px;
+          align-items: center;
+        }
+
+        .home-books-photo img {
+          width: 100%;
+          display: block;
+          border-radius: 28px;
+        }
+
+        .home-books-content .home-inline-link {
+          display: inline-block;
+          margin-top: 35px;
+        }
+
+        /* PHILOSOPHY */
+
+        .home-philosophy {
+          padding: 180px 0;
+          background: #000;
+          color: #f5f5f7;
+        }
+
+        .home-section-label.light {
+          color: #86868b;
+        }
+
+        .home-philosophy h2 {
+          color: #f5f5f7;
+        }
+
+        .home-philosophy h2 span {
+          color: #86868b;
+        }
+
+        .home-philosophy > .home-shell > p:last-child {
+          max-width: 730px;
+          margin: 50px 0 0;
+          color: #a1a1a6;
+          font-size: 22px;
+          line-height: 1.55;
+        }
+
+        /* CLOSING */
+
+        .home-closing {
+          padding: 180px 0;
+          background: white;
+        }
+
+        .home-closing h2 span {
+          color: #86868b;
+        }
+
+        .home-closing-actions {
+          display: flex;
+          gap: 35px;
+          margin-top: 55px;
+        }
+
+        .home-closing-actions a {
+          color: #0066cc;
+          font-size: 21px;
+          font-weight: 500;
           text-decoration: none;
         }
 
-        .presentation-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 1px;
-          color: #444;
+        /* FOOTER */
+
+        .home-footer {
+          padding: 35px 0 45px;
+          background: #f5f5f7;
+          border-top: 1px solid #d2d2d7;
         }
 
-        .presentation-title {
-          font-size: 1.5rem;
-          font-weight: 800;
-          margin: 10px 0;
+        .home-footer-inner {
+          display: flex;
+          justify-content: space-between;
+          gap: 30px;
+          color: #6e6e73;
+          font-size: 13px;
         }
 
-        .presentation-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .fade-in-text {
-          opacity: 0;
-          animation: fadeInText 1.2s ease-out forwards;
-          animation-delay: 0.4s;
-        }
-
-        @keyframes fadeInText {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .text-highlight {
-          padding: 60px 20px;
-          text-align: center;
-        }
-
-        .text-highlight p {
-          font-size: 1.6rem;
-          color: #555;
-          max-width: 800px;
-          margin: auto;
-          line-height: 1.6;
-        }
-
-        .inline-photo {
-          height: 40px;
-          width: auto;
-          margin: 0 8px;
-          vertical-align: middle;
-          border-radius: 6px;
-        }
-
-        .featured-section {
+        .home-footer-inner div {
           display: flex;
           flex-wrap: wrap;
-          gap: 40px;
-          padding: 60px 20px;
-          max-width: 1200px;
-          margin: auto;
+          gap: 24px;
         }
 
-        .featured-left {
-          flex: 1;
-          min-width: 300px;
+        .home-footer a {
+          color: #424245;
+          text-decoration: none;
         }
 
-        .featured-image-wrapper {
-          position: relative;
+        .home-footer a:hover {
+          text-decoration: underline;
         }
 
-        .featured-image {
-          width: 100%;
-          border-radius: 12px;
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+          .home-shell {
+            width: calc(100% - 42px);
+          }
+
+          .home-wide {
+            width: calc(100% - 24px);
+          }
+
+          .home-hero {
+            min-height: auto;
+            padding: 150px 0 100px;
+          }
+
+          .home-hero h1 {
+            font-size: clamp(58px, 17vw, 82px);
+          }
+
+          .home-lead {
+            margin-top: 38px;
+          }
+
+          .home-actions {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 22px;
+          }
+
+          .home-feature {
+            padding-bottom: 100px;
+          }
+
+          .home-feature-image-wrap,
+          .home-feature-image {
+            height: 650px;
+            min-height: 650px;
+          }
+
+          .home-feature-copy {
+            left: 28px;
+            right: 28px;
+            bottom: 35px;
+          }
+
+          .home-feature-gradient {
+            background:
+              linear-gradient(
+                0deg,
+                rgba(0,0,0,0.8) 0%,
+                rgba(0,0,0,0.18) 72%
+              );
+          }
+
+          .home-manifesto,
+          .home-story,
+          .home-books,
+          .home-philosophy,
+          .home-closing {
+            padding: 110px 0;
+          }
+
+          .home-story-grid,
+          .home-books-grid {
+            grid-template-columns: 1fr;
+            gap: 60px;
+          }
+
+          .home-story-content {
+            order: -1;
+          }
+
+          .home-youth {
+            padding-bottom: 100px;
+          }
+
+          .home-youth-image-wrap,
+          .home-youth-image {
+            height: 680px;
+            min-height: 680px;
+          }
+
+          .home-youth-copy {
+            left: 28px;
+            right: 28px;
+            bottom: 35px;
+          }
+
+          .home-closing-actions {
+            flex-direction: column;
+            gap: 18px;
+          }
+
+          .home-footer-inner {
+            flex-direction: column;
+          }
+
         }
 
-        .featured-overlay {
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 8px;
-        }
-
-        .featured-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: #444;
-        }
-
-        .featured-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          margin: 10px 0;
-        }
-
-        .featured-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .featured-right {
-          flex: 1;
-          min-width: 300px;
-        }
-
-        .mini-featured-image {
-          width: 100%;
-          border-radius: 8px;
-          margin-top: 20px;
-        }
-          .site-footer {
-  background-color: #f5f5f5;
-  padding: 40px 20px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
-  border-top: 1px solid #e0e0e0;
-}
-
-.footer-links,
-.footer-bottom {
-  margin-bottom: 20px;
-}
-
-.footer-links a,
-.footer-bottom a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 12px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-bottom a:hover {
-  color: #0078d4; /* azul sobrio como en Gates Notes */
-  text-decoration: underline;
-}
-
-.footer-bottom span {
-  display: block;
-  margin-top: 10px;
-  color: #999;
-}
-
-      `
-      }</style>
+      `}</style>
     </>
   );
-};
+}
 
-export default Navbar;
+export default PresentationHeader;

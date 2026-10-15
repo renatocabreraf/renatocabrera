@@ -1,414 +1,705 @@
 import React from "react";
-import { useAlert } from 'react-alert'
-import axios from 'axios';
 import { Link } from "react-router-dom";
-// reactstrap components
-import {
-  Button,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { motion } from "framer-motion";
 
-// core components
-import ContactUsHeader from "components/Headers/ContactUsHeader.js";
-import Footer from "components/Footers/Footer.js";
-import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
-import FooterBlack from "components/Footers/FooterBlack";
+import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
 
 function ContactUs() {
-  const [nameFocus, setNameFocus] = React.useState(false);
-  const [emailFocus, setEmailFocus] = React.useState(false);
-  const [numberFocus, setNumberFocus] = React.useState(false);
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [number, setNumber] = React.useState("");
-  const [message, setMessage] = React.useState("");
-
-  const alert = useAlert()
-  const handleSubmit = (e) => {
-    axios.post('https://mw275xspoi.execute-api.us-east-2.amazonaws.com/default/SendContactEmail', {senderName: name, senderEmail:email, senderPhone:number , message: message})
-      .then(response => {
-        response.status === 200 ? alert.show("Mensaje enviado correctamente") : alert.show("Ha ocurrido un error al enviar el mensaje");
-          return response.data;      
-      })
-      .catch(error => {
-        console.log(error.response);
-        alert.show("Lo sentimos, el mensaje no pudo ser enviado");
-      })
-    setName("");
-    setEmail("");
-    setNumber("");
-    setMessage("");
-    e.preventDefault();
-  }
-
   React.useEffect(() => {
     document.body.classList.add("contact-page");
-    document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    return function cleanup() {
+
+    return () => {
       document.body.classList.remove("contact-page");
-      document.body.classList.remove("sidebar-collapse");
     };
   }, []);
 
   return (
     <>
       <ScrollTransparentNavbar />
-      <br/> <br/>
-      <div className="wrapper">
-        <div className="main">
-          <div className="contact-content">
-            <Container>
-              <Row>
-                <Col className="ml-auto mr-auto" md="5">
-                  <br/>  <br/>  <br/>  <br/>
-                   <img
-                        src={require("assets/img/IMG_5446.JPG")} // Usa tu foto aquí
-                        
-                        
-                      />
-                
-                </Col>
-                <Col className="ml-auto mr-auto" md="5"
-              >
-                  <div className="info info-horizontal mt-5">
-                    <div className="icon icon-info">
-                      <i className="now-ui-icons ui-1_calendar-60"></i>
-                    </div>
-                    <div className="description"
-                    >
-                      <h4 className="info-title"
-                      >Agenda una Cita conmigo</h4>
-                      <h5
-                      >
-                        Si necesitas alguna Asesoría o Consultoría, puedes contactarme por medio de correo electrónico y agendar una cita conmigo.
-                      </h5>
-                      <h6><a href="https://calendar.app.google/KMwKDykx7d7SRrYq9" style={{ color: "black" }}>Haz clic aquí</a></h6>
-                    </div>
-                  </div>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-info">
-                      <i className="now-ui-icons tech_mobile"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">Envíame un mensaje</h4>
-                      <h5>
-                        Ponte en contacto con mi equipo, será un placer poder estar en comunicación contigo.
-                        <br/>
-                        <h6><a href="mailto:rc@renatocabrera.com" style={{ color: "black" }}>
-                  rc@renatocabrera.com
-                </a></h6>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-info">
-                      <i className="business_briefcase-24 now-ui-icons"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">Kind Mind</h4>
-                     <h5>Contacta con  <img
-                  src={require("assets/img/Imagotipo Horizontal_Vivid Blue.png")} // Usa tu foto aquí
-                 
-                  style={{
-                    
-                  
-                    width: '100px',
-                  }}
-                /> si necesitas ayuda tecnológica con tu empresa</h5>
-                <h6><a href="mailto:info@kindmindgt.com" style={{ color: "black" }}>
-                  info@kindmindgt.com
-                </a></h6>
-                <h6><a href="www.kindmindgt.com" style={{ color: "black" }}>
-                  www.kindmindgt.com
-                </a></h6>
-               
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
+
+      <main className="rc-contact">
+
+        {/* HERO */}
+        <section className="contact-hero">
+          <div className="contact-shell">
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+            >
+              <p className="contact-eyebrow">
+                CONTACTO
+              </p>
+
+              <h1>
+                Hablemos.
+                <br />
+                <span>Las buenas ideas empiezan así.</span>
+              </h1>
+
+              <p className="contact-lead">
+                Si quieres conversar sobre tecnología, proyectos,
+                consultoría, colaboración o simplemente intercambiar ideas,
+                estaré encantado de escucharte.
+              </p>
+
+              <div className="contact-actions">
+
+                <a
+                  href="mailto:renatocabrerafigueroa@gmail.com"
+                  className="contact-primary"
+                >
+                  Escríbeme <span>→</span>
+                </a>
+
+                <a
+                  href="https://calendar.app.google/KMwKDykx7d7SRrYq9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-secondary"
+                >
+                  Agenda una cita ↗
+                </a>
+
+              </div>
+
+            </motion.div>
+
           </div>
-        </div>
-        <div>
-          
-        </div>
-       <footer className="site-footer">
-        <div className="footer-links">
+        </section>
 
-          <Link to="/blog-posts">Blog</Link>
-          <Link to="/social">Labor Social</Link>
+        {/* PROFILE / CONTACT */}
+        <section className="contact-profile">
+          <div className="contact-shell">
 
-        </div>
+            <div className="contact-grid">
 
-        <div className="footer-bottom">
-          <Link to="/politicas">Política de Privacidad</Link>
-          <Link to="/presentation"> Home </Link>
-          <Link to="/contact-us">Contáctame</Link>
-          <span>© 2025 Renato Cabrera</span>
-        </div>
-      </footer>
+              <motion.div
+                className="contact-photo"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src={require("assets/img/IMG_5446.JPG")}
+                  alt="Renato Cabrera"
+                />
+              </motion.div>
 
-      <style jsx>{`
-        .navbar-container {
-          width: 100%;
-          position: fixed;
-          top: 0;
-          z-index: 1000;
-          background: linear-gradient(to right, #222, #111);
-          padding: 0.5rem 1rem;
+              <motion.div
+                className="contact-info"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.08 }}
+              >
+
+                <p className="contact-section-label">
+                  Contacto directo
+                </p>
+
+                <h2>
+                  Una conversación
+                  <br />
+                  puede abrir muchas
+                  <br />
+                  posibilidades.
+                </h2>
+
+                <div className="contact-list">
+
+                  <div className="contact-item">
+                    <span className="contact-number">01</span>
+
+                    <div>
+                      <h3>Correo</h3>
+
+                      <a href="mailto:renatocabrerafigueroa@gmail.com">
+                        renatocabrerafigueroa@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="contact-item">
+                    <span className="contact-number">02</span>
+
+                    <div>
+                      <h3>Agenda</h3>
+
+                      <p>
+                        Si quieres una conversación más estructurada,
+                        puedes reservar un espacio directamente en mi calendario.
+                      </p>
+
+                      <a
+                        href="https://calendar.app.google/KMwKDykx7d7SRrYq9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Agendar una cita ↗
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="contact-item">
+                    <span className="contact-number">03</span>
+
+                    <div>
+                      <h3>LinkedIn</h3>
+
+                      <p>
+                        También puedes encontrarme y escribirme directamente
+                        a través de LinkedIn.
+                      </p>
+
+                      <a
+                        href="https://www.linkedin.com/in/renatocabreraf/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Ver perfil ↗
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+
+              </motion.div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* KIND MIND */}
+        <section className="contact-kindmind">
+          <div className="contact-shell">
+
+            <div className="contact-kindmind-grid">
+
+              <div className="contact-kindmind-copy">
+
+                <p className="contact-section-label light">
+                  Tecnología para empresas
+                </p>
+
+                <h2>
+                  ¿Buscas una solución
+                  <br />
+                  tecnológica?
+                </h2>
+
+                <p>
+                  Si tu conversación está relacionada con desarrollo,
+                  consultoría, cloud, experiencia digital o transformación
+                  tecnológica, también puedes hacerlo a través de
+                  Kind Mind Technologies.
+                </p>
+
+                <div className="contact-kindmind-links">
+
+                  <a
+                    href="mailto:info@kindmindgt.com"
+                  >
+                    info@kindmindgt.com →
+                  </a>
+
+                  <a
+                    href="https://www.kindmindgt.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    kindmindgt.com ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+              <div className="contact-kindmind-logo">
+                <img
+                  src={require("assets/img/Imagotipo Horizontal_Vivid Blue.png")}
+                  alt="Kind Mind Technologies"
+                />
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* PHILOSOPHY */}
+        <section className="contact-philosophy">
+          <div className="contact-shell contact-narrow">
+
+            <p className="contact-section-label light">
+              Antes de empezar
+            </p>
+
+            <h2>
+              Primero entendamos
+              <br />
+              el problema.
+              <br />
+              <span>Luego construimos.</span>
+            </h2>
+
+            <p>
+              Las mejores soluciones suelen comenzar con una buena conversación,
+              no con una herramienta específica.
+            </p>
+
+          </div>
+        </section>
+
+        {/* CLOSING */}
+        <section className="contact-closing">
+          <div className="contact-shell contact-narrow">
+
+            <h2>
+              ¿Tienes algo en mente?
+              <br />
+              <span>Conversemos.</span>
+            </h2>
+
+            <div className="contact-closing-links">
+
+              <a href="mailto:renatocabrerafigueroa@gmail.com">
+                Escríbeme →
+              </a>
+
+              <a
+                href="https://calendar.app.google/KMwKDykx7d7SRrYq9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agenda una cita ↗
+              </a>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="contact-footer">
+
+          <div className="contact-shell contact-footer-inner">
+
+            <span>
+              © 2026 Renato Cabrera
+            </span>
+
+            <div>
+
+              <Link to="/presentation">
+                Inicio
+              </Link>
+
+              <Link to="/about-us">
+                Conóceme
+              </Link>
+
+              <Link to="/blog-posts">
+                Blog
+              </Link>
+
+              <Link to="/social">
+                Labor Social
+              </Link>
+
+              <Link to="/politicas">
+                Privacidad
+              </Link>
+
+            </div>
+
+          </div>
+
+        </footer>
+
+      </main>
+
+      <style>{`
+
+        .rc-contact {
+          background: #fff;
+          color: #1d1d1f;
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "SF Pro Display",
+            "SF Pro Text",
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
+          -webkit-font-smoothing: antialiased;
+          overflow: hidden;
         }
 
-        .navbar {
-          max-width: 1200px;
-          margin: auto;
+        .contact-shell {
+          width: calc(100% - 80px);
+          max-width: 1180px;
+          margin: 0 auto;
+        }
+
+        .contact-narrow {
+          max-width: 920px;
+        }
+
+        /* HERO */
+
+        .contact-hero {
+          min-height: 88vh;
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          padding: 170px 0 110px;
+          background:
+            radial-gradient(
+              circle at 78% 16%,
+              rgba(0, 113, 227, 0.08),
+              transparent 31%
+            ),
+            #fff;
         }
 
-        .brand {
+        .contact-eyebrow,
+        .contact-section-label {
+          margin: 0 0 28px;
+          color: #6e6e73;
+          font-size: 13px;
+          line-height: 1;
+          font-weight: 650;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .contact-hero h1 {
+          max-width: 1060px;
+          margin: 0;
+          color: #1d1d1f;
+          font-size: clamp(68px, 9vw, 126px);
+          line-height: 0.92;
+          letter-spacing: -0.07em;
+          font-weight: 650;
+        }
+
+        .contact-hero h1 span {
+          color: #86868b;
+        }
+
+        .contact-lead {
+          max-width: 720px;
+          margin: 50px 0 0;
+          color: #6e6e73;
+          font-size: clamp(22px, 2.2vw, 30px);
+          line-height: 1.38;
+          letter-spacing: -0.03em;
+        }
+
+        .contact-actions {
           display: flex;
           align-items: center;
+          gap: 28px;
+          margin-top: 44px;
         }
 
-        .logo {
-          height: 100px;
-          width: 190px;
-          object-fit: contain;
-          transition: all 0.3s ease;
-        }
-
-        .menu-toggle {
-          background: none;
-          border: none;
-          font-size: 1.5rem;
-          color: white;
-          display: none;
-        }
-
-        .nav-menu {
-          display: flex;
-          gap: 2rem;
-        }
-
-        .nav-item {
-          color: white;
-          text-decoration: none;
-          font-size: 1rem;
+        .contact-primary {
+          display: inline-flex;
+          gap: 9px;
+          padding: 13px 24px;
+          border-radius: 999px;
+          background: #0071e3;
+          color: #fff !important;
+          font-size: 17px;
           font-weight: 500;
+          text-decoration: none !important;
+          transition: 0.25s ease;
         }
 
-        .nav-item:hover {
-          text-decoration: underline;
+        .contact-primary:hover {
+          background: #0077ed;
+          transform: translateY(-1px);
         }
 
-        .search-icon {
-          background: none;
-          border: none;
-          font-size: 1.3rem;
-          color: white;
+        .contact-secondary {
+          color: #0066cc !important;
+          font-size: 17px;
+          font-weight: 500;
+          text-decoration: none !important;
         }
 
-        .presentation-container {
+        /* PROFILE */
+
+        .contact-profile {
+          padding: 170px 0;
+          background: #f5f5f7;
+        }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 0.95fr 1.05fr;
+          gap: 100px;
+          align-items: center;
+        }
+
+        .contact-photo img {
           width: 100%;
+          display: block;
+          border-radius: 28px;
+        }
+
+        .contact-info h2,
+        .contact-kindmind h2,
+        .contact-philosophy h2,
+        .contact-closing h2 {
+          margin: 0;
+          color: #1d1d1f;
+          font-size: clamp(44px, 6vw, 76px);
+          line-height: 1.02;
+          letter-spacing: -0.055em;
+          font-weight: 650;
+        }
+
+        .contact-list {
+          margin-top: 60px;
+          border-top: 1px solid #d2d2d7;
+        }
+
+        .contact-item {
+          display: grid;
+          grid-template-columns: 50px 1fr;
+          gap: 20px;
+          padding: 30px 0;
+          border-bottom: 1px solid #d2d2d7;
+        }
+
+        .contact-number {
+          color: #86868b;
+          font-size: 13px;
+          font-weight: 600;
+        }
+
+        .contact-item h3 {
+          margin: 0 0 10px;
+          font-size: 24px;
+          letter-spacing: -0.03em;
+          font-weight: 600;
+        }
+
+        .contact-item p {
+          max-width: 520px;
+          margin: 0 0 12px;
+          color: #6e6e73;
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .contact-item a {
+          color: #0066cc;
+          font-size: 16px;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        /* KIND MIND */
+
+        .contact-kindmind {
+          padding: 170px 0;
+          background: #111;
+          color: #fff;
+        }
+
+        .contact-section-label.light {
+          color: #86868b;
+        }
+
+        .contact-kindmind-grid {
+          display: grid;
+          grid-template-columns: 1.15fr 0.85fr;
+          gap: 90px;
+          align-items: center;
+        }
+
+        .contact-kindmind h2 {
+          color: #f5f5f7;
+        }
+
+        .contact-kindmind-copy > p:not(.contact-section-label) {
+          max-width: 660px;
+          margin: 38px 0 0;
+          color: #a1a1a6;
+          font-size: 20px;
+          line-height: 1.6;
+        }
+
+        .contact-kindmind-links {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          margin-top: 35px;
+        }
+
+        .contact-kindmind-links a {
+          color: #2997ff;
+          font-size: 18px;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        .contact-kindmind-logo {
           display: flex;
           justify-content: center;
+          padding: 60px;
+          border-radius: 28px;
+          background: #fff;
         }
 
-        .presentation-inner {
-          position: relative;
+        .contact-kindmind-logo img {
           width: 100%;
-          max-width: 1920px;
-        }
-
-        .presentation-image {
-          width: 100%;
+          max-width: 360px;
           height: auto;
           display: block;
         }
 
-        .presentation-overlay {
-          position: absolute;
-          bottom: 40px;
-          left: 40px;
-          max-width: 400px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 10px;
+        /* PHILOSOPHY */
+
+        .contact-philosophy {
+          padding: 180px 0;
+          background: #000;
+          color: #f5f5f7;
         }
 
-        .presentation-box {
-          color: black;
+        .contact-philosophy h2 {
+          color: #f5f5f7;
+        }
+
+        .contact-philosophy h2 span {
+          color: #86868b;
+        }
+
+        .contact-philosophy > .contact-shell > p:last-child {
+          max-width: 720px;
+          margin: 50px 0 0;
+          color: #a1a1a6;
+          font-size: 22px;
+          line-height: 1.55;
+        }
+
+        /* CLOSING */
+
+        .contact-closing {
+          padding: 180px 0;
+          background: #fff;
+        }
+
+        .contact-closing h2 span {
+          color: #86868b;
+        }
+
+        .contact-closing-links {
+          display: flex;
+          gap: 36px;
+          margin-top: 50px;
+        }
+
+        .contact-closing-links a {
+          color: #0066cc;
+          font-size: 20px;
+          font-weight: 500;
           text-decoration: none;
         }
 
-        .presentation-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 1px;
-          color: #444;
+        /* FOOTER */
+
+        .contact-footer {
+          padding: 35px 0 45px;
+          background: #f5f5f7;
+          border-top: 1px solid #d2d2d7;
         }
 
-        .presentation-title {
-          font-size: 1.5rem;
-          font-weight: 800;
-          margin: 10px 0;
+        .contact-footer-inner {
+          display: flex;
+          justify-content: space-between;
+          gap: 30px;
+          color: #6e6e73;
+          font-size: 13px;
         }
 
-        .presentation-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .fade-in-text {
-          opacity: 0;
-          animation: fadeInText 1.2s ease-out forwards;
-          animation-delay: 0.4s;
-        }
-
-        @keyframes fadeInText {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .text-highlight {
-          padding: 60px 20px;
-          text-align: center;
-        }
-
-        .text-highlight p {
-          font-size: 1.6rem;
-          color: #555;
-          max-width: 800px;
-          margin: auto;
-          line-height: 1.6;
-        }
-
-        .inline-photo {
-          height: 40px;
-          width: auto;
-          margin: 0 8px;
-          vertical-align: middle;
-          border-radius: 6px;
-        }
-
-        .featured-section {
+        .contact-footer-inner div {
           display: flex;
           flex-wrap: wrap;
-          gap: 40px;
-          padding: 60px 20px;
-          max-width: 1200px;
-          margin: auto;
+          gap: 24px;
         }
 
-        .featured-left {
-          flex: 1;
-          min-width: 300px;
+        .contact-footer a {
+          color: #424245;
+          text-decoration: none;
         }
 
-        .featured-image-wrapper {
-          position: relative;
+        .contact-footer a:hover {
+          text-decoration: underline;
         }
 
-        .featured-image {
-          width: 100%;
-          border-radius: 12px;
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+          .contact-shell {
+            width: calc(100% - 42px);
+          }
+
+          .contact-hero {
+            min-height: auto;
+            padding: 150px 0 100px;
+          }
+
+          .contact-hero h1 {
+            font-size: clamp(56px, 17vw, 82px);
+          }
+
+          .contact-actions {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 22px;
+          }
+
+          .contact-profile,
+          .contact-kindmind,
+          .contact-philosophy,
+          .contact-closing {
+            padding: 110px 0;
+          }
+
+          .contact-grid,
+          .contact-kindmind-grid {
+            grid-template-columns: 1fr;
+            gap: 60px;
+          }
+
+          .contact-kindmind-logo {
+            padding: 40px;
+          }
+
+          .contact-closing-links {
+            flex-direction: column;
+            gap: 18px;
+          }
+
+          .contact-footer-inner {
+            flex-direction: column;
+          }
+
         }
 
-        .featured-overlay {
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 8px;
-        }
-
-        .featured-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: #444;
-        }
-
-        .featured-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          margin: 10px 0;
-        }
-
-        .featured-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .featured-right {
-          flex: 1;
-          min-width: 300px;
-        }
-
-        .mini-featured-image {
-          width: 100%;
-          border-radius: 8px;
-          margin-top: 20px;
-        }
-          .site-footer {
-  background-color: #f5f5f5;
-  padding: 40px 20px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
-  border-top: 1px solid #e0e0e0;
-}
-
-.footer-links,
-.footer-bottom {
-  margin-bottom: 20px;
-}
-
-.footer-links a,
-.footer-bottom a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 12px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-bottom a:hover {
-  color: #0078d4; /* azul sobrio como en Gates Notes */
-  text-decoration: underline;
-}
-
-.footer-bottom span {
-  display: block;
-  margin-top: 10px;
-  color: #999;
-}
-
-      `
-      }</style>
-      </div>
+      `}</style>
     </>
   );
 }
 
 export default ContactUs;
-

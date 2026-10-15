@@ -1,359 +1,802 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
-import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-function PulseViews() {
+import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
+
+function Social() {
+  React.useEffect(() => {
+    document.body.classList.add("social-page");
+    document.documentElement.classList.remove("nav-open");
+    window.scrollTo(0, 0);
+
+    return () => {
+      document.body.classList.remove("social-page");
+    };
+  }, []);
+
   return (
     <>
       <ScrollTransparentNavbar />
-      <br/>      <br/><br/>
 
-      <section style={{ backgroundColor: "#f8f9fa"}}>
-        <Container>
-          <Row>
-            <Col className="text-center">
-              <h2 style={{ fontWeight: "bold", fontSize: "2.5rem", marginBottom: "20px" }}>Hagamos un mejor mundo para todos</h2>
-              <p style={{ fontSize: "18px", color: "#666", maxWidth: "700px", margin: "auto" }}>
-                Mi compromiso con el desarrollo tecnológico me ha llevado a estudiar y comprender de manera más profunda
-                a la sociedad. Guatemala es mi punto de partida, pero quisiera poder llegar a todas partes en donde se necesite
-                y pueda brindar mi ayuda y conocimientos.
+      <main className="rc-social">
+
+        {/* HERO */}
+        <section className="social-hero">
+          <div className="social-shell">
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <p className="social-eyebrow">
+                LABOR SOCIAL
               </p>
-            </Col>
-          </Row>
 
-          <Row style={{ marginTop: "60px", alignItems: "center" }}>
-            <Col md="6">
-              <h3 style={{ fontSize: "1.75rem", color: "#333" }}>Esta formación, cambió mi vida</h3>
-              <p style={{ fontSize: "16px", color: "#555" }}>
-                Desde el año 2006, mi vida encontró rumbo bajo la luz del carisma salesiano. Fue en los pasillos del Colegio Salesiano Don Bosco donde empecé a descubrir no solo el conocimiento académico, sino también un estilo de vida guiado por valores, fe y servicio. Ahí no solo aprendí matemáticas, ciencia o lenguaje; aprendí lo que significa ser honesto, trabajador, compasivo, y profundamente humano. Cada maestro, cada consejo, cada Eucaristía, fueron sembrando en mí una semilla que con el tiempo florecería en compromiso y vocación.
-
-                Gracias al esfuerzo constante y a la formación que me inculcaron, fui bendecido con una beca universitaria que me permitió continuar mis estudios superiores en Ingeniería en Informática y Sistemas. Esta oportunidad no solo transformó mi realidad personal y profesional, sino que reforzó en mí la certeza de que la educación es una de las herramientas más poderosas para cambiar vidas. Fue entonces cuando comprendí que no podía quedarme con los dones recibidos, sino que estaba llamado a multiplicarlos.
-
-                Inspirado por el sueño de San Juan Bosco, decidí continuar este camino formándome como Salesiano Cooperador. Hoy, mi vocación va mucho más allá de lo profesional: es un compromiso de vida. Acompañar a niños y jóvenes, escucharlos, orientarlos y caminar junto a ellos en sus luchas y esperanzas se ha vuelto parte de mi esencia. Me esfuerzo por aplicar el Sistema Preventivo como una forma de educar con amor, razón y religión.
-
-                Cada chico que cruza mi camino es un recordatorio de que estamos llamados a ser faros en medio de sus tormentas. Mi misión es guiarlos con ternura y firmeza, acompañarlos en sus procesos, y ser testimonio de que los sueños sí se pueden alcanzar cuando hay alguien que cree en ti. Como Don Bosco decía: “La educación es cosa del corazón”, y hoy, con gratitud y alegría, puedo decir que mi corazón late al ritmo del carisma salesiano.
-
-              </p>
-            </Col>
-            <Col md="6" className="text-center">
-              <img
-                src={require("assets/img/regalos.jpg")}
-                alt="Desarrollo"
-                style={{ width: "100%", maxWidth: "500px", borderRadius: "12px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
-              />
-            </Col>
-          </Row>
-
-          <Row style={{ marginTop: "60px", alignItems: "center", flexDirection: "row-reverse" }}>
-            <Col md="6">
-              <h3 style={{ fontSize: "1.75rem", color: "#333" }}>El valor de la Educación</h3>
-              <p style={{ fontSize: "16px", color: "#555" }}>
-                Mi mayor anhelo es poder contribuir, desde donde me encuentre, al fortalecimiento de la educación en mi país. Estoy convencido de que Guatemala no necesita héroes solitarios, sino profesionales comprometidos, decididos a poner sus talentos al servicio de los demás. Cada uno de nosotros, desde su trinchera, puede ser parte de un cambio verdadero, y la educación es, sin duda, el terreno más fértil para sembrar esperanza.
-
-                Con esa visión clara, y movido por el carisma salesiano que ha marcado mi vida, hemos unido esfuerzos con el Oratorio Don Bosco para impulsar un programa que va más allá del simple apoyo económico. Como Coordinador del Centro Local Don Bosco de los Salesianos Cooperadores, y junto a mis hermanos de vocación, hemos diseñado una iniciativa que busca acompañar con dedicación y cercanía a los estudiantes becados por el Oratorio. No solo les brindamos ayuda financiera para que puedan continuar sus estudios, sino que también les ofrecemos seguimiento académico, orientación y acompañamiento personal. Nos aseguramos de que no caminen solos, de que sientan que hay alguien que cree en ellos, que les apoya, que les escucha.
-
-                Además, extendemos nuestra ayuda a cualquier alumno del Oratorio que lo necesite. Ya sea un cuaderno, una mochila, útiles escolares, zapatos o víveres: si lo piden, buscamos la forma de conseguirlo. Gestionamos fondos, buscamos donaciones, tocamos puertas. Porque creemos que ningún niño o joven debería detener su educación por falta de recursos. Creemos que cada historia vale la pena ser acompañada, y cada necesidad atendida con dignidad.
-
-                Este sueño no es solo mío. Es un sueño compartido, una respuesta comunitaria al llamado de Don Bosco: amar a los jóvenes, educarlos y caminar con ellos, especialmente con los más pobres y necesitados. Porque transformar una vida, es empezar a transformar el país.
-              </p>
-            </Col>
-            <Col md="6" className="text-center">
-              <img
-                src={require("assets/img/oratorio.jpg")}
-                alt="Consultoría"
-                style={{ width: "100%", maxWidth: "500px", borderRadius: "12px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
-              />
-            </Col>
-          </Row>
-
-          <Row style={{ marginTop: "60px", alignItems: "center" }}>
-            <Col md="6">
-              <h3 style={{ fontSize: "1.75rem", color: "#333" }}>¿Cómo puedes apoyar?</h3>
-              <p style={{ fontSize: "16px"}}>
-                Si tu deseo es apoyar estos proyectos, por favor, contacta conmigo, y estaré muy feliz de poder indicarte
-                cómo puedes ser parte de este sueño.
+              <h1>
+                El futuro se
                 <br />
-                Escribe a <a href="mailto:rc@renatocabrera.com" style={{ color: "#0078d4", textDecoration: "underline" }}>
-                  rc@renatocabrera.com
+                construye con
+                <br />
+                <span>las personas.</span>
+              </h1>
+
+              <p className="social-lead">
+                Tecnología, educación y servicio forman parte de una misma
+                convicción: crear oportunidades para que otros puedan
+                desarrollar todo su potencial.
+              </p>
+
+              <div className="social-actions">
+                <a
+                  href="mailto:renatocabrerafigueroa@gmail.com"
+                  className="social-primary"
+                >
+                  Quiero apoyar <span>→</span>
                 </a>
-                <br />
-                Estaré esperando tu mensaje, muchas gracias.
+
+                <Link
+                  to="/contact-us"
+                  className="social-secondary"
+                >
+                  Contáctame
+                </Link>
+              </div>
+
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* SALESIAN ROOTS */}
+        <section className="social-story">
+          <div className="social-shell">
+
+            <div className="social-grid">
+
+              <motion.div
+                className="social-photo"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src={require("assets/img/regalos.jpg")}
+                  alt="Formación y servicio salesiano"
+                />
+              </motion.div>
+
+              <motion.div
+                className="social-content"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.08 }}
+              >
+                <p className="social-section-label">
+                  Mi formación
+                </p>
+
+                <h2>
+                  Una forma de
+                  <br />
+                  entender la vida.
+                </h2>
+
+                <p className="social-large-copy">
+                  Desde 2006, la formación salesiana ha marcado profundamente
+                  mi manera de entender la educación, el trabajo y el servicio.
+                </p>
+
+                <p className="social-body-copy">
+                  En el Colegio Salesiano Don Bosco aprendí mucho más que
+                  conocimientos académicos. Encontré valores, acompañamiento
+                  y una manera de mirar a cada persona desde sus posibilidades.
+                </p>
+
+                <p className="social-body-copy">
+                  Esa formación también me permitió continuar mis estudios
+                  universitarios y comprender que las oportunidades recibidas
+                  adquieren verdadero sentido cuando somos capaces de
+                  multiplicarlas para otros.
+                </p>
+
+              </motion.div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* PRINCIPLE */}
+        <section className="social-principle">
+          <div className="social-shell social-narrow">
+
+            <p className="social-section-label light">
+              Una convicción
+            </p>
+
+            <h2>
+              La educación puede
+              <br />
+              <span>cambiar una vida.</span>
+            </h2>
+
+            <p>
+              Y cuando cambia una vida, empieza a cambiar una familia,
+              una comunidad y, eventualmente, un país.
+            </p>
+
+          </div>
+        </section>
+
+        {/* EDUCATION PROJECT */}
+        <section className="social-education">
+          <div className="social-shell">
+
+            <div className="social-grid reverse">
+
+              <motion.div
+                className="social-content"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
+              >
+                <p className="social-section-label">
+                  Educación
+                </p>
+
+                <h2>
+                  Nadie debería
+                  <br />
+                  caminar solo.
+                </h2>
+
+                <p className="social-large-copy">
+                  Mi mayor anhelo es contribuir al fortalecimiento de la
+                  educación en Guatemala desde los espacios en los que
+                  puedo servir.
+                </p>
+
+                <p className="social-body-copy">
+                  Junto al Oratorio Don Bosco y a los Salesianos Cooperadores,
+                  trabajamos para acompañar a estudiantes que necesitan apoyo
+                  para continuar sus estudios.
+                </p>
+
+                <p className="social-body-copy">
+                  El acompañamiento no se limita a una ayuda económica.
+                  También buscamos ofrecer seguimiento académico,
+                  orientación personal y cercanía.
+                </p>
+
+              </motion.div>
+
+              <motion.div
+                className="social-photo"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.08 }}
+              >
+                <img
+                  src={require("assets/img/oratorio.jpg")}
+                  alt="Oratorio Don Bosco"
+                />
+              </motion.div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* SUPPORT CARDS */}
+        <section className="social-impact">
+          <div className="social-shell">
+
+            <div className="social-heading">
+
+              <p className="social-section-label">
+                Cómo ayudamos
               </p>
-            </Col>
-            <Col md="6" className="text-center">
-              <img
-                src={require("assets/img/labsoc.png")}
-                alt="Social"
-                style={{ width: "100%", maxWidth: "500px", borderRadius: "12px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
 
-      <footer className="site-footer">
-        <div className="footer-links">
+              <h2>
+                Pequeñas acciones.
+                <br />
+                <span>Impacto real.</span>
+              </h2>
 
-          <Link to="/blog-posts">Blog</Link>
-          <Link to="/social">Labor Social</Link>
-        </div>
-        <div className="footer-bottom">
-          <Link to="/politicas">Política de Privacidad</Link>
-          <Link to="/presentation"> Home </Link>
-          <Link to="/contact-us">Contáctame</Link>
-          <span>© 2025 Renato Cabrera</span>
-        </div>
-      </footer>
+            </div>
 
-      <style jsx>{`
-        .navbar-container {
+            <div className="social-impact-grid">
+
+              <article className="social-impact-card">
+                <span>01</span>
+                <h3>Educación</h3>
+                <p>
+                  Apoyo para que niños y jóvenes puedan continuar sus estudios
+                  y superar barreras económicas.
+                </p>
+              </article>
+
+              <article className="social-impact-card">
+                <span>02</span>
+                <h3>Acompañamiento</h3>
+                <p>
+                  Seguimiento académico, orientación y presencia cercana para
+                  que ningún joven sienta que debe avanzar solo.
+                </p>
+              </article>
+
+              <article className="social-impact-card">
+                <span>03</span>
+                <h3>Necesidades concretas</h3>
+                <p>
+                  Útiles, mochilas, zapatos, víveres y otros recursos que
+                  pueden marcar la diferencia en la continuidad educativa.
+                </p>
+              </article>
+
+              <article className="social-impact-card">
+                <span>04</span>
+                <h3>Comunidad</h3>
+                <p>
+                  Personas que aportan tiempo, conocimiento, recursos y
+                  voluntad para construir oportunidades juntos.
+                </p>
+              </article>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* CALL TO ACTION */}
+        <section className="social-help">
+          <div className="social-shell">
+
+            <div className="social-help-grid">
+
+              <motion.div
+                className="social-help-image"
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.65 }}
+              >
+                <img
+                  src={require("assets/img/labsoc.png")}
+                  alt="Labor social"
+                />
+              </motion.div>
+
+              <div className="social-help-content">
+
+                <p className="social-section-label">
+                  Puedes ser parte
+                </p>
+
+                <h2>
+                  Hagamos un mejor
+                  <br />
+                  mundo para todos.
+                </h2>
+
+                <p>
+                  Si deseas apoyar alguno de estos proyectos, aportar recursos,
+                  compartir conocimientos o simplemente conocer cómo puedes
+                  involucrarte, estaré muy feliz de conversar contigo.
+                </p>
+
+                <a
+                  href="mailto:renatocabrerafigueroa@gmail.com"
+                  className="social-email-link"
+                >
+                  renatocabrerafigueroa@gmail.com →
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* CLOSING */}
+        <section className="social-closing">
+          <div className="social-shell social-narrow">
+
+            <h2>
+              Lo que recibimos
+              <br />
+              cobra sentido cuando
+              <br />
+              <span>lo compartimos.</span>
+            </h2>
+
+            <div className="social-closing-links">
+
+              <Link to="/about-us">
+                Sobre mí →
+              </Link>
+
+              <Link to="/contact-us">
+                Hablemos →
+              </Link>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="social-footer">
+
+          <div className="social-shell social-footer-inner">
+
+            <span>
+              © 2026 Renato Cabrera
+            </span>
+
+            <div>
+              <Link to="/presentation">
+                Inicio
+              </Link>
+
+              <Link to="/about-us">
+                Conóceme
+              </Link>
+
+              <Link to="/blog-posts">
+                Blog
+              </Link>
+
+              <Link to="/politicas">
+                Privacidad
+              </Link>
+
+              <a
+                href="https://www.linkedin.com/in/renatocabreraf/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+
+          </div>
+
+        </footer>
+
+      </main>
+
+      <style>{`
+
+        .rc-social {
+          background: #fff;
+          color: #1d1d1f;
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "SF Pro Display",
+            "SF Pro Text",
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
+          -webkit-font-smoothing: antialiased;
+          overflow: hidden;
+        }
+
+        .social-shell {
+          width: calc(100% - 80px);
+          max-width: 1180px;
+          margin: 0 auto;
+        }
+
+        .social-narrow {
+          max-width: 920px;
+        }
+
+        /* HERO */
+
+        .social-hero {
+          min-height: 92vh;
+          display: flex;
+          align-items: center;
+          padding: 170px 0 110px;
+          background:
+            radial-gradient(
+              circle at 78% 18%,
+              rgba(52, 199, 89, 0.10),
+              transparent 31%
+            ),
+            #fff;
+        }
+
+        .social-eyebrow,
+        .social-section-label {
+          margin: 0 0 28px;
+          color: #6e6e73;
+          font-size: 13px;
+          line-height: 1;
+          font-weight: 650;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .social-hero h1 {
+          max-width: 1000px;
+          margin: 0;
+          color: #1d1d1f;
+          font-size: clamp(66px, 9vw, 126px);
+          line-height: 0.92;
+          letter-spacing: -0.07em;
+          font-weight: 650;
+        }
+
+        .social-hero h1 span {
+          color: #86868b;
+        }
+
+        .social-lead {
+          max-width: 720px;
+          margin: 50px 0 0;
+          color: #6e6e73;
+          font-size: clamp(22px, 2.3vw, 30px);
+          line-height: 1.38;
+          letter-spacing: -0.03em;
+        }
+
+        .social-actions {
+          display: flex;
+          align-items: center;
+          gap: 28px;
+          margin-top: 44px;
+        }
+
+        .social-primary {
+          display: inline-flex;
+          gap: 9px;
+          padding: 13px 24px;
+          border-radius: 999px;
+          background: #0071e3;
+          color: white !important;
+          font-size: 17px;
+          font-weight: 500;
+          text-decoration: none !important;
+          transition: 0.25s ease;
+        }
+
+        .social-primary:hover {
+          background: #0077ed;
+          transform: translateY(-1px);
+        }
+
+        .social-secondary {
+          color: #0066cc !important;
+          font-size: 17px;
+          font-weight: 500;
+          text-decoration: none !important;
+        }
+
+        /* STORY */
+
+        .social-story,
+        .social-education {
+          padding: 170px 0;
+          background: #fff;
+        }
+
+        .social-education {
+          background: #f5f5f7;
+        }
+
+        .social-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 95px;
+          align-items: center;
+        }
+
+        .social-grid.reverse {
+          grid-template-columns: 0.95fr 1.05fr;
+        }
+
+        .social-photo img {
           width: 100%;
-          position: fixed;
-          top: 0;
-          z-index: 1000;
-          background: linear-gradient(to right, #222, #111);
-          padding: 0.5rem 1rem;
+          display: block;
+          border-radius: 28px;
         }
 
-        .navbar {
-          max-width: 1200px;
-          margin: auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+        .social-content h2,
+        .social-heading h2,
+        .social-help-content h2,
+        .social-principle h2,
+        .social-closing h2 {
+          margin: 0;
+          color: #1d1d1f;
+          font-size: clamp(44px, 6vw, 76px);
+          line-height: 1.02;
+          letter-spacing: -0.055em;
+          font-weight: 650;
         }
 
-        .brand {
-          display: flex;
-          align-items: center;
-        }
-
-        .logo {
-          height: 100px;
-          width: 190px;
-          object-fit: contain;
-          transition: all 0.3s ease;
-        }
-
-        .menu-toggle {
-          background: none;
-          border: none;
-          font-size: 1.5rem;
-          color: white;
-          display: none;
-        }
-
-        .nav-menu {
-          display: flex;
-          gap: 2rem;
-        }
-
-        .nav-item {
-          color: white;
-          text-decoration: none;
-          font-size: 1rem;
+        .social-large-copy {
+          margin: 44px 0 0;
+          color: #1d1d1f;
+          font-size: clamp(24px, 2.8vw, 33px);
+          line-height: 1.28;
+          letter-spacing: -0.035em;
           font-weight: 500;
         }
 
-        .nav-item:hover {
-          text-decoration: underline;
-        }
-
-        .search-icon {
-          background: none;
-          border: none;
-          font-size: 1.3rem;
-          color: white;
-        }
-
-        .presentation-container {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-
-        .presentation-inner {
-          position: relative;
-          width: 100%;
-          max-width: 1920px;
-        }
-
-        .presentation-image {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-
-        .presentation-overlay {
-          position: absolute;
-          bottom: 40px;
-          left: 40px;
-          max-width: 400px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 10px;
-        }
-
-        .presentation-box {
-          color: black;
-          text-decoration: none;
-        }
-
-        .presentation-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 1px;
-          color: #444;
-        }
-
-        .presentation-title {
-          font-size: 1.5rem;
-          font-weight: 800;
-          margin: 10px 0;
-        }
-
-        .presentation-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .fade-in-text {
-          opacity: 0;
-          animation: fadeInText 1.2s ease-out forwards;
-          animation-delay: 0.4s;
-        }
-
-        @keyframes fadeInText {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .text-highlight {
-          padding: 60px 20px;
-          text-align: center;
-        }
-
-        .text-highlight p {
-          font-size: 1.6rem;
-          color: #555;
-          max-width: 800px;
-          margin: auto;
+        .social-body-copy {
+          margin: 28px 0 0;
+          color: #6e6e73;
+          font-size: 18px;
           line-height: 1.6;
         }
 
-        .inline-photo {
-          height: 40px;
-          width: auto;
-          margin: 0 8px;
-          vertical-align: middle;
-          border-radius: 6px;
+        /* PRINCIPLE */
+
+        .social-principle {
+          padding: 180px 0;
+          background: #000;
+          color: #f5f5f7;
         }
 
-        .featured-section {
+        .social-section-label.light {
+          color: #86868b;
+        }
+
+        .social-principle h2 {
+          color: #f5f5f7;
+        }
+
+        .social-principle h2 span {
+          color: #86868b;
+        }
+
+        .social-principle > .social-shell > p:last-child {
+          max-width: 720px;
+          margin: 50px 0 0;
+          color: #a1a1a6;
+          font-size: 22px;
+          line-height: 1.55;
+        }
+
+        /* IMPACT */
+
+        .social-impact {
+          padding: 170px 0;
+          background: #fff;
+        }
+
+        .social-heading {
+          margin-bottom: 80px;
+        }
+
+        .social-heading h2 span {
+          color: #86868b;
+        }
+
+        .social-impact-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1px;
+          background: #d2d2d7;
+        }
+
+        .social-impact-card {
+          min-height: 290px;
+          padding: 42px;
+          background: #f5f5f7;
+        }
+
+        .social-impact-card > span {
+          color: #86868b;
+          font-size: 13px;
+          font-weight: 600;
+        }
+
+        .social-impact-card h3 {
+          margin: 65px 0 18px;
+          font-size: 30px;
+          letter-spacing: -0.035em;
+          font-weight: 600;
+        }
+
+        .social-impact-card p {
+          max-width: 440px;
+          margin: 0;
+          color: #6e6e73;
+          font-size: 17px;
+          line-height: 1.55;
+        }
+
+        /* HELP */
+
+        .social-help {
+          padding: 170px 0;
+          background: #f5f5f7;
+        }
+
+        .social-help-grid {
+          display: grid;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 95px;
+          align-items: center;
+        }
+
+        .social-help-image img {
+          width: 100%;
+          display: block;
+          border-radius: 28px;
+        }
+
+        .social-help-content > p:not(.social-section-label) {
+          margin: 34px 0 30px;
+          color: #6e6e73;
+          font-size: 19px;
+          line-height: 1.6;
+        }
+
+        .social-email-link {
+          color: #0066cc !important;
+          font-size: 20px;
+          font-weight: 500;
+          text-decoration: none !important;
+        }
+
+        /* CLOSING */
+
+        .social-closing {
+          padding: 180px 0;
+          background: #fff;
+        }
+
+        .social-closing h2 span {
+          color: #86868b;
+        }
+
+        .social-closing-links {
+          display: flex;
+          gap: 35px;
+          margin-top: 55px;
+        }
+
+        .social-closing-links a {
+          color: #0066cc;
+          font-size: 20px;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        /* FOOTER */
+
+        .social-footer {
+          padding: 35px 0 45px;
+          background: #f5f5f7;
+          border-top: 1px solid #d2d2d7;
+        }
+
+        .social-footer-inner {
+          display: flex;
+          justify-content: space-between;
+          gap: 30px;
+          color: #6e6e73;
+          font-size: 13px;
+        }
+
+        .social-footer-inner div {
           display: flex;
           flex-wrap: wrap;
-          gap: 40px;
-          padding: 60px 20px;
-          max-width: 1200px;
-          margin: auto;
+          gap: 24px;
         }
 
-        .featured-left {
-          flex: 1;
-          min-width: 300px;
+        .social-footer a {
+          color: #424245;
+          text-decoration: none;
         }
 
-        .featured-image-wrapper {
-          position: relative;
+        .social-footer a:hover {
+          text-decoration: underline;
         }
 
-        .featured-image {
-          width: 100%;
-          border-radius: 12px;
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+          .social-shell {
+            width: calc(100% - 42px);
+          }
+
+          .social-hero {
+            min-height: auto;
+            padding: 150px 0 100px;
+          }
+
+          .social-hero h1 {
+            font-size: clamp(56px, 17vw, 82px);
+          }
+
+          .social-actions {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 22px;
+          }
+
+          .social-story,
+          .social-education,
+          .social-impact,
+          .social-help,
+          .social-principle,
+          .social-closing {
+            padding: 110px 0;
+          }
+
+          .social-grid,
+          .social-grid.reverse,
+          .social-help-grid {
+            grid-template-columns: 1fr;
+            gap: 60px;
+          }
+
+          .social-grid.reverse .social-photo {
+            order: -1;
+          }
+
+          .social-impact-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .social-impact-card {
+            min-height: 250px;
+            padding: 32px;
+          }
+
+          .social-impact-card h3 {
+            margin-top: 50px;
+          }
+
+          .social-closing-links {
+            flex-direction: column;
+            gap: 18px;
+          }
+
+          .social-footer-inner {
+            flex-direction: column;
+          }
+
         }
 
-        .featured-overlay {
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 8px;
-        }
-
-        .featured-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: #444;
-        }
-
-        .featured-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          margin: 10px 0;
-        }
-
-        .featured-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .featured-right {
-          flex: 1;
-          min-width: 300px;
-        }
-
-        .mini-featured-image {
-          width: 100%;
-          border-radius: 8px;
-          margin-top: 20px;
-        }
-          .site-footer {
-  background-color: #f5f5f5;
-  padding: 40px 20px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
-  border-top: 1px solid #e0e0e0;
-}
-
-.footer-links,
-.footer-bottom {
-  margin-bottom: 20px;
-}
-
-.footer-links a,
-.footer-bottom a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 12px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-bottom a:hover {
-  color: #0078d4; /* azul sobrio como en Gates Notes */
-  text-decoration: underline;
-}
-
-.footer-bottom span {
-  display: block;
-  margin-top: 10px;
-  color: #999;
-}
-
-      `
-      }</style>
+      `}</style>
     </>
   );
 }
 
-export default PulseViews;
+export default Social;

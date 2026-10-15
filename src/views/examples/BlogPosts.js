@@ -1,564 +1,920 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-// reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
+import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
 
-// core components
-import ScrollTransparentNavbar from 'components/Navbars/ScrollTransparentNavbar';
-import BlogPostsHeader from "components/Headers/BlogPostsHeader.js";
-import FooterBlackSocial from "components/Footers/FooterBlackSocial.js";
+const posts = [
+  {
+    title: "El trabajo en equipo en tecnología no es opcional. Es infraestructura.",
+    category: "Tecnología · Liderazgo",
+    date: "7 de octubre de 2026",
+    route: "/trabajo-en-equipo-tecnologia",
+    image: require("assets/img/trabajo-equipo-tecnologia.png"),
+    description:
+      "Un departamento de tecnología puede tener grandes especialistas, pero si el conocimiento se concentra en pocas personas, el equipo sigue siendo vulnerable.",
+    author: "Renato José Cabrera Figueroa",
+  },
+
+  {
+    title: "Las 5 lecturas que han ayudado a formarme como profesional.",
+    category: "Lecturas",
+    date: "9 junio 2025",
+    route: "/5lecturas",
+    image: require("assets/img/libre.jpg"),
+    featured: true,
+    description:
+      "Cinco libros que han influido en mi manera de pensar, trabajar y entender el crecimiento profesional.",
+  },
+  {
+    title: "La juventud es la clave del desarrollo de las sociedades.",
+    category: "Sociedad",
+    date: "9 junio 2025",
+    route: "/juventud",
+    image: require("assets/img/comunion.jpg"),
+    description:
+      "Una reflexión sobre educación, acompañamiento y el papel de los jóvenes en la construcción del futuro.",
+  },
+  {
+    title: "La importancia de cuidar la salud mental.",
+    category: "Bienestar",
+    date: "20 mayo 2025",
+    route: "/saludmental",
+    image: require("assets/img/apple.jpg"),
+    description:
+      "El bienestar emocional también forma parte del desarrollo personal y profesional.",
+  },
+  {
+    title: "Si no sabes programar, serás un analfabeta... ¿o no?",
+    category: "Tecnología",
+    date: "2 mayo 2025",
+    route: "/programacion",
+    image: require("assets/img/code.jpg"),
+    description:
+      "Una mirada sobre programación, pensamiento lógico y el verdadero papel de la tecnología en la vida moderna.",
+  },
+];
+
+const recommendations = [
+  {
+    title: "Kind Mind",
+    category: "Tecnología",
+    url: "http://www.kindmindgt.com",
+    image: require("assets/img/IMG_5451.JPG"),
+    description:
+      "Tecnología, desarrollo y consultoría orientados a resolver problemas reales de las organizaciones.",
+  },
+
+  {
+    title: "STEM Racing GT",
+    category: "Educación STEM",
+    url: "https://www.stemracing.gt",
+    image: require("assets/img/stem-racing.jpg"),
+    description:
+      "Una iniciativa que acerca a niños y jóvenes al mundo STEM a través del diseño, ingeniería, innovación, gestión de proyectos y competencias inspiradas en el motorsport.",
+  },
+  {
+    title: "Nukunem",
+    category: "Impacto social",
+    url: "https://www.nukunem.org/home",
+    image: require("assets/img/nukunem4.png"),
+    description:
+      "Una iniciativa que busca transformar comunidades a través de salud integral y desarrollo social.",
+  },
+];
 
 function BlogPosts() {
-  const [emailFocus, setEmailFocus] = React.useState(false);
   React.useEffect(() => {
     document.body.classList.add("blog-posts");
-    document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    return function cleanup() {
+
+    return () => {
       document.body.classList.remove("blog-posts");
-      document.body.classList.remove("sidebar-collapse");
     };
   }, []);
+
+  const featuredPost = posts.find((post) => post.featured);
+  const secondaryPosts = posts.filter((post) => !post.featured);
+
   return (
     <>
       <ScrollTransparentNavbar />
-       <br/> <br/>
-      <div className="wrapper">
-        <BlogPostsHeader />
-        <div className="projects-4">
-          <Container fluid>
-            <Row>
-              <Col className="px-0" md="6">
-                <Card
-                  className="card-fashion card-background"
-                  style={{
-                    backgroundImage:
-                      "url(" + require("assets/img/libre.jpg") + ")"
+
+      <main className="rc-blog">
+
+        {/* HERO */}
+        <section className="blog-hero">
+          <div className="blog-shell">
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+            >
+              <p className="blog-eyebrow">
+                BLOG
+              </p>
+
+              <h1>
+                Ideas,
+                <br />
+                tecnología
+                <br />
+                <span>y lo que voy aprendiendo.</span>
+              </h1>
+
+              <p className="blog-lead">
+                Reflexiones sobre tecnología, sociedad, lectura,
+                bienestar y las ideas que van formando mi manera
+                de ver el mundo.
+              </p>
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* FEATURED POST */}
+        <section className="blog-featured">
+          <div className="blog-wide">
+
+            <Link
+              to={featuredPost.route}
+              className="blog-featured-link"
+            >
+              <motion.article
+                className="blog-featured-card"
+                initial={{ opacity: 0, scale: 0.985 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.65 }}
+              >
+
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                />
+
+                <div className="blog-featured-overlay"></div>
+
+                <div className="blog-featured-copy">
+
+                  <div className="blog-meta light">
+                    <span>{featuredPost.category}</span>
+                    <span>·</span>
+                    <span>{featuredPost.date}</span>
+                  </div>
+
+                  <h2>
+                    {featuredPost.title}
+                  </h2>
+
+                  <p>
+                    {featuredPost.description}
+                  </p>
+
+                  <span className="blog-read-link">
+                    Leer artículo →
+                  </span>
+
+                </div>
+
+              </motion.article>
+            </Link>
+
+          </div>
+        </section>
+
+        {/* POSTS */}
+        <section className="blog-posts-section">
+          <div className="blog-shell">
+
+            <div className="blog-section-heading">
+
+              <p className="blog-section-label">
+                Últimas ideas
+              </p>
+
+              <h2>
+                Algunas cosas sobre
+                <br />
+                las que vale la pena pensar.
+              </h2>
+
+            </div>
+
+            <div className="blog-grid">
+
+              {secondaryPosts.map((post, index) => (
+                <motion.article
+                  className="blog-card"
+                  key={post.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: index * 0.08,
                   }}
                 >
-                  <CardBody>
-                    <CardTitle className="text-left" tag="div">
-                      <h2>
-                        <a href="/5lecturas" >
-                          Las 5 Lecturas que han ayudado a formarme como profesional.
-                        </a>
-                      </h2>
-                    </CardTitle>
-                    <CardFooter className="text-left">
-                      <div className="stats">
-                        <span>
-                          <i className="now-ui-icons users_circle-08"></i>
-                          Renato Cabrera
-                        </span>
-                        <span>
-                          <i className="now-ui-icons tech_watch-time"></i>
-                          June 9, 2025
-                        </span>
-                      </div>
-                      <div className="stats-link pull-right">
 
-                      </div>
-                    </CardFooter>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col className="px-0" md="3">
-                <Card className="card-fashion">
-                  <CardTitle tag="div">
-                    <h4>
-                      <a href="juventud" 
-                      >
-                        La juventud es la clave del desarrollo de las sociedades.
-                      </a>
-                    </h4>
-                  </CardTitle>
-                  <CardBody>
-                    <CardFooter>
-                      <div className="stats">
-                        <span>
-                          <i className="now-ui-icons users_circle-08"></i>
-                          Renato Caberera
-                        </span>
-                        <span>
-                          <i className="now-ui-icons tech_watch-time"></i>
-                          June 9, 2025
-                        </span>
-                      </div>
+                  <Link
+                    to={post.route}
+                    className="blog-card-image-link"
+                  >
+                    <div className="blog-card-image-wrap">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                      />
+                    </div>
+                  </Link>
 
-                    </CardFooter>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col className="px-0" md="3">
-                <Card
-                  className="card-fashion card-background"
-                  style={{
-                    backgroundImage:
-                      "url(" + require("assets/img/comunion.jpg") + ")"
-                  }}
-                ></Card>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="px-0" md="3">
-                <Card
-                  className="card-fashion card-background"
-                  style={{
-                    backgroundImage:
-                      "url(" + require("assets/img/apple.jpg") + ")"
-                  }}
-                ></Card>
-              </Col>
-              <Col className="px-0" md="3">
-                <Card className="card-fashion arrow-left">
-                  <CardTitle tag="div">
-                    <h4>
-                      <a href="/saludmental" >
-                        La importancia de cuidar la Salud Mental.
-                      </a>
-                    </h4>
-                  </CardTitle>
-                  <CardBody>
-                    <CardFooter>
-                      <div className="stats">
-                        <span>
-                          <i className="now-ui-icons users_circle-08"></i>
-                          Renato Cabrera
-                        </span>
-                        <span>
-                          <i className="now-ui-icons tech_watch-time"></i>
-                          May 20, 2025
-                        </span>
-                      </div>
+                  <div className="blog-card-content">
 
-                    </CardFooter>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col className="px-0" md="6">
-                <Card
-                  className="card-fashion card-background"
-                  style={{
-                    backgroundImage:
-                      "url(" + require("assets/img/code.jpg") + ")"
+                    <div className="blog-meta">
+                      <span>{post.category}</span>
+                      <span>·</span>
+                      <span>{post.date}</span>
+                    </div>
+
+                    <Link
+                      to={post.route}
+                      className="blog-card-title-link"
+                    >
+                      <h3>
+                        {post.title}
+                      </h3>
+                    </Link>
+
+                    <p>
+                      {post.description}
+                    </p>
+
+                    <Link
+                      to={post.route}
+                      className="blog-inline-link"
+                    >
+                      Leer más →
+                    </Link>
+
+                  </div>
+
+                </motion.article>
+              ))}
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* PHILOSOPHY */}
+        <section className="blog-philosophy">
+          <div className="blog-shell blog-narrow">
+
+            <p className="blog-section-label light">
+              Escribir
+            </p>
+
+            <h2>
+              Pensar también
+              <br />
+              es una forma de
+              <br />
+              <span>construir.</span>
+            </h2>
+
+            <p>
+              Escribo para ordenar ideas, cuestionar certezas y
+              registrar aquello que voy aprendiendo mientras trabajo,
+              leo, construyo proyectos y conozco nuevas personas.
+            </p>
+
+          </div>
+        </section>
+
+        {/* RECOMMENDATIONS */}
+        <section className="blog-recommendations">
+          <div className="blog-shell">
+
+            <div className="blog-section-heading">
+
+              <p className="blog-section-label">
+                También vale la pena conocer
+              </p>
+
+              <h2>
+                Proyectos que
+                <br />
+                hacen cosas interesantes.
+              </h2>
+
+            </div>
+
+            <div className="blog-recommendation-grid">
+
+              {recommendations.map((item, index) => (
+                <motion.a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="blog-recommendation"
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
                   }}
                 >
-                  <CardBody>
-                    <CardTitle className="text-left" tag="div">
-                      <h2>
-                        <a href="/programacion" >
-                          Si no sabes programar, serás un analfabeta... ¿o no?
-                        </a>
-                      </h2>
-                    </CardTitle>
-                    <CardFooter className="text-left">
-                      <div className="stats">
-                        <span>
-                          <i className="now-ui-icons users_circle-08"></i>
-                          Renato Cabrera
-                        </span>
-                        <span>
-                          <i className="now-ui-icons tech_watch-time"></i>
-                          May 2, 2025
-                        </span>
-                      </div>
 
-                    </CardFooter>
-                  </CardBody>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <div className="main">
-          <Container>
-            <div className="section">
-              <h3 className="title text-center">
-                Tal vez te interese conocer
-              </h3>
-              <br></br>
-              <Row>
-                <Col md="4">
-                  <Card className="card-plain card-blog">
-                    <div className="card-image">
-                      <a href="http://www.kindmindgt.com" target="_blank" rel="noopener noreferrer">
-                        <img
-                          alt="..."
-                          className="img rounded img-raised"
-                          src={require("assets/img/IMG_5451.JPG")}
-                        ></img>
-                      </a>
-                    </div>
-                    <CardBody>
-                      <h6 className="category text-info">Empresa</h6>
-                      <CardTitle tag="h4">
-                        <a href="http://www.kindmindgt.com" target="_blank" rel="noopener noreferrer">
-                          Kind Mind
-                        </a>
-                      </CardTitle>
-                      <p className="card-description">
-                        Empresa fundada y dirigida por Renato Cabrera, dedicada al desarrollo de software,
-                        consultorías y asesorías, además de proyectar un desarrollo tecnológico para Guatemala
-                        en todas las industrias.{" "}
-                        <a href="http://www.kindmindgt.com" target="_blank" rel="noopener noreferrer">
-                          Conoce Más.
-                        </a>
-                      </p>
-                      <div className="author">
+                  <div className="blog-recommendation-image">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                    />
+                  </div>
 
-                      </div>
-                    </CardBody>
-                  </Card>
-                </Col>
-                <Col md="4">
-                  <Card className="card-plain card-blog">
-                    <div className="card-image">
-                      <a href="http://www.anima.gt" target="_blank" rel="noopener noreferrer">
-                        <img
-                          alt="..."
-                          className="img rounded img-raised"
-                          src={require("assets/img/anima3.png")}
-                        ></img>
-                      </a>
-                    </div>
-                    <CardBody>
-                      <h6 className="category text-success">Salud Mental</h6>
-                      <CardTitle tag="h4">
-                        <a href="http://www.anima.gt" target="_blank" rel="noopener noreferrer">
-                          Anima
-                        </a>
-                      </CardTitle>
-                      <p className="card-description">
-                        Anima es un espacio de psicología dedicado al bienestar emocional y el crecimiento personal.
-                        Queremos ayudar a las personas a reconectar con ellas mismas y construir una vida con sentido.{" "}
-                        <a href="http://www.anima.gt" target="_blank" rel="noopener noreferrer">
-                          Conoce Más.
-                        </a>
-                      </p>
+                  <div className="blog-recommendation-copy">
 
-                    </CardBody>
-                  </Card>
-                </Col>
-                <Col md="4">
-                  <Card className="card-plain card-blog">
-                    <div className="card-image">
-                      <a href="https://www.nukunem.org/home" target="_blank" rel="noopener noreferrer">
-                        <img
-                          alt="..."
-                          className="img rounded img-raised"
-                          src={require("assets/img/nukunem4.png")}
-                        ></img>
-                      </a>
-                    </div>
-                    <CardBody>
-                      <h6 className="category text-danger">
-                        {" "}
-                        Fundación
-                      </h6>
-                      <CardTitle tag="h4">
-                        <a href="https://www.nukunem.org/home" target="_blank" rel="noopener noreferrer">
-                          Nukunem
-                        </a>
-                      </CardTitle>
-                      <p className="card-description">
-                        Contribuimos a cambiar positivamente la realidad de Guatemala a través de la construcción de un programa comunitario de salud integral.
-                        Nukunem, en k’aqchikel, significa “programar”.{" "}
-                        <a href="https://www.nukunem.org/home" target="_blank" rel="noopener noreferrer">
-                          Conoce Más
-                        </a>
-                      </p>
+                    <p className="blog-recommendation-category">
+                      {item.category}
+                    </p>
 
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
-            </div>
-          </Container>
+                    <h3>
+                      {item.title}
+                    </h3>
 
-          <footer className="site-footer">
-            <div className="footer-links">
+                    <p>
+                      {item.description}
+                    </p>
 
-              <Link to="/blog-posts">Blog</Link>
-              <Link to="/social">Labor Social</Link>
+                    <span>
+                      Visitar ↗
+                    </span>
+
+                  </div>
+
+                </motion.a>
+              ))}
 
             </div>
 
-            <div className="footer-bottom">
-              <Link to="/politicas">Política de Privacidad</Link>
-              <Link to="/presentation"> Home </Link>
-              <Link to="/contact-us">Contáctame</Link>
-              <span>© 2025 Renato Cabrera</span>
-            </div>
-          </footer>
+          </div>
+        </section>
 
-          <style jsx>{`
-        .navbar-container {
+        {/* CLOSING */}
+        <section className="blog-closing">
+          <div className="blog-shell blog-narrow">
+
+            <h2>
+              Seguir aprendiendo.
+              <br />
+              <span>Seguir compartiendo.</span>
+            </h2>
+
+            <div className="blog-closing-links">
+
+              <Link to="/about-us">
+                Sobre mí →
+              </Link>
+
+              <Link to="/contact-us">
+                Hablemos →
+              </Link>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="blog-footer">
+
+          <div className="blog-shell blog-footer-inner">
+
+            <span>
+              © 2026 Renato Cabrera
+            </span>
+
+            <div>
+              <Link to="/presentation">
+                Inicio
+              </Link>
+
+              <Link to="/about-us">
+                Conóceme
+              </Link>
+
+              <Link to="/social">
+                Labor Social
+              </Link>
+
+              <Link to="/politicas">
+                Privacidad
+              </Link>
+
+              <a
+                href="https://www.linkedin.com/in/renatocabreraf/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+
+          </div>
+
+        </footer>
+
+      </main>
+
+      <style>{`
+
+        .rc-blog {
+          background: #fff;
+          color: #1d1d1f;
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "SF Pro Display",
+            "SF Pro Text",
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
+          -webkit-font-smoothing: antialiased;
+          overflow: hidden;
+        }
+
+        .blog-shell {
+          width: calc(100% - 80px);
+          max-width: 1180px;
+          margin: 0 auto;
+        }
+
+        .blog-wide {
+          width: calc(100% - 48px);
+          max-width: 1480px;
+          margin: 0 auto;
+        }
+
+        .blog-narrow {
+          max-width: 900px;
+        }
+
+        /* HERO */
+
+        .blog-hero {
+          padding: 180px 0 120px;
+          background:
+            radial-gradient(
+              circle at 80% 12%,
+              rgba(0, 113, 227, 0.08),
+              transparent 30%
+            ),
+            #fff;
+        }
+
+        .blog-eyebrow,
+        .blog-section-label {
+          margin: 0 0 28px;
+          color: #6e6e73;
+          font-size: 13px;
+          line-height: 1;
+          font-weight: 650;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .blog-hero h1 {
+          max-width: 1060px;
+          margin: 0;
+          color: #1d1d1f;
+          font-size: clamp(64px, 8.5vw, 122px);
+          line-height: 0.93;
+          letter-spacing: -0.07em;
+          font-weight: 650;
+        }
+
+        .blog-hero h1 span {
+          color: #86868b;
+        }
+
+        .blog-lead {
+          max-width: 700px;
+          margin: 50px 0 0;
+          color: #6e6e73;
+          font-size: clamp(21px, 2.2vw, 29px);
+          line-height: 1.38;
+          letter-spacing: -0.03em;
+        }
+
+        /* FEATURED */
+
+        .blog-featured {
+          padding: 0 0 150px;
+        }
+
+        .blog-featured-link {
+          color: inherit;
+          text-decoration: none !important;
+        }
+
+        .blog-featured-card {
+          position: relative;
+          overflow: hidden;
+          min-height: 700px;
+          border-radius: 28px;
+          background: #111;
+        }
+
+        .blog-featured-card img {
           width: 100%;
-          position: fixed;
-          top: 0;
-          z-index: 1000;
-          background: linear-gradient(to right, #222, #111);
-          padding: 0.5rem 1rem;
+          height: 700px;
+          display: block;
+          object-fit: cover;
         }
 
-        .navbar {
-          max-width: 1200px;
-          margin: auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+        .blog-featured-overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(
+              90deg,
+              rgba(0,0,0,0.74) 0%,
+              rgba(0,0,0,0.36) 45%,
+              rgba(0,0,0,0.08) 75%
+            );
         }
 
-        .brand {
-          display: flex;
-          align-items: center;
-        }
-
-        .logo {
-          height: 100px;
-          width: 190px;
-          object-fit: contain;
-          transition: all 0.3s ease;
-        }
-
-        .menu-toggle {
-          background: none;
-          border: none;
-          font-size: 1.5rem;
+        .blog-featured-copy {
+          position: absolute;
+          left: 70px;
+          bottom: 70px;
+          max-width: 670px;
           color: white;
-          display: none;
         }
 
-        .nav-menu {
+        .blog-meta {
           display: flex;
-          gap: 2rem;
+          gap: 8px;
+          margin-bottom: 18px;
+          color: #86868b;
+          font-size: 13px;
+          font-weight: 550;
         }
 
-        .nav-item {
+        .blog-meta.light {
+          color: rgba(255,255,255,0.7);
+        }
+
+        .blog-featured-copy h2 {
+          margin: 0;
           color: white;
-          text-decoration: none;
-          font-size: 1rem;
+          font-size: clamp(42px, 5vw, 70px);
+          line-height: 1.02;
+          letter-spacing: -0.055em;
+          font-weight: 650;
+        }
+
+        .blog-featured-copy p {
+          max-width: 560px;
+          margin: 24px 0;
+          color: rgba(255,255,255,0.8);
+          font-size: 18px;
+          line-height: 1.5;
+        }
+
+        .blog-read-link {
+          color: white;
+          font-size: 17px;
           font-weight: 500;
         }
 
-        .nav-item:hover {
-          text-decoration: underline;
+        /* POSTS */
+
+        .blog-posts-section {
+          padding: 160px 0;
+          background: #f5f5f7;
         }
 
-        .search-icon {
-          background: none;
-          border: none;
-          font-size: 1.3rem;
-          color: white;
+        .blog-section-heading {
+          margin-bottom: 80px;
         }
 
-        .presentation-container {
-          width: 100%;
+        .blog-section-heading h2,
+        .blog-philosophy h2,
+        .blog-closing h2 {
+          margin: 0;
+          font-size: clamp(44px, 6vw, 76px);
+          line-height: 1.02;
+          letter-spacing: -0.055em;
+          font-weight: 650;
+        }
+
+        .blog-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 50px 30px;
+        }
+
+        .blog-card {
           display: flex;
-          justify-content: center;
+          flex-direction: column;
         }
 
-        .presentation-inner {
-          position: relative;
-          width: 100%;
-          max-width: 1920px;
-        }
-
-        .presentation-image {
-          width: 100%;
-          height: auto;
+        .blog-card-image-link {
           display: block;
         }
 
-        .presentation-overlay {
-          position: absolute;
-          bottom: 40px;
-          left: 40px;
-          max-width: 400px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 10px;
+        .blog-card-image-wrap {
+          overflow: hidden;
+          border-radius: 22px;
+          background: #ddd;
         }
 
-        .presentation-box {
-          color: black;
+        .blog-card-image-wrap img {
+          width: 100%;
+          height: 310px;
+          display: block;
+          object-fit: cover;
+          transition: transform 0.45s ease;
+        }
+
+        .blog-card:hover .blog-card-image-wrap img {
+          transform: scale(1.025);
+        }
+
+        .blog-card-content {
+          padding: 26px 4px 0;
+        }
+
+        .blog-card-title-link {
+          color: inherit;
+          text-decoration: none !important;
+        }
+
+        .blog-card-content h3 {
+          margin: 0;
+          color: #1d1d1f;
+          font-size: 29px;
+          line-height: 1.12;
+          letter-spacing: -0.04em;
+          font-weight: 600;
+        }
+
+        .blog-card-content > p {
+          margin: 20px 0;
+          color: #6e6e73;
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .blog-inline-link {
+          color: #0066cc !important;
+          font-size: 16px;
+          font-weight: 500;
+          text-decoration: none !important;
+        }
+
+        /* PHILOSOPHY */
+
+        .blog-philosophy {
+          padding: 180px 0;
+          background: #000;
+          color: #f5f5f7;
+        }
+
+        .blog-section-label.light {
+          color: #86868b;
+        }
+
+        .blog-philosophy h2 {
+          color: #f5f5f7;
+        }
+
+        .blog-philosophy h2 span {
+          color: #86868b;
+        }
+
+        .blog-philosophy > .blog-shell > p:last-child {
+          max-width: 720px;
+          margin: 50px 0 0;
+          color: #a1a1a6;
+          font-size: 22px;
+          line-height: 1.55;
+        }
+
+        /* RECOMMENDATIONS */
+
+        .blog-recommendations {
+          padding: 170px 0;
+          background: #fff;
+        }
+
+        .blog-recommendation-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 32px;
+        }
+
+        .blog-recommendation {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+
+        .blog-recommendation-image {
+          overflow: hidden;
+          border-radius: 22px;
+          background: #f5f5f7;
+        }
+
+        .blog-recommendation-image img {
+          width: 100%;
+          height: 260px;
+          display: block;
+          object-fit: cover;
+          transition: transform 0.45s ease;
+        }
+
+        .blog-recommendation:hover img {
+          transform: scale(1.025);
+        }
+
+        .blog-recommendation-copy {
+          padding: 24px 3px 0;
+        }
+
+        .blog-recommendation-category {
+          margin: 0 0 10px !important;
+          color: #6e6e73 !important;
+          font-size: 13px !important;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+
+        .blog-recommendation-copy h3 {
+          margin: 0 0 15px;
+          color: #1d1d1f;
+          font-size: 29px;
+          letter-spacing: -0.035em;
+          font-weight: 600;
+        }
+
+        .blog-recommendation-copy > p {
+          margin: 0 0 18px;
+          color: #6e6e73;
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .blog-recommendation-copy span {
+          color: #0066cc;
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        /* CLOSING */
+
+        .blog-closing {
+          padding: 170px 0;
+          background: #f5f5f7;
+        }
+
+        .blog-closing h2 span {
+          color: #86868b;
+        }
+
+        .blog-closing-links {
+          display: flex;
+          gap: 36px;
+          margin-top: 50px;
+        }
+
+        .blog-closing-links a {
+          color: #0066cc;
+          font-size: 20px;
+          font-weight: 500;
           text-decoration: none;
         }
 
-        .presentation-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 1px;
-          color: #444;
+        /* FOOTER */
+
+        .blog-footer {
+          padding: 35px 0 45px;
+          background: #f5f5f7;
+          border-top: 1px solid #d2d2d7;
         }
 
-        .presentation-title {
-          font-size: 1.5rem;
-          font-weight: 800;
-          margin: 10px 0;
+        .blog-footer-inner {
+          display: flex;
+          justify-content: space-between;
+          gap: 30px;
+          color: #6e6e73;
+          font-size: 13px;
         }
 
-        .presentation-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .fade-in-text {
-          opacity: 0;
-          animation: fadeInText 1.2s ease-out forwards;
-          animation-delay: 0.4s;
-        }
-
-        @keyframes fadeInText {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .text-highlight {
-          padding: 60px 20px;
-          text-align: center;
-        }
-
-        .text-highlight p {
-          font-size: 1.6rem;
-          color: #555;
-          max-width: 800px;
-          margin: auto;
-          line-height: 1.6;
-        }
-
-        .inline-photo {
-          height: 40px;
-          width: auto;
-          margin: 0 8px;
-          vertical-align: middle;
-          border-radius: 6px;
-        }
-
-        .featured-section {
+        .blog-footer-inner div {
           display: flex;
           flex-wrap: wrap;
-          gap: 40px;
-          padding: 60px 20px;
-          max-width: 1200px;
-          margin: auto;
+          gap: 24px;
         }
 
-        .featured-left {
-          flex: 1;
-          min-width: 300px;
+        .blog-footer a {
+          color: #424245;
+          text-decoration: none;
         }
 
-        .featured-image-wrapper {
-          position: relative;
+        .blog-footer a:hover {
+          text-decoration: underline;
         }
 
-        .featured-image {
-          width: 100%;
-          border-radius: 12px;
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+          .blog-grid,
+          .blog-recommendation-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .blog-card-image-wrap img,
+          .blog-recommendation-image img {
+            height: auto;
+            aspect-ratio: 16 / 10;
+          }
+
         }
 
-        .featured-overlay {
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 20px;
-          border-radius: 8px;
+        @media (max-width: 768px) {
+
+          .blog-shell {
+            width: calc(100% - 42px);
+          }
+
+          .blog-wide {
+            width: calc(100% - 24px);
+          }
+
+          .blog-hero {
+            padding: 150px 0 100px;
+          }
+
+          .blog-hero h1 {
+            font-size: clamp(56px, 16vw, 80px);
+          }
+
+          .blog-featured {
+            padding-bottom: 100px;
+          }
+
+          .blog-featured-card,
+          .blog-featured-card img {
+            min-height: 650px;
+            height: 650px;
+          }
+
+          .blog-featured-overlay {
+            background:
+              linear-gradient(
+                0deg,
+                rgba(0,0,0,0.82) 0%,
+                rgba(0,0,0,0.16) 75%
+              );
+          }
+
+          .blog-featured-copy {
+            left: 28px;
+            right: 28px;
+            bottom: 35px;
+          }
+
+          .blog-posts-section,
+          .blog-philosophy,
+          .blog-recommendations,
+          .blog-closing {
+            padding: 110px 0;
+          }
+
+          .blog-section-heading {
+            margin-bottom: 55px;
+          }
+
+          .blog-closing-links {
+            flex-direction: column;
+            gap: 18px;
+          }
+
+          .blog-footer-inner {
+            flex-direction: column;
+          }
+
         }
 
-        .featured-subtitle {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: #444;
-        }
-
-        .featured-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          margin: 10px 0;
-        }
-
-        .featured-description {
-          font-size: 1rem;
-          color: #666;
-        }
-
-        .featured-right {
-          flex: 1;
-          min-width: 300px;
-        }
-
-        .mini-featured-image {
-          width: 100%;
-          border-radius: 8px;
-          margin-top: 20px;
-        }
-       
-        .site-footer {
-  background-color: #f5f5f5;
-  padding: 40px 20px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
-  border-top: 1px solid #e0e0e0;
-}
-
-.footer-links,
-.footer-bottom {
-  margin-bottom: 20px;
-}
-
-.footer-links a,
-.footer-bottom a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 12px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-bottom a:hover {
-  color: #0078d4; /* azul sobrio como en Gates Notes */
-  text-decoration: underline;
-}
-
-.footer-bottom span {
-  display: block;
-  margin-top: 10px;
-  color: #999;
-}
-
-      `
-          }</style>
-        </div>
-
-      </div>
+      `}</style>
     </>
   );
 }
