@@ -21,6 +21,7 @@ import GeniusCloud from "views/sections-sections/GeniusCloud";
 import Vista from "views/sections-sections/Vista";
 import GlobalIdentity from "components/Renato/GlobalIdentity";
 import TrabajoEnEquipoTecnologia from "views/articles/TrabajoEnEquipoTecnologia";
+import Certificaciones from "views/Certificaciones";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -40,6 +41,7 @@ root.render(
       <Route exact path="/juventud" component={Vista}/>
       <Route exact path="/politicas" component={NucleoIcons}/>
       <Route exact path="/presentation" component={Presentation}/>
+      <Route exact path="/certificaciones" component={Certificaciones}/>
 
       <Redirect exact from="/" to="/presentation"/>
       <Redirect exact from="/blog-post" to="/blog-posts"/>

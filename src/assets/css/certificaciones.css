@@ -1,0 +1,505 @@
+.rc-certificaciones-page {
+  --rc-black: #050505;
+  --rc-text: #1d1d1f;
+  --rc-muted: #6e6e73;
+  --rc-light: #f5f5f7;
+  --rc-line: rgba(0, 0, 0, 0.08);
+  --rc-blue: #0071e3;
+  background: #ffffff;
+  color: var(--rc-text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.rc-certificaciones-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.rc-certificaciones-hero {
+  position: relative;
+  min-height: 720px;
+  display: flex;
+  align-items: flex-end;
+  background:
+    radial-gradient(
+      circle at 78% 25%,
+      rgba(0, 113, 227, 0.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 18% 85%,
+      rgba(90, 200, 250, 0.12),
+      transparent 26%
+    ),
+    #050505;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 150px 0 92px;
+}
+
+.rc-certificaciones-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rc-orb-one {
+  width: 380px;
+  height: 380px;
+  background: rgba(0, 113, 227, 0.22);
+  top: -110px;
+  right: -80px;
+}
+
+.rc-orb-two {
+  width: 240px;
+  height: 240px;
+  background: rgba(100, 210, 255, 0.13);
+  bottom: -80px;
+  left: 10%;
+}
+
+.rc-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.rc-certificaciones-eyebrow,
+.rc-section-kicker {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--rc-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.rc-certificaciones-hero h1 {
+  max-width: 930px;
+  margin: 0;
+  font-size: clamp(60px, 8vw, 112px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+}
+
+.rc-certificaciones-hero h1 span {
+  color: #8e8e93;
+}
+
+.rc-certificaciones-lead {
+  max-width: 720px;
+  margin: 42px 0 0;
+  color: #d2d2d7;
+  font-size: clamp(21px, 2vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.rc-certificaciones-author {
+  margin-top: 32px;
+  color: #86868b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rc-certificaciones-intro {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.rc-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 90px;
+  align-items: start;
+}
+
+.rc-intro-grid h2,
+.rc-gallery-heading h2,
+.rc-marquee-heading h2 {
+  margin: 0;
+  color: var(--rc-text);
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  font-weight: 700;
+}
+
+.rc-intro-copy {
+  padding-top: 34px;
+}
+
+.rc-intro-copy p {
+  margin: 0 0 22px;
+  color: var(--rc-muted);
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: -0.015em;
+}
+
+.rc-certificaciones-gallery {
+  padding: 110px 0 130px;
+  background: var(--rc-light);
+}
+
+.rc-gallery-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.rc-gallery-count {
+  color: var(--rc-muted);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.rc-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.rc-badge-card {
+  position: relative;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 30px;
+  padding: 26px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.rc-badge-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.09);
+}
+
+.rc-badge-image-wrap {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.rc-badge-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 220px;
+  max-height: 220px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.rc-badge-card-copy {
+  border-top: 1px solid var(--rc-line);
+  padding-top: 19px;
+  min-height: 104px;
+}
+
+.rc-badge-card-copy span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--rc-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.rc-badge-card-copy h2 {
+  margin: 0;
+  color: var(--rc-text);
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: -0.018em;
+  font-weight: 600;
+}
+
+.rc-certificaciones-cta {
+  max-width: 760px;
+  margin: 90px auto 0;
+  text-align: center;
+}
+
+.rc-certificaciones-cta p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  color: var(--rc-muted);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.rc-linkedin-cert-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 56px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--rc-blue);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.rc-linkedin-cert-button:hover {
+  background: #0077ed;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 113, 227, 0.25);
+}
+
+.rc-linkedin-cert-button span {
+  font-size: 20px;
+}
+
+.rc-marquee-section {
+  position: relative;
+  padding: 120px 0 100px;
+  background: #050505;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.rc-marquee-heading {
+  margin-bottom: 70px;
+}
+
+.rc-kicker-light {
+  color: #2997ff;
+}
+
+.rc-marquee-heading h2 {
+  max-width: 850px;
+  color: #ffffff;
+}
+
+.rc-marquee-heading p {
+  max-width: 650px;
+  margin: 28px 0 0;
+  color: #86868b;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.rc-marquee-shell {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 14px 0 24px;
+}
+
+.rc-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 28px;
+  align-items: center;
+  animation: rcBadgesMoveRight 42s linear infinite;
+  will-change: transform;
+}
+
+.rc-marquee-shell:hover .rc-marquee-track {
+  animation-play-state: paused;
+}
+
+.rc-marquee-badge {
+  flex: 0 0 170px;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.rc-marquee-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.rc-marquee-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100px;
+  pointer-events: none;
+}
+
+.rc-marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #050505, transparent);
+}
+
+.rc-marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #050505, transparent);
+}
+
+@keyframes rcBadgesMoveRight {
+  from {
+    transform: translateX(calc(-50% - 14px));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.rc-certificaciones-footer {
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 36px 0 44px;
+}
+
+.rc-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.rc-footer-inner div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rc-footer-inner strong {
+  color: #f5f5f7;
+  font-size: 14px;
+}
+
+.rc-footer-inner span {
+  color: #6e6e73;
+  font-size: 13px;
+}
+
+.rc-footer-inner a {
+  color: #2997ff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media (max-width: 1050px) {
+  .rc-badges-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .rc-intro-grid {
+    gap: 55px;
+  }
+}
+
+@media (max-width: 800px) {
+  .rc-certificaciones-container {
+    width: min(100% - 34px, 1180px);
+  }
+
+  .rc-certificaciones-hero {
+    min-height: 650px;
+    padding: 135px 0 72px;
+  }
+
+  .rc-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .rc-intro-copy {
+    padding-top: 0;
+  }
+
+  .rc-gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rc-badges-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rc-marquee-badge {
+    flex-basis: 145px;
+    width: 145px;
+    height: 145px;
+  }
+}
+
+@media (max-width: 520px) {
+  .rc-certificaciones-hero h1 {
+    font-size: 54px;
+  }
+
+  .rc-certificaciones-lead {
+    font-size: 20px;
+  }
+
+  .rc-certificaciones-intro,
+  .rc-certificaciones-gallery,
+  .rc-marquee-section {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+
+  .rc-badges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rc-badge-card {
+    padding: 24px;
+  }
+
+  .rc-badge-image-wrap {
+    aspect-ratio: 1.25 / 1;
+  }
+
+  .rc-badge-image {
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  .rc-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rc-marquee-track {
+    animation: none;
+  }
+
+  .rc-badge-card,
+  .rc-linkedin-cert-button {
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  }

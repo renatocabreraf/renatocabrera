@@ -5,11 +5,36 @@ import SiteFooter from "components/Renato/SiteFooter";
 import "assets/css/renato-editorial.css";
 
 const books = [
-  ["Steve Jobs","Walter Isaacson","assets/img/sj.jpg","Esta biografía me ayudó a comprender el valor de unir tecnología y arte, de cuidar los detalles y de construir productos que no solo funcionen, sino que también sean útiles, bellos y significativos."],
-  ["Minimalismo Digital","Cal Newport","assets/img/md.jpg","Me hizo replantear mi relación con las herramientas digitales: recuperar enfoque, elegir mejor dónde invierto mi atención y poner límites a la distracción constante."],
-  ["El Método Lean Startup","Eric Ries","assets/img/ls.jpg.jpg","Me dio una estructura práctica para desarrollar proyectos con pocos recursos: probar, aprender, corregir y validar antes de invertir demasiado en una idea."],
-  ["Enganchado","Nir Eyal","assets/img/hooked.jpg","Me acercó al diseño conductual y a la forma en que los productos digitales pueden integrarse en los hábitos de las personas. Entender al usuario es tan importante como construir la tecnología."],
-  ["La Teoría del Todo","Stephen Hawking","assets/img/tt.jpg.jpg","Me recordó que el conocimiento no tiene una frontera definitiva. La curiosidad, la capacidad de cuestionar y la humildad frente a lo desconocido también forman parte del crecimiento profesional."]
+  [
+    "Steve Jobs",
+    "Walter Isaacson",
+    require("assets/img/sj.jpg"),
+    "Esta biografía me ayudó a comprender el valor de unir tecnología y arte, de cuidar los detalles y de construir productos que no solo funcionen, sino que también sean útiles, bellos y significativos."
+  ],
+  [
+    "Minimalismo Digital",
+    "Cal Newport",
+    require("assets/img/md.jpg"),
+    "Me hizo replantear mi relación con las herramientas digitales: recuperar enfoque, elegir mejor dónde invierto mi atención y poner límites a la distracción constante."
+  ],
+  [
+    "El Método Lean Startup",
+    "Eric Ries",
+    require("assets/img/ls.jpg.jpg"),
+    "Me dio una estructura práctica para desarrollar proyectos con pocos recursos: probar, aprender, corregir y validar antes de invertir demasiado en una idea."
+  ],
+  [
+    "Enganchado",
+    "Nir Eyal",
+    require("assets/img/hooked.jpg"),
+    "Me acercó al diseño conductual y a la forma en que los productos digitales pueden integrarse en los hábitos de las personas. Entender al usuario es tan importante como construir la tecnología."
+  ],
+  [
+    "La Teoría del Todo",
+    "Stephen Hawking",
+    require("assets/img/tt.jpg.jpg"),
+    "Me recordó que el conocimiento no tiene una frontera definitiva. La curiosidad, la capacidad de cuestionar y la humildad frente a lo desconocido también forman parte del crecimiento profesional."
+  ]
 ];
 
 function PulseViews(){
@@ -37,7 +62,7 @@ function PulseViews(){
         <div className="re-cards">
           {books.map((b,i)=><motion.article className="re-card" key={b[0]} initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:.5,delay:i*.04}}>
             <span className="re-card-index">{String(i+1).padStart(2,"0")}</span>
-            <div className="re-card-image-wrap"><img className="re-card-image" src={require(`assets/img/${b[2].split("/").pop()}`)} alt={b[0]}/></div>
+            <div className="re-card-image-wrap"><img className="re-card-image" src={b[2]} alt={b[0]}/></div>
             <h3>{b[0]}<br/><span style={{color:"#86868b",fontSize:18}}>{b[1]}</span></h3><p>{b[3]}</p>
           </motion.article>)}
         </div>
