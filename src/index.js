@@ -20,6 +20,7 @@ import Counsel from "views/sections-sections/Counsel";
 import GeniusCloud from "views/sections-sections/GeniusCloud";
 import Vista from "views/sections-sections/Vista";
 import GlobalIdentity from "components/Renato/GlobalIdentity";
+import GlobalBadgesMarquee from "components/Renato/GlobalBadgesMarquee";
 import TrabajoEnEquipoTecnologia from "views/articles/TrabajoEnEquipoTecnologia";
 import Certificaciones from "views/Certificaciones";
 
@@ -60,6 +61,7 @@ root.render(
         />
 <Redirect to="/presentation"/>
     </Switch>
+    <GlobalBadgesMarquee />
   </BrowserRouter>
     </>
 );

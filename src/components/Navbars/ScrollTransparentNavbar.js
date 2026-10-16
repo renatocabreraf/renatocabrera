@@ -9,6 +9,7 @@ const Navbar = () => {
   const menuItems = [
     { label: "Conóceme", path: "/about-us" },
     { label: "Blog", path: "/blog-posts" },
+    { label: "Certificaciones", path: "/certificaciones" },
     { label: "Labor Social", path: "/social" },
   ];
 
